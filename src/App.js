@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import {characterAPI, charactersAPI } from './helpers/urlFor';
+import axios from 'axios';
+import List from './components/List'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor () {
+    super();
+    this.state = {
+      characters: [],
+      character: {},
+      error: ''
+  };
 }
+  componentDidMount = () => {
+    axios.get(charactersAPI())
+    .then((res) => this.setState({characters: res.data}))
+    .catch((err) => console.log(err.response.data));
+  }
 
+  render() { 
+    const { characters } = this.state;
+
+    return (  
+      <div className="App">
+        <List characters={characters} />
+      </div>
+    );
+  }
+};
+ 
 export default App;
+
