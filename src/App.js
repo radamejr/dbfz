@@ -3,6 +3,8 @@ import './App.css';
 import {characterAPI, charactersAPI } from './helpers/urlFor';
 import axios from 'axios';
 import List from './components/List'
+import Nav from './components/Nav'
+
 
 class App extends Component {
   constructor () {
@@ -24,6 +26,7 @@ class App extends Component {
 
     return (  
       <div className="App">
+        <Nav characters={characters} />
         <List characters={characters} />
       </div>
     );

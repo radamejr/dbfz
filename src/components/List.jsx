@@ -7,7 +7,7 @@ class List extends Component {
 
         const selections = characters.map((character, index) => {
           return (
-            <div className="row" key={index}>
+            <div className="container" key={index}>
               <h1 className="characterName">
                 {character.name} id: {character.id} dlc?: {character.dlc ? "Yes" : "No"}
               </h1>
