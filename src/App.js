@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import {characterAPI, charactersAPI } from './helpers/urlFor';
+import { charactersAPI } from './helpers/urlFor';
 import axios from 'axios';
-import List from './components/List'
-import Nav from './components/Nav'
+import List from './components/List';
+import Nav from './components/Nav';
+import Home from './components/Home';
+import Character from './components/Character'
 
 
 class App extends Component {
@@ -11,7 +14,6 @@ class App extends Component {
     super();
     this.state = {
       characters: [],
-      character: {},
       error: ''
   };
 }
@@ -27,7 +29,12 @@ class App extends Component {
     return (  
       <div className="App">
         <Nav characters={characters} />
-        <List characters={characters} />
+        
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/characters' render={props => (<List {...props} characters={this.state.characters}/>)}  />
+          <Route path='/characters/:id' render={props => (<Character {...props} characters={this.state.characters}/>)} />
+        </Switch>
       </div>
     );
   }
