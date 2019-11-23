@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Nav extends Component {
     
@@ -10,7 +10,7 @@ class Nav extends Component {
             return (
               
                 <p className="dropdown-item" key={index}>
-                    <Link to={"/characters/" + character.id}>{character.name}</Link>
+                    <Link to={"/characters/" + character.id} onClick={() => this.forceUpdate} >{character.name}</Link>
                 </p>                
               
               

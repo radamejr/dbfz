@@ -6,26 +6,40 @@ class Character extends Component {
     constructor () {
       super();
       this.state = {
-        character: ''
+        character: {}
       }
     }
+    
+    reloadCharacter = () => {
+        this.setState(this.state);
+    }
+    
+    componentDidUpdate(nextProps) {
+        if (nextProps.match.params.id !== this.props.match.params.id) {
+            this.setState({ character: {}});
+            this.getCharacter(this.props.match.params.id);
+            
+        }
+    }
 
-    componentDidMount() {
-      const { match: { params } } = this.props
-      console.log(params.id)
+    componentDidMount = () => {
+        this.getCharacter();
+    }
 
-      axios.get(characterAPI(params.id))
-      .then((res) => this.setState({character: res.data}))
-      .catch((err) => console.log(err.response.data));
-      
+    getCharacter = () => {
+        let { match: { params } } = this.props;
+        
+        axios.get(characterAPI(params.id))
+        .then((res) => this.setState({character: res.data}))
+        .catch((err) => console.log(err.response.data));
     }
 
     render() { 
-        
+        let { character } = this.state;      
         
         return ( 
             <div className="container">
-              
+              {character.name}
             </div>
             
         );

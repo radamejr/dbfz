@@ -14,7 +14,7 @@ class App extends Component {
     super();
     this.state = {
       characters: [],
-      error: ''
+      character: {}
   };
 }
   componentDidMount = () => {
@@ -32,8 +32,9 @@ class App extends Component {
         
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route exact path='/characters' render={props => (<List {...props} characters={this.state.characters}/>)}  />
-          <Route path='/characters/:id' render={props => (<Character {...props} characters={this.state.characters}/>)} />
+          <Route path='/characters/:id' render={props => (<Character {...props} characters={this.state.characters} character={this.state.character} />)} />
+          <Route path='/characters' render={props => (<List {...props} characters={this.state.characters}/>)}  />
+          
         </Switch>
       </div>
     );
