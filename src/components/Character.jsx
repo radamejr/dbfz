@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { characterAPI } from './../helpers/urlFor';
 import axios from 'axios';
+import Normals from './Normals';
+import Specials from './Specials';
+import Supers from './Supers';
 
 class Character extends Component {
     constructor () {
@@ -10,16 +13,14 @@ class Character extends Component {
       }
     }
     
-    reloadCharacter = () => {
-        this.setState(this.state);
-    }
-    
+        
     componentDidUpdate(nextProps) {
         if (nextProps.match.params.id !== this.props.match.params.id) {
             this.setState({ character: {}});
-            this.getCharacter(this.props.match.params.id);
+            this.getCharacter();
             
         }
+        
     }
 
     componentDidMount = () => {
@@ -35,13 +36,29 @@ class Character extends Component {
     }
 
     render() { 
-        let { character } = this.state;      
+        let { character } = this.state; 
+        let { match: { params } } = this.props;     
         
         return ( 
             <div className="container">
               {character.name}
+
+              <div className="normal-container">
+                <Normals 
+                    params={params}
+                />
+                <br></br>
+                <Specials
+                    params={params}
+                />
+                <br></br>
+                <Supers
+                    params={params}
+                />
+              </div>
             </div>
             
+
         );
     }
 }
