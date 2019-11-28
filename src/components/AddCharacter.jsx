@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { charactersAPI, characterAPI } from '../helpers/urlFor';
+import { charactersAPI } from '../helpers/urlFor';
 
 class AddCharacter extends Component {
     constructor () {
