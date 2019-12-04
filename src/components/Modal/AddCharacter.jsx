@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { charactersAPI } from '../helpers/urlFor';
+import { charactersAPI } from '../../helpers/urlFor';
 
 class AddCharacter extends Component {
     constructor () {
@@ -18,8 +18,7 @@ class AddCharacter extends Component {
     onSubmit = (e) => {
         e.preventDefault();
         const { name, dlc, discord_link, combo_doc_link } = this.state;
-        console.log(name, dlc, discord_link, combo_doc_link)
-
+        
         axios.post(charactersAPI(), {name, dlc, discord_link, combo_doc_link })
         .then((result) => {
             window.location.reload(false);

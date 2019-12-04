@@ -38,7 +38,7 @@ class Character extends Component {
     render() { 
         let { character } = this.state; 
         let { match: { params } } = this.props;     
-        
+               
         return ( 
             <div className="container">
               {character.name}
