@@ -3,6 +3,7 @@ import { characterNormals } from '../helpers/urlFor';
 import axios from 'axios';
 import Modal from 'react-bootstrap/Modal';
 import AddNormal from './Modal/AddNormal';
+import EditNormal from './Modal/EditNormal';
 
 class Normals extends Component {
     constructor () {
@@ -10,15 +11,31 @@ class Normals extends Component {
         this.state = {
             params: '',
             normals: [],
-            isOpen: false
+            addModalOpen: false,
+            editModalOpen: false,
+            normal_index: ''
         }
     }
 
-    toggleModal = () => {
-        let { isOpen } = this.state
-        this.setState({isOpen: !isOpen})
+    toggleAddModal = () => {
+        let { addModalOpen } = this.state
+        this.setState({addModalOpen: !addModalOpen})
     }
 
+    toggleEditModal = () => {
+        let { editModalOpen } = this.state
+        this.setState({editModalOpen: !editModalOpen})
+    }
+
+    editButtonClicked = (id) => {
+        
+        this.setState({normal_index: id})
+        
+        this.toggleEditModal()
+        
+
+    }
+    
     componentDidMount = () => {
         
         this.setState({ normals: [], params: this.props.params.id});
@@ -40,6 +57,7 @@ class Normals extends Component {
         let {  params  } = this.props
         try {
             const response = await axios.get(characterNormals(params.id));
+            response.data.sort((a, b) => a.id - b.id)
             this.setState({normals: response.data})
           } catch (error) {
             console.error(error);
@@ -48,14 +66,17 @@ class Normals extends Component {
     }
     
     render() { 
-        let { normals, isOpen, params } = this.state
+        let { normals, normal_index, addModalOpen, editModalOpen, params } = this.state
         
-
         const currentNormals = normals.map((normal, index) => {
             return(
-                <p className="normal" key={index}>
-                    {normal.input}                 
-                </p> 
+                <div key={index}>
+                    <p className="normal">
+                        {normal.input}                 
+                        <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Normal</button>
+                    </p> 
+                    
+                </div>
             );
         });
 
@@ -67,17 +88,31 @@ class Normals extends Component {
                     {currentNormals}
                 </div>
 
-                <button className="btn btn-primary float-right" onClick={this.toggleModal}>Add Normals +</button>
+                <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Normals +</button>
 
                 <Modal 
-                    show={isOpen}
+                    show={addModalOpen}
                     >
                     <Modal.Header>
-                        <button className="btn btn-primary float-right" onClick={this.toggleModal}>cancel</button>
+                        <button className="btn btn-primary float-right" onClick={this.toggleAddModal}>cancel</button>
                     </Modal.Header>
-                <AddNormal 
-                    params={params}
-                    />
+                    <AddNormal 
+                        
+                        params={params}
+                        />
+                    
+                </Modal>
+
+                <Modal 
+                    show={editModalOpen}
+                    >
+                    <Modal.Header>
+                        <button className="btn btn-primary float-right" onClick={this.toggleEditModal}>cancel</button>
+                    </Modal.Header>
+                    <EditNormal 
+                        params={params}
+                        props={normals[normal_index]}
+                        />
                     
                 </Modal>
                 <br></br>
