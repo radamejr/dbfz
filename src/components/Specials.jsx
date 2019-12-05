@@ -39,6 +39,7 @@ class Specials extends Component {
         let { params } = this.props
         try {
             const response = await axios.get(characterSpecials(params.id));
+            response.data.sort((a, b) => a.id - b.id)
             this.setState({specials: response.data})
           } catch (error) {
             console.error(error);
@@ -69,7 +70,7 @@ class Specials extends Component {
                 Here are the Specials:
                 {currentSpecials}
             </div>
-            <button className="btn btn-primary float-right" onClick={this.toggleModal}>Add Specials +</button>
+            <button className="btn btn-primary btn-sm float-right" onClick={this.toggleModal}>Add Specials +</button>
 
             <Modal 
                 show={isOpen}

@@ -6,11 +6,13 @@ const charactersAPI = () => {
     return 'http://localhost:3030/api/v1/characters';
 }
   
-
-
 const characterNormals = (character_id) => {
   return `http://localhost:3030/api/v1/characters/${character_id}/normals`;
 
+}
+
+const characterNormal = (character_id, normal_id) => {
+  return `http://localhost:3030/api/v1/characters/${character_id}/normals/${normal_id}`
 }
 
 const characterSpecials = (character_id) => {
@@ -25,10 +27,13 @@ const characterSupers = (character_id) => {
 
 
 
+
+
 export {
   characterAPI,
   charactersAPI,
   characterNormals,
+  characterNormal,
   characterSpecials,
   characterSupers
 }

@@ -37,6 +37,7 @@ class Supers extends Component {
         let { params } = this.props
         try {
             const response = await axios.get(characterSupers(params.id));
+            response.data.sort((a, b) => a.id - b.id)
             this.setState({supers: response.data})
           } catch (error) {
             console.error(error);
@@ -68,7 +69,7 @@ class Supers extends Component {
                 Here are the Supers:
                 {currentSupers}
             </div>
-            <button className="btn btn-primary float-right" onClick={this.toggleModal}>Add Supers +</button>
+            <button className="btn btn-primary btn-sm float-right" onClick={this.toggleModal}>Add Supers +</button>
 
             <Modal 
                 show={isOpen}

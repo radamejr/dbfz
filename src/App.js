@@ -18,9 +18,18 @@ class App extends Component {
   };
 }
   componentDidMount = () => {
-    axios.get(charactersAPI())
-    .then((res) => this.setState({characters: res.data}))
-    .catch((err) => console.log(err.response.data));
+    this.getCharacters()   
+  }
+
+  async getCharacters() {
+
+    try {
+      const response = await axios.get(charactersAPI());
+      response.data.sort((a, b) => a.id - b.id )
+      this.setState({characters: response.data})
+      } catch (error) {
+      console.error(error);
+  }
   }
 
   render() { 
