@@ -20,8 +20,18 @@ const characterSpecials = (character_id) => {
 
 }
 
+const characterSpecial = (character_id, special_id) => {
+  return `http://localhost:3030/api/v1/characters/${character_id}/specials/${special_id}`;
+
+}
+
 const characterSupers = (character_id) => {
   return `http://localhost:3030/api/v1/characters/${character_id}/supers`;
+
+}
+
+const characterSuper = (character_id, super_id) => {
+  return `http://localhost:3030/api/v1/characters/${character_id}/supers/${super_id}`;
 
 }
 
@@ -35,5 +45,7 @@ export {
   characterNormals,
   characterNormal,
   characterSpecials,
-  characterSupers
+  characterSpecial,
+  characterSupers,
+  characterSuper
 }

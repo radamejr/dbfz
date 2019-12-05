@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { characterNormal } from '../../helpers/urlFor';
+import { characterSpecial } from '../../helpers/urlFor';
 
-class EditNormal extends Component {
+class EditSpecial extends Component {
     constructor () {
         super();
         this.state = {
             params: '',
+            name: '',
             input: '',
             startup_frames: '',
-            active_frames: '',
             recovery_on_hit: '',
             recovery_on_block: '',
             recovery_on_whiff: '',
             cancellable: false,
             blockstun: '',
             immune_to: '',
+            meter_used: '',
             id: ''
         }
         
@@ -25,9 +26,10 @@ class EditNormal extends Component {
         let { props } = this.props
               
         this.setState({
+            name: props.name,
             input: props.input,
             startup_frames: props.startup_frames,
-            active_frames: props.active_frames,
+            //active_frames: props.active_frames,
             recovery_on_hit: props.recovery_on_hit,
             recovery_on_block: props.recovery_on_block,
             recovery_on_whiff: props.recovery_on_whiff,
@@ -41,10 +43,10 @@ class EditNormal extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { input, startup_frames, active_frames, recovery_on_hit, recovery_on_block, recovery_on_whiff, cancellable, blockstun, immune_to, id } = this.state;
+        const { name, input, startup_frames, active_frames, recovery_on_hit, recovery_on_block, recovery_on_whiff, cancellable, blockstun, immune_to, id } = this.state;
         let { params } = this.props
 
-        axios.put(characterNormal(params, id), {input, startup_frames, active_frames, recovery_on_hit, recovery_on_block, recovery_on_whiff, cancellable, blockstun, immune_to })
+        axios.put(characterSpecial(params, id), {name, input, startup_frames, active_frames, recovery_on_hit, recovery_on_block, recovery_on_whiff, cancellable, blockstun, immune_to })
         .then((result) => {
             window.location.reload(false);
         });
@@ -63,9 +65,19 @@ class EditNormal extends Component {
 
         return ( 
             
-            <form id="edit-normal" onSubmit={this.onSubmit}>
+            <form id="edit-special" onSubmit={this.onSubmit}>
                 
                 <div className="row">
+                    <div className="category">
+                        Name:
+                        <div className="form-input">
+                            <input name="name"
+                                type="text"
+                                defaultValue={this.state.name}
+                                onChange={this.handleChange}
+                            />
+                        </div>
+                    </div>
                     <div className="category">
                         Input:
                         <div className="form-input">
@@ -91,7 +103,7 @@ class EditNormal extends Component {
                         <div className="form-input">
                             <input name="active_frames"
                                 type="text"
-                                defaultValue={this.state.active_frames}
+                                value="coming soon"
                                 onChange={this.handleChange}
                             />
                         </div>
@@ -165,4 +177,4 @@ class EditNormal extends Component {
     }
 }
  
-export default EditNormal;
+export default EditSpecial;

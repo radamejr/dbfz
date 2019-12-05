@@ -3,6 +3,7 @@ import { characterSpecials } from '../helpers/urlFor';
 import axios from 'axios';
 import Modal from 'react-bootstrap/Modal'
 import AddSpecial from './Modal/AddSpecial'
+import EditSpecial from './Modal/EditSpecial';
 
 class Specials extends Component {
     constructor () {
@@ -10,14 +11,27 @@ class Specials extends Component {
         this.state = {
             params: '',
             specials: [],
-            isOpen: false
+            addModalOpen: false,
+            editModalOpen: false,
+            special_index: ''
         }
     }
 
 
-    toggleModal = () => {
-        let { isOpen } = this.state
-        this.setState({isOpen: !isOpen})
+    toggleAddModal = () => {
+        let { addModalOpen } = this.state
+        this.setState({addModalOpen: !addModalOpen})
+    }
+
+    toggleEditModal = () => {
+        let { editModalOpen } = this.state
+        this.setState({editModalOpen: !editModalOpen})
+    }
+
+    editButtonClicked = (id) => {
+        
+        this.setState({special_index: id})
+        this.toggleEditModal()
     }
 
     componentDidMount = () => {  
@@ -47,18 +61,19 @@ class Specials extends Component {
         
     }
     render() { 
-        let { specials, isOpen, params } = this.state
+        let { specials, addModalOpen, editModalOpen, params, special_index } = this.state
         
 
         const currentSpecials = specials.map((special, index) => {
             return(
-                <p className="special" key={index}>
-                    {special.name}
-                    <br></br>
-                    {special.input}
-                    
-                    
-                </p> 
+                <div key={index}>
+                    <p className="special">
+                        {special.name}
+                        <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Special</button>
+                        <br></br>
+                        {special.input}                       
+                    </p> 
+                </div>
 
             );
             
@@ -70,16 +85,29 @@ class Specials extends Component {
                 Here are the Specials:
                 {currentSpecials}
             </div>
-            <button className="btn btn-primary btn-sm float-right" onClick={this.toggleModal}>Add Specials +</button>
+            <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Specials +</button>
 
             <Modal 
-                show={isOpen}
+                show={addModalOpen}
                 >
                 <Modal.Header>
-                    <button className="btn btn-primary float-right" onClick={this.toggleModal}>cancel</button>
+                    <button className="btn btn-primary float-right" onClick={this.toggleAddModal}>cancel</button>
                 </Modal.Header>
-            <AddSpecial 
+                <AddSpecial 
                 params={params}
+                />
+                
+            </Modal>
+
+            <Modal 
+                show={editModalOpen}
+                >
+                <Modal.Header>
+                    <button className="btn btn-primary float-right" onClick={this.toggleEditModal}>cancel</button>
+                </Modal.Header>
+                <EditSpecial 
+                params={params}
+                props={specials[special_index]}
                 />
                 
             </Modal>

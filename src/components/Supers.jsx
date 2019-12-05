@@ -3,6 +3,7 @@ import { characterSupers } from '../helpers/urlFor';
 import axios from 'axios';
 import Modal from 'react-bootstrap/Modal'
 import AddSuper from './Modal/AddSuper'
+import EditSuper from './Modal/EditSuper'
 
 class Supers extends Component {
     constructor () {
@@ -10,14 +11,27 @@ class Supers extends Component {
         this.state = {
             params: '',
             supers: [],
-            usOpen: false
+            addModalOpen: false,
+            editModalOpen: false,
+            super_index: ''
         }
 
     }
 
-    toggleModal = () => {
-        let { isOpen } = this.state
-        this.setState({isOpen: !isOpen})
+    toggleAddModal = () => {
+        let { addModalOpen } = this.state
+        this.setState({addModalOpen: !addModalOpen})
+    }
+
+    toggleEditModal = () => {
+        let { editModalOpen } = this.state
+        this.setState({editModalOpen: !editModalOpen})
+    }
+
+    editButtonClicked = (id) => {
+        
+        this.setState({super_index: id})
+        this.toggleEditModal()
     }
 
     componentDidMount = () => {
@@ -46,18 +60,19 @@ class Supers extends Component {
     }
 
     render() { 
-        let { supers, isOpen, params } = this.state
+        let { supers, addModalOpen, editModalOpen, params, super_index } = this.state
        
 
         const currentSupers = supers.map((superMove, index) => {
             return(
-                <p className="super" key={index}>
-                    {superMove.name}
-                    <br></br>
-                    {superMove.input}
-                    
-                    
-                </p> 
+               <div key={index}>
+                    <p className="super">
+                        {superMove.name}
+                        <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Super</button>
+                        <br></br>
+                        {superMove.input}
+                    </p> 
+               </div>
 
             );
             
@@ -69,16 +84,30 @@ class Supers extends Component {
                 Here are the Supers:
                 {currentSupers}
             </div>
-            <button className="btn btn-primary btn-sm float-right" onClick={this.toggleModal}>Add Supers +</button>
+            <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Supers +</button>
 
             <Modal 
-                show={isOpen}
+                show={addModalOpen}
                 >
                 <Modal.Header>
-                    <button className="btn btn-primary float-right" onClick={this.toggleModal}>cancel</button>
+                    <button className="btn btn-primary float-right" onClick={this.toggleAddModal}>cancel</button>
                 </Modal.Header>
-            <AddSuper 
-                params={params}
+                <AddSuper 
+                    params={params}
+                />
+                
+            </Modal>
+
+
+            <Modal 
+                show={editModalOpen}
+                >
+                <Modal.Header>
+                    <button className="btn btn-primary float-right" onClick={this.toggleEditModal}>cancel</button>
+                </Modal.Header>
+                <EditSuper 
+                    params={params}
+                    props={supers[super_index]}
                 />
                 
             </Modal>

@@ -46,7 +46,7 @@ class EditCharacter extends Component {
         const { name, dlc, discord_link, combo_doc_link } = this.state;
         
         return ( 
-            <form id="add-character" onSubmit={this.onSubmit}>
+            <form id="edit-character" onSubmit={this.onSubmit}>
                 
                 <div className="row">
                     <div className="category">
