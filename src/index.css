@@ -21,3 +21,9 @@ code {
   margin: 10px;
 
 }
+
+.dropdown-item {
+  display: inline;
+  padding: 0px;
+  width: auto;
+}
