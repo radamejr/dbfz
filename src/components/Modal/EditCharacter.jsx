@@ -10,6 +10,7 @@ class EditCharacter extends Component {
             dlc: '',
             discord_link: '',
             combo_doc_link: '',
+            icon:''
 
         }
         

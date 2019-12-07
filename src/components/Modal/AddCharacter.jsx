@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { charactersAPI } from '../../helpers/urlFor';
 
+
+
 class AddCharacter extends Component {
     constructor () {
         super();
@@ -10,6 +12,7 @@ class AddCharacter extends Component {
             dlc: false,
             discord_link: '',
             combo_doc_link: '',
+            icon: ''
 
         }
         
@@ -17,17 +20,26 @@ class AddCharacter extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { name, dlc, discord_link, combo_doc_link } = this.state;
+        const { name, dlc, discord_link, combo_doc_link, icon } = this.state;
         
-        axios.post(charactersAPI(), {name, dlc, discord_link, combo_doc_link })
+        axios.post(charactersAPI(), {name, dlc, discord_link, combo_doc_link, icon })
         .then((result) => {
             window.location.reload(false);
         });
-        
-        
+               
     }
 
+    convertIconImage = (e) => {
 
+        let file = e.target.files[0]
+        let reader = new FileReader();        
+
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+           
+           this.setState({icon: reader.result})
+        }
+    }
 
     handleChange = (e) => {
         this.setState({ [e.target.name ]: e.target.value })
@@ -75,6 +87,16 @@ class AddCharacter extends Component {
                                 type="text"
                                 value={this.state.combo_doc_link}
                                 onChange={this.handleChange}
+                            />
+                        </div>
+                    </div>
+                    <div className="category">
+                        Icon Image:
+                        <div className="form-input">
+                            <input name="icon"
+                                type="file"
+                                defaultValue=""
+                                onChange={this.convertIconImage.bind(this)}
                             />
                         </div>
                     </div>
