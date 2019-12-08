@@ -12,7 +12,9 @@ class Character extends Component {
       super();
       this.state = {
         character: {},
-        isOpen: false
+        isOpen: false,
+        picture: "",
+        icon: ""
 
       }
     }
@@ -24,7 +26,11 @@ class Character extends Component {
         
     componentDidUpdate(nextProps) {
         if (nextProps.match.params.id !== this.props.match.params.id) {
-            this.setState({ character: {}});
+            this.setState({ 
+              character: {},
+              picture: "",
+              icon: ""
+            });
             this.getCharacter();
             
         }
@@ -38,9 +44,14 @@ class Character extends Component {
     async getCharacter() {
         let { match: { params } } = this.props;
         
-        try {
-            const response = await axios.get(characterAPI(params.id));
-            this.setState({character: response.data})
+       try {
+          const response = await axios.get(characterAPI(params.id));
+            this.setState({
+              character: response.data,
+              picture: response.data.character_picture.url,
+              icon: response.data.icon.url
+            })
+            
         } catch (error) {
             console.error(error);
         }
@@ -48,15 +59,24 @@ class Character extends Component {
     }
 
     render() { 
-        let { character, isOpen } = this.state; 
-        let { match: { params } } = this.props;     
-               
+        let { character, isOpen, picture, icon } = this.state; 
+        let { match: { params } } = this.props;    
+        
+       
+        
         return ( 
             <div className="container">
-              {character.name}   <br></br>
-              {character.dlc ? "Yes" : "No"} <br></br>
-              {character.discord_link} <br></br>
-              {character.combo_doc_link} <br></br>
+              <div className="row">
+                <div className="character-text float-left">
+                  {character.name}   <br></br>
+                  {character.dlc ? "Yes" : "No"} <br></br>
+                  {character.discord_link} <br></br>
+                  {character.combo_doc_link} <br></br>
+                </div>
+                <div className="character-picture float-right"><img src={picture} alt="character"></img> <br></br></div>
+              </div>
+
+
               <button className="btn-primary btn btn-sm float-right" onClick={this.toggleModal}>Edit Character</button>
               
               <br></br>
@@ -72,6 +92,8 @@ class Character extends Component {
                     dlc={character.dlc}
                     discord_link={character.discord_link}
                     combo_doc_link={character.combo_doc_link}
+                    character_picture={picture}
+                    character_icon={icon}
                 />
                 
               </Modal>

@@ -25,9 +25,11 @@ class Nav extends Component {
   const selections = characters.map((character, index) => {
     
       return (        
-        <Link to={"/characters/" + character.id} onClick={() => this.forceUpdate} key={index} >
-          <img src={character.icon.url} className="dropdown-item" alt="character-icon" ></img>
-        </Link>
+        <li key={index} >
+          <Link to={"/characters/" + character.id} onClick={() => this.forceUpdate} >    
+            <img src={character.icon.url} className="dropdown-item" alt="character-icon" ></img>        
+          </Link>
+        </li>
                             
       );
       
@@ -56,8 +58,10 @@ class Nav extends Component {
             <p className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Characters
             </p>
-            <div className="dropdown-menu col-10 offset-1" aria-labelledby="navbarDropdown">
-              {selections}
+            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <ul className="character-selector">
+                {selections}
+              </ul>
               <button className="nav-link btn" onClick={this.toggleModal}>Add Character +</button>
             </div>
           </li>
