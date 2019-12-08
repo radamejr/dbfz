@@ -79,11 +79,11 @@ class Normals extends Component {
                                 </div>
                                 <br></br>
                                 <div  className="float-left">
-                                Startup Frames:  {normal.startup_frames}
+                                Startup Frames:  {normal.startup}
                                 </div>
                                 <br></br>
                                 <div  className="float-left">
-                                Active Frames:  {normal.active_frames}
+                                Active Frames:  {normal.active}
                                 </div>
                                 <br></br>
 
