@@ -22,8 +22,23 @@ code {
 
 }
 
+.character-selector {
+  display: inline-flex;
+  list-style: none;
+}
 .dropdown-item {
   
   padding: 0px;
   width: auto;
+}
+
+.row {
+  display: inline-flex;
+}
+
+.character-picture > img {
+  height: 500px;
+}
+.container {
+  margin: 100px, 0px, 100px, 0px;
 }

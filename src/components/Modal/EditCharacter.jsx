@@ -10,7 +10,9 @@ class EditCharacter extends Component {
             dlc: '',
             discord_link: '',
             combo_doc_link: '',
-            icon:''
+            icon:'',
+            character_picture: ''
+
 
         }
         
@@ -21,17 +23,43 @@ class EditCharacter extends Component {
             name: this.props.name,
             dlc: this.props.dlc,
             discord_link: this.props.discord_link,
-            combo_doc_link: this.props.combo_doc_link
+            combo_doc_link: this.props.combo_doc_link,
+            icon: this.props.icon,
+            character_picture: this.props.picture
 
         })
     }
 
+    convertIconImage = (e) => {
+
+        let file = e.target.files[0]
+        let reader = new FileReader();        
+
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+           
+           this.setState({icon: reader.result})
+        }
+    }
+
+    convertCharacterImage = (e) => {
+
+        let file = e.target.files[0]
+        let reader = new FileReader();        
+
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+           
+           this.setState({character_picture: reader.result})
+        }
+    }
+
     onSubmit = (e) => {
         e.preventDefault();
-        const { name, dlc, discord_link, combo_doc_link } = this.state;
+        const { name, dlc, discord_link, combo_doc_link, icon, character_picture } = this.state;
         let { params } = this.props
         
-        axios.put(characterAPI(params.id), {name, dlc, discord_link, combo_doc_link })
+        axios.put(characterAPI(params.id), {name, dlc, discord_link, combo_doc_link, icon, character_picture })
         .then((result) => {
            window.location.reload(false);
         });
@@ -87,6 +115,24 @@ class EditCharacter extends Component {
                                 type="text"
                                 defaultValue={combo_doc_link}
                                 onChange={this.handleChange}
+                            />
+                        </div>
+                    </div>
+                    <div className="category">
+                        Character Picture:
+                        <div className="form-input">
+                            <input name="character_picture"
+                                type="file"
+                                onChange={this.convertCharacterImage}
+                            />
+                        </div>
+                    </div>
+                    <div className="category">
+                        Character Icon:
+                        <div className="form-input">
+                            <input name="icon"
+                                type="file"
+                                onChange={this.convertIconImage}
                             />
                         </div>
                     </div>

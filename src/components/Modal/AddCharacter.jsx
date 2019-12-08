@@ -12,7 +12,8 @@ class AddCharacter extends Component {
             dlc: false,
             discord_link: '',
             combo_doc_link: '',
-            icon: ''
+            icon: '',
+            character_picture: ''
 
         }
         
@@ -20,9 +21,9 @@ class AddCharacter extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { name, dlc, discord_link, combo_doc_link, icon } = this.state;
+        const { name, dlc, discord_link, combo_doc_link, icon, character_picture } = this.state;
         
-        axios.post(charactersAPI(), {name, dlc, discord_link, combo_doc_link, icon })
+        axios.post(charactersAPI(), {name, dlc, discord_link, combo_doc_link, icon, character_picture })
         .then((result) => {
             window.location.reload(false);
         });
@@ -38,6 +39,18 @@ class AddCharacter extends Component {
         reader.onload = () => {
            
            this.setState({icon: reader.result})
+        }
+    }
+
+    convertCharacterImage = (e) => {
+
+        let file = e.target.files[0]
+        let reader = new FileReader();        
+
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+           
+           this.setState({character_picture: reader.result})
         }
     }
 
@@ -97,6 +110,16 @@ class AddCharacter extends Component {
                                 type="file"
                                 defaultValue=""
                                 onChange={this.convertIconImage.bind(this)}
+                            />
+                        </div>
+                    </div>
+                    <div className="category">
+                        Character Image:
+                        <div className="form-input">
+                            <input name="character_picture"
+                                type="file"
+                                defaultValue=""
+                                onChange={this.convertCharacterImage.bind(this)}
                             />
                         </div>
                     </div>
