@@ -66,7 +66,7 @@ class Character extends Component {
     }
 
     render() { 
-        let { character, isOpen, picture, icon, loading } = this.state; 
+        let { character, isOpen, picture, icon } = this.state; 
         let { match: { params } } = this.props;    
         
        
