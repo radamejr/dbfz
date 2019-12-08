@@ -9,25 +9,27 @@ class AddSpecial extends Component {
             params: '',
             name: '',
             input: '',
-            startup_frames: '',
-            recovery_on_hit: '',
-            recovery_on_block: '',
-            recovery_on_whiff: '',
-            cancellable: false,
-            blockstun: '',
+            startup: '',
+            active: '',
+            recovery: '',
+            gaurd: '',
+            properties: '',
+            advantage: '',
             immune_to: '',
-            meter_used: ''
+            special_notes: '',
+            meter_used: '',
+            picture: ''
         }
         
     }
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { input, name, startup_frames, meter_used, recovery_on_hit, recovery_on_block, recovery_on_whiff, cancellable, blockstun, immune_to } = this.state;
+        const { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used } = this.state;
         let { params } = this.props
         
 
-        axios.post(characterSpecials(params), {input, name, startup_frames, meter_used, recovery_on_hit, recovery_on_block, recovery_on_whiff, cancellable, blockstun, immune_to })
+        axios.post(characterSpecials(params), { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used })
         .then((result) => {
             window.location.reload(false);
         });
@@ -35,6 +37,17 @@ class AddSpecial extends Component {
         
     }
 
+    convertMoveImage = (e) => {
+
+        let file = e.target.files[0]
+        let reader = new FileReader();        
+
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+           
+           this.setState({picture: reader.result})
+        }
+    }
 
 
     handleChange = (e) => {
@@ -46,25 +59,35 @@ class AddSpecial extends Component {
 
         return ( 
             
-            <form id="add-normal" onSubmit={this.onSubmit}>
+            <form id="add-special" onSubmit={this.onSubmit}>
                 
                 <div className="row">
                     <div className="category">
-                        Input:
+                    Picture:
                         <div className="form-input">
-                            <input name="input"
+                            <input name="picture"
+                                type="file"
+                                defaultValue={this.state.picture}
+                                onChange={this.convertMoveImage}
+                            />
+                        </div>
+                    </div>
+                    <div className="category">
+                    Name:
+                        <div className="form-input">
+                            <input name="name"
                                 type="text"
-                                value={this.state.input}
+                                defaultValue={this.state.name}
                                 onChange={this.handleChange}
                             />
                         </div>
                     </div>
                     <div className="category">
-                        Name:
+                    Input:
                         <div className="form-input">
-                            <input name="name"
+                            <input name="input"
                                 type="text"
-                                value={this.state.name}
+                                defaultValue={this.state.input}
                                 onChange={this.handleChange}
                             />
                         </div>
@@ -72,69 +95,80 @@ class AddSpecial extends Component {
                     <div className="category">
                     Startup Frames:
                         <div className="form-input">
-                            <input name="startup_frames"
+                            <input name="startup"
                                 type="text"
-                                value={this.state.start_frames}
+                                defaultValue={this.state.startup}
                                 onChange={this.handleChange}
                             />
                         </div>
                     </div>
                     <div className="category">
-                    Recovery On Hit:
+                    Active Frames:
                         <div className="form-input">
-                            <input name="recovery_on_hit"
+                            <input name="active"
                                 type="text"
-                                value={this.state.recovery_on_hit}
+                                defaultValue={this.state.active}
                                 onChange={this.handleChange}
                             />
                         </div>
                     </div>
                     <div className="category">
-                    Recovery On Block:
+                    Recovery Frames:
                         <div className="form-input">
-                            <input name="recovery_on_block"
+                            <input name="recovery"
                                 type="text"
-                                value={this.state.recovery_on_block}
+                                defaultValue={this.state.advantage}
                                 onChange={this.handleChange}
                             />
                         </div>
                     </div>
                     <div className="category">
-                    Recovery On Whiff:
+                    Advantage:
                         <div className="form-input">
-                            <input name="recovery_on_whiff"
+                            <input name="advantage"
                                 type="text"
-                                value={this.state.recovery_on_whiff}
+                                defaultValue={this.state.advantage}
                                 onChange={this.handleChange}
                             />
                         </div>
                     </div>
                     <div className="category">
-                    Cancellable?:
+                    Gaurd:
                         <div className="form-input">
-                            <input name="cancellable"
+                            <input name="gaurd"
                                 type="text"
-                                value={this.state.cancellable}
+                                defaultValue={this.state.gaurd}
                                 onChange={this.handleChange}
                             />
                         </div>
                     </div>
                     <div className="category">
-                    Blockstun:
+                    Properties:
                         <div className="form-input">
-                            <input name="blockstun"
+                            <input name="properties"
                                 type="text"
-                                value={this.state.blockstun}
+                                defaultValue={this.state.properties}
                                 onChange={this.handleChange}
                             />
                         </div>
                     </div>
+                    
                     <div className="category">
                     Immune To:
                         <div className="form-input">
                             <input name="immune_to"
                                 type="text"
-                                value={this.state.immune_to}
+                                defaultValue={this.state.immune_to}
+                                onChange={this.handleChange}
+                            />
+                        </div>
+                    </div>
+                    <div className="category">
+                    Special Notes:
+                        <div className="form-input">
+                            <input name="special_notes"
+                                type="text"
+                                defaultValue={this.state.special_notes}
                                 onChange={this.handleChange}
                             />
                         </div>
@@ -144,7 +178,7 @@ class AddSpecial extends Component {
                         <div className="form-input">
                             <input name="meter_used"
                                 type="text"
-                                value={this.state.meter_used}
+                                defaultValue={this.state.meter_used}
                                 onChange={this.handleChange}
                             />
                         </div>
