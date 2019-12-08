@@ -8,14 +8,16 @@ class EditNormal extends Component {
         this.state = {
             params: '',
             input: '',
-            startup_frames: '',
-            active_frames: '',
-            recovery_on_hit: '',
-            recovery_on_block: '',
-            recovery_on_whiff: '',
-            cancellable: false,
-            blockstun: '',
+            startup: '',
+            active: '',
+            recovery: '',
+            gaurd: '',
+            properties: '',
+            advantage: '',
             immune_to: '',
+            special_notes: '',
+            picture: '',
+            move_type: '',
             id: ''
         }
         
@@ -26,25 +28,38 @@ class EditNormal extends Component {
               
         this.setState({
             input: props.input,
-            startup_frames: props.startup_frames,
-            active_frames: props.active_frames,
-            recovery_on_hit: props.recovery_on_hit,
-            recovery_on_block: props.recovery_on_block,
-            recovery_on_whiff: props.recovery_on_whiff,
-            cancellable: props.cancellable,
-            blockstun: props.blockstun,
+            startup: props.startup,
+            active: props.active,
+            recovery: props.recovery,
+            gaurd: props.gaurd,
+            advantage: props.advantage,
+            properties: props.properties,
             immune_to: props.immune_to,
+            special_notes: props.special_notes,
+            move_type: props.move_type,
             id: props.id
 
         })
     }
+    
+    convertMoveImage = (e) => {
+
+        let file = e.target.files[0]
+        let reader = new FileReader();        
+
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+           
+           this.setState({picture: reader.result})
+        }
+    }
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { input, startup_frames, active_frames, recovery_on_hit, recovery_on_block, recovery_on_whiff, cancellable, blockstun, immune_to, id } = this.state;
+        const { input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, move_type, id } = this.state;
         let { params } = this.props
 
-        axios.put(characterNormal(params, id), {input, startup_frames, active_frames, recovery_on_hit, recovery_on_block, recovery_on_whiff, cancellable, blockstun, immune_to })
+        axios.put(characterNormal(params, id), {input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, move_type })
         .then((result) => {
             window.location.reload(false);
         });
@@ -67,7 +82,17 @@ class EditNormal extends Component {
                 
                 <div className="row">
                     <div className="category">
-                        Input:
+                    Picture:
+                        <div className="form-input">
+                            <input name="picture"
+                                type="file"
+                                defaultValue={this.state.picture}
+                                onChange={this.convertMoveImage}
+                            />
+                        </div>
+                    </div>
+                    <div className="category">
+                    Input:
                         <div className="form-input">
                             <input name="input"
                                 type="text"
@@ -79,9 +104,9 @@ class EditNormal extends Component {
                     <div className="category">
                     Startup Frames:
                         <div className="form-input">
-                            <input name="startup_frames"
+                            <input name="startup"
                                 type="text"
-                                defaultValue={this.state.startup_frames}
+                                defaultValue={this.state.startup}
                                 onChange={this.handleChange}
                             />
                         </div>
@@ -89,69 +114,80 @@ class EditNormal extends Component {
                     <div className="category">
                     Active Frames:
                         <div className="form-input">
-                            <input name="active_frames"
+                            <input name="active"
                                 type="text"
-                                defaultValue={this.state.active_frames}
+                                defaultValue={this.state.active}
                                 onChange={this.handleChange}
                             />
                         </div>
                     </div>
                     <div className="category">
-                    Recovery On Hit:
+                    Recovery Frames:
                         <div className="form-input">
-                            <input name="recovery_on_hit"
+                            <input name="recovery"
                                 type="text"
-                                defaultValue={this.state.recovery_on_hit}
+                                defaultValue={this.state.advantage}
                                 onChange={this.handleChange}
                             />
                         </div>
                     </div>
                     <div className="category">
-                    Recovery On Block:
+                    Advantage:
                         <div className="form-input">
-                            <input name="recovery_on_block"
+                            <input name="advantage"
                                 type="text"
-                                defaultValue={this.state.recovery_on_block}
+                                defaultValue={this.state.advantage}
                                 onChange={this.handleChange}
                             />
                         </div>
                     </div>
                     <div className="category">
-                    Recovery On Whiff:
+                    Gaurd:
                         <div className="form-input">
-                            <input name="recovery_on_whiff"
+                            <input name="gaurd"
                                 type="text"
-                                defaultValue={this.state.recovery_on_whiff}
+                                defaultValue={this.state.gaurd}
                                 onChange={this.handleChange}
                             />
                         </div>
                     </div>
                     <div className="category">
-                    Cancellable?:
+                    Properties:
                         <div className="form-input">
-                            <input name="cancellable"
+                            <input name="properties"
                                 type="text"
-                                defaultValue={this.state.cancellable}
+                                defaultValue={this.state.properties}
                                 onChange={this.handleChange}
                             />
                         </div>
                     </div>
-                    <div className="category">
-                    Blockstun:
-                        <div className="form-input">
-                            <input name="blockstun"
-                                type="text"
-                                defaultValue={this.state.blockstun}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
+                    
                     <div className="category">
                     Immune To:
                         <div className="form-input">
                             <input name="immune_to"
                                 type="text"
                                 defaultValue={this.state.immune_to}
+                                onChange={this.handleChange}
+                            />
+                        </div>
+                    </div>
+                    <div className="category">
+                    Special Notes:
+                        <div className="form-input">
+                            <input name="special_notes"
+                                type="text"
+                                defaultValue={this.state.special_notes}
+                                onChange={this.handleChange}
+                            />
+                        </div>
+                    </div>
+                    <div className="category">
+                    Type:
+                        <div className="form-input">
+                            <input name="move_type"
+                                type="text"
+                                defaultValue={this.state.move_type}
                                 onChange={this.handleChange}
                             />
                         </div>

@@ -71,11 +71,30 @@ class Normals extends Component {
         const currentNormals = normals.map((normal, index) => {
             return(
                 <div key={index}>
-                    <p className="normal">
-                        {normal.input}                 
-                        <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Normal</button>
-                    </p> 
-                    
+                    <div className="normal-move row">
+                        <img className="normal col-4" src={normal.picture.url}  alt="normal"></img>
+                            <div className="col">
+                                <div className="float-left">
+                                Input: {normal.input}
+                                </div>
+                                <br></br>
+                                <div  className="float-left">
+                                Startup Frames:  {normal.startup}
+                                </div>
+                                <br></br>
+                                <div  className="float-left">
+                                Active Frames:  {normal.active}
+                                </div>
+                                <br></br>
+
+
+                                
+                            </div>
+                            
+                        <br></br>          
+                        
+                    </div>   
+                    <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Normal</button> 
                 </div>
             );
         });
@@ -87,7 +106,8 @@ class Normals extends Component {
                     Here are the Normals:
                     {currentNormals}
                 </div>
-
+                <br></br>   
+                <br></br>   
                 <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Normals +</button>
 
                 <Modal 

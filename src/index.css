@@ -12,9 +12,6 @@ code {
     monospace;
 }
 
-.row {
-  display: inline;
-}
 
 .category {
   padding: 20px;
@@ -27,7 +24,6 @@ code {
   list-style: none;
   overflow: hidden;
 }
-
 
 .character-selector > img {
   width: 75%;
@@ -52,9 +48,7 @@ code {
   background-color: transparent;
 }
 
-.row {
-  display: inline-flex;
-}
+
 
 .character-picture > img {
   height: 500px;
