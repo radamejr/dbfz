@@ -9,14 +9,16 @@ class EditSuper extends Component {
             params: '',
             name: '',
             input: '',
-            startup_frames: '',
-            recovery_on_hit: '',
-            recovery_on_block: '',
-            recovery_on_whiff: '',
-            cancellable: false,
-            blockstun: '',
+            startup: '',
+            active: '',
+            recovery: '',
+            gaurd: '',
+            properties: '',
+            advantage: '',
             immune_to: '',
+            special_notes: '',
             meter_used: '',
+            picture: '',
             id: ''
         }
         
@@ -28,14 +30,15 @@ class EditSuper extends Component {
         this.setState({
             name: props.name,
             input: props.input,
-            startup_frames: props.startup_frames,
-            //active_frames: props.active_frames,
-            recovery_on_hit: props.recovery_on_hit,
-            recovery_on_block: props.recovery_on_block,
-            recovery_on_whiff: props.recovery_on_whiff,
-            cancellable: props.cancellable,
-            blockstun: props.blockstun,
+            startup: props.startup,
+            active: props.active,
+            recovery: props.recovery,
+            gaurd: props.gaurd,
+            advantage: props.advantage,
+            properties: props.properties,
             immune_to: props.immune_to,
+            special_notes: props.special_notes,
+            meter_used: props.meter_used,
             id: props.id
 
         })
@@ -43,10 +46,10 @@ class EditSuper extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { name, input, startup_frames, active_frames, recovery_on_hit, recovery_on_block, recovery_on_whiff, cancellable, blockstun, immune_to, id } = this.state;
+        const { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used, id } = this.state;
         let { params } = this.props
 
-        axios.put(characterSuper(params, id), {name, input, startup_frames, active_frames, recovery_on_hit, recovery_on_block, recovery_on_whiff, cancellable, blockstun, immune_to })
+        axios.put(characterSuper(params, id), { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used })
         .then((result) => {
             window.location.reload(false);
         });
@@ -67,112 +70,133 @@ class EditSuper extends Component {
             
             <form id="edit-super" onSubmit={this.onSubmit}>
                 
-                <div className="row">
-                    <div className="category">
-                        Name:
-                        <div className="form-input">
-                            <input name="name"
-                                type="text"
-                                defaultValue={this.state.name}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="category">
-                        Input:
-                        <div className="form-input">
-                            <input name="input"
-                                type="text"
-                                defaultValue={this.state.input}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="category">
-                    Startup Frames:
-                        <div className="form-input">
-                            <input name="startup_frames"
-                                type="text"
-                                defaultValue={this.state.startup_frames}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="category">
-                    Active Frames:
-                        <div className="form-input">
-                            <input name="active_frames"
-                                type="text"
-                                value="coming soon"
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="category">
-                    Recovery On Hit:
-                        <div className="form-input">
-                            <input name="recovery_on_hit"
-                                type="text"
-                                defaultValue={this.state.recovery_on_hit}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="category">
-                    Recovery On Block:
-                        <div className="form-input">
-                            <input name="recovery_on_block"
-                                type="text"
-                                defaultValue={this.state.recovery_on_block}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="category">
-                    Recovery On Whiff:
-                        <div className="form-input">
-                            <input name="recovery_on_whiff"
-                                type="text"
-                                defaultValue={this.state.recovery_on_whiff}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="category">
-                    Cancellable?:
-                        <div className="form-input">
-                            <input name="cancellable"
-                                type="text"
-                                defaultValue={this.state.cancellable}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="category">
-                    Blockstun:
-                        <div className="form-input">
-                            <input name="blockstun"
-                                type="text"
-                                defaultValue={this.state.blockstun}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="category">
-                    Immune To:
-                        <div className="form-input">
-                            <input name="immune_to"
-                                type="text"
-                                defaultValue={this.state.immune_to}
-                                onChange={this.handleChange}
-                            />
-                        </div>
+            <div className="row">
+                <div className="category">
+                Picture:
+                    <div className="form-input">
+                        <input name="picture"
+                            type="file"
+                            defaultValue={this.state.picture}
+                            onChange={this.convertMoveImage}
+                        />
                     </div>
                 </div>
-                <br></br>
-                <button type="submit" className="btn btn-primary float-right">Edit</button>
+                <div className="category">
+                Name:
+                    <div className="form-input">
+                        <input name="name"
+                            type="text"
+                            defaultValue={this.state.name}
+                            onChange={this.handleChange}
+                        />
+                    </div>
+                </div>
+                <div className="category">
+                Input:
+                    <div className="form-input">
+                        <input name="input"
+                            type="text"
+                            defaultValue={this.state.input}
+                            onChange={this.handleChange}
+                        />
+                    </div>
+                </div>
+                <div className="category">
+                Startup Frames:
+                    <div className="form-input">
+                        <input name="startup"
+                            type="text"
+                            defaultValue={this.state.startup}
+                            onChange={this.handleChange}
+                        />
+                    </div>
+                </div>
+                <div className="category">
+                Active Frames:
+                    <div className="form-input">
+                        <input name="active"
+                            type="text"
+                            defaultValue={this.state.active}
+                            onChange={this.handleChange}
+                        />
+                    </div>
+                </div>
+                <div className="category">
+                Recovery Frames:
+                    <div className="form-input">
+                        <input name="recovery"
+                            type="text"
+                            defaultValue={this.state.advantage}
+                            onChange={this.handleChange}
+                        />
+                    </div>
+                </div>
+                <div className="category">
+                Advantage:
+                    <div className="form-input">
+                        <input name="advantage"
+                            type="text"
+                            defaultValue={this.state.advantage}
+                            onChange={this.handleChange}
+                        />
+                    </div>
+                </div>
+                <div className="category">
+                Gaurd:
+                    <div className="form-input">
+                        <input name="gaurd"
+                            type="text"
+                            defaultValue={this.state.gaurd}
+                            onChange={this.handleChange}
+                        />
+                    </div>
+                </div>
+                <div className="category">
+                Properties:
+                    <div className="form-input">
+                        <input name="properties"
+                            type="text"
+                            defaultValue={this.state.properties}
+                            onChange={this.handleChange}
+                        />
+                    </div>
+                </div>
                 
-            </form>
+                <div className="category">
+                Immune To:
+                    <div className="form-input">
+                        <input name="immune_to"
+                            type="text"
+                            defaultValue={this.state.immune_to}
+                            onChange={this.handleChange}
+                        />
+                    </div>
+                </div>
+                <div className="category">
+                Special Notes:
+                    <div className="form-input">
+                        <input name="special_notes"
+                            type="text"
+                            defaultValue={this.state.special_notes}
+                            onChange={this.handleChange}
+                        />
+                    </div>
+                </div>
+                <div className="category">
+                Meter Used:
+                    <div className="form-input">
+                        <input name="meter_used"
+                            type="text"
+                            defaultValue={this.state.meter_used}
+                            onChange={this.handleChange}
+                        />
+                    </div>
+                </div>
+            </div>
+            <br></br>
+            <button type="submit" className="btn btn-primary float-right">Add</button>
+            
+        </form>
         );
     }
 }

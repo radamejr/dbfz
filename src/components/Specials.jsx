@@ -67,12 +67,25 @@ class Specials extends Component {
         const currentSpecials = specials.map((special, index) => {
             return(
                 <div key={index}>
-                    <p className="special">
-                        {special.name}
-                        <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Special</button>
-                        <br></br>
-                        {special.input}                       
-                    </p> 
+                     <div className="special-move row">
+                        <img className="special col-4" src={special.picture.url}  alt="special"></img>
+                            <div className="col">
+                                <div className="float-left">
+                                Name: {special.name}
+                                </div>
+                                <br></br>
+                                <div  className="float-left">
+                                Input Frames:  {special.input}
+                                </div>
+                                <br></br>
+                                <div  className="float-left">
+                                Active Frames:  {special.active}
+                                </div>
+                                <br></br>
+                            </div>                            
+                        <br></br>          
+                    </div>
+                    <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Special</button>   
                 </div>
 
             );
@@ -85,6 +98,8 @@ class Specials extends Component {
                 Here are the Specials:
                 {currentSpecials}
             </div>
+            <br></br>   
+            <br></br>
             <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Specials +</button>
 
             <Modal 

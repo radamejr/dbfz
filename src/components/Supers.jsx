@@ -66,12 +66,25 @@ class Supers extends Component {
         const currentSupers = supers.map((superMove, index) => {
             return(
                <div key={index}>
-                    <p className="super">
-                        {superMove.name}
-                        <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Super</button>
-                        <br></br>
-                        {superMove.input}
-                    </p> 
+                  <div className="super-move row">
+                        <img className="super col-4" src={superMove.picture.url}  alt="super"></img>
+                            <div className="col">
+                                <div className="float-left">
+                                Name: {superMove.name}
+                                </div>
+                                <br></br>
+                                <div  className="float-left">
+                                Input Frames:  {superMove.input}
+                                </div>
+                                <br></br>
+                                <div  className="float-left">
+                                Active Frames:  {superMove.active}
+                                </div>
+                                <br></br>
+                            </div>                            
+                        <br></br>          
+                    </div>
+                    <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Super</button> 
                </div>
 
             );
@@ -84,6 +97,9 @@ class Supers extends Component {
                 Here are the Supers:
                 {currentSupers}
             </div>
+            <br></br>
+            <br></br>
+            
             <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Supers +</button>
 
             <Modal 
