@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import AddCharacter from '../components/Modal/AddCharacter';
 
+
 class Nav extends Component {
     
   constructor() {

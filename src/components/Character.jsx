@@ -7,6 +7,8 @@ import Supers from './Supers';
 import Modal from 'react-bootstrap/Modal'
 import EditCharacter from './Modal/EditCharacter'
 
+
+
 class Character extends Component {
     constructor () {
       super();
@@ -23,6 +25,11 @@ class Character extends Component {
         let { isOpen } = this.state
         this.setState({isOpen: !isOpen})
       }
+
+    testToggle = () => {
+      let { loading } = this.state
+      this.setState({loading: !loading})
+    }
         
     componentDidUpdate(nextProps) {
         if (nextProps.match.params.id !== this.props.match.params.id) {
@@ -59,13 +66,16 @@ class Character extends Component {
     }
 
     render() { 
-        let { character, isOpen, picture, icon } = this.state; 
+        let { character, isOpen, picture, icon, loading } = this.state; 
         let { match: { params } } = this.props;    
         
        
         
         return ( 
+          
+            
             <div className="container">
+              
               <div className="row">
                 <div className="character-text float-left">
                   {character.name}   <br></br>
@@ -98,6 +108,7 @@ class Character extends Component {
                 
               </Modal>
 
+              
               <div className="normal-container">
                 <Normals 
                     params={params}
