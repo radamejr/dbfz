@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { charactersAPI } from '../../helpers/urlFor';
-
+import Modal from 'react-bootstrap/Modal'
+import Loading from './Loading'
 
 
 class AddCharacter extends Component {
@@ -13,16 +14,21 @@ class AddCharacter extends Component {
             discord_link: '',
             combo_doc_link: '',
             icon: '',
-            character_picture: ''
+            character_picture: '',
+            isLoading: false
+
 
         }
         
     }
 
+
+
     onSubmit = (e) => {
         e.preventDefault();
-        const { name, dlc, discord_link, combo_doc_link, icon, character_picture } = this.state;
+        const { name, dlc, discord_link, combo_doc_link, icon, character_picture} = this.state;
         
+        this.setState({isLoading: true})
         axios.post(charactersAPI(), {name, dlc, discord_link, combo_doc_link, icon, character_picture })
         .then((result) => {
             window.location.reload(false);
@@ -42,6 +48,8 @@ class AddCharacter extends Component {
         }
     }
 
+
+
     convertCharacterImage = (e) => {
 
         let file = e.target.files[0]
@@ -59,6 +67,8 @@ class AddCharacter extends Component {
     }
   
     render() { 
+        let { isLoading } = this.state
+
         return ( 
             <form id="add-character" onSubmit={this.onSubmit}>
                 
@@ -126,7 +136,10 @@ class AddCharacter extends Component {
                 </div>
                 <br></br>
                 <button type="submit" className="btn btn-primary float-right">Add</button>
-                
+                                
+                <Modal show={isLoading}>
+                    <Loading />
+                </Modal>
             </form>
         );
     }

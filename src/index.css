@@ -23,13 +23,33 @@ code {
 }
 
 .character-selector {
-  display: inline-flex;
+  display: inline-block;
   list-style: none;
+  overflow: hidden;
+}
+
+
+.character-selector > img {
+  width: 75%;
+}
+
+.character-selector > li {
+  float: left;
+  margin-left: -1em;
+}
+
+
+.dropdown {
+  position: inherit;
 }
 .dropdown-item {
-  
   padding: 0px;
   width: auto;
+  
+}
+
+.dropdown-item:hover {
+  background-color: transparent;
 }
 
 .row {
@@ -39,6 +59,11 @@ code {
 .character-picture > img {
   height: 500px;
 }
+
+.loading-container > img {
+  width: 100%;
+}
+
 .container {
   margin: 100px, 0px, 100px, 0px;
 }
