@@ -6,6 +6,8 @@ import axios from 'axios';
 import List from './components/List';
 import Nav from './components/Nav';
 import Home from './components/Home';
+import SignIn from './components/Authentication/SignIn'
+import Register from './components/Authentication/Registration'
 import Character from './components/Character'
 
 
@@ -14,11 +16,11 @@ class App extends Component {
     super();
     this.state = {
       characters: [],
-      character: {}
+      character: {},
   };
 }
-  componentDidMount = () => {
-    this.getCharacters()   
+  componentDidMount = () => {    
+    this.getCharacters()       
   }
 
   async getCharacters() {
@@ -34,7 +36,7 @@ class App extends Component {
 
   render() { 
     const { characters } = this.state;
-
+    
     return (  
       <div className="App">
         <Nav characters={characters} />
@@ -43,7 +45,8 @@ class App extends Component {
           <Route exact path='/' component={Home} />
           <Route path='/characters/:id' render={props => (<Character {...props} characters={this.state.characters} character={this.state.character} />)} />
           <Route path='/characters' render={props => (<List {...props} characters={this.state.characters}/>)}  />
-          
+          <Route exact path='/login' component={SignIn} />
+          <Route exact path='/register' component={Register} />
         </Switch>
       </div>
     );
