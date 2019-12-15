@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Link } from 'react-router-dom';
-import { authAPI } from '../../helpers/urlFor'
+
 
 
 class Registration extends Component {
@@ -18,11 +18,7 @@ class Registration extends Component {
         e.preventDefault();
         const { email, password, password_confirmation } = this.state;
 
-        axios.post(authAPI(), {email, password, password_confirmation })
-        .then((result) => {
-            console.log(result)
-            localStorage.setItem("user", result.headers)    
-        });
+
                
     }
 

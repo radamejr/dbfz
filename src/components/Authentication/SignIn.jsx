@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { authAPI } from '../../helpers/urlFor';
+
 
 class SignIn extends Component {
     constructor() {
@@ -18,10 +18,7 @@ class SignIn extends Component {
         const { email, password } = this.state;
         
         
-        axios.post(authAPI("sign_in"), { email, password })
-        .then((result) => {
 
-        });
                
     }
     

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import AddCharacter from '../components/Modal/AddCharacter';
-import { authAPI } from '../helpers/urlFor'
 import axios from 'axios'
 
 
@@ -18,25 +17,6 @@ class Nav extends Component {
 
   }
 
-  componentDidMount() {
-    this.verifyLogin()
-    
-
-  }
-
-  verifyLogin() {
-    let get_token = JSON.stringify(localStorage.getItem("token"))
-
-    axios.get(authAPI("validate_token"), { get_token })
-        .then((result) => {
-          console.log(result)
-          
-        })
-        .catch((error) => {
-          console.log(error)
-        })
-        
-  }
 
   toggleModal = () => {
     let { isOpen } = this.state
