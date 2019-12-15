@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import AddCharacter from '../components/Modal/AddCharacter';
+import { authAPI } from '../helpers/urlFor'
+import axios from 'axios'
+
 
 
 class Nav extends Component {
@@ -10,8 +13,29 @@ class Nav extends Component {
     super();
     this.state = {
       isOpen: false,
+      loggedIn: false
     }
 
+  }
+
+  componentDidMount() {
+    this.verifyLogin()
+    
+
+  }
+
+  verifyLogin() {
+    let get_token = JSON.stringify(localStorage.getItem("token"))
+
+    axios.get(authAPI("validate_token"), { get_token })
+        .then((result) => {
+          console.log(result)
+          
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+        
   }
 
   toggleModal = () => {
@@ -21,7 +45,7 @@ class Nav extends Component {
 
   render() { 
   const { characters } = this.props
-  const { isOpen } = this.state
+  const { isOpen, loggedIn } = this.state
   
   const selections = characters.map((character, index) => {
     
@@ -49,12 +73,7 @@ class Nav extends Component {
     
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
-          <li className="nav-item">
-            <p className="nav-link">
-              <Link to='/characters'>Characters List</Link>  
-            </p>
-          </li>
-          
+                    
           <li className="nav-item dropdown">
             <p className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Characters
@@ -66,9 +85,10 @@ class Nav extends Component {
               <button className="nav-link btn" onClick={this.toggleModal}>Add Character +</button>
             </div>
           </li>
-          
         </ul>
-        
+        <p className="nav-link">
+            {loggedIn ? "Welcome!" : <Link to='/login'>Login</Link>}
+        </p>
       </div>
       </nav>
 

@@ -36,9 +36,6 @@ const characterSuper = (character_id, super_id) => {
 }
 
 
-
-
-
 export {
   characterAPI,
   charactersAPI,
