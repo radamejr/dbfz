@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import AddCharacter from '../components/Modal/AddCharacter';
 import axios from 'axios'
+import { auth } from '../helpers/urlFor'
 
 
 
@@ -12,7 +13,6 @@ class Nav extends Component {
     super();
     this.state = {
       isOpen: false,
-      loggedIn: false
     }
 
   }
@@ -23,10 +23,18 @@ class Nav extends Component {
     this.setState({isOpen: !isOpen})
   }
 
+  logoutClick = () => {
+    axios.delete(auth("logout"), {withCredentials: true})
+    .then(response => {
+      this.props.handleLogout()
+    })
+    .catch(error => console.log(error))
+  }
+
   render() { 
   const { characters } = this.props
-  const { isOpen, loggedIn } = this.state
-  
+  const { isOpen } = this.state
+
   const selections = characters.map((character, index) => {
     
       return (        
@@ -62,12 +70,18 @@ class Nav extends Component {
               <ul className="character-selector">
                 {selections}
               </ul>
-              <button className="nav-link btn" onClick={this.toggleModal}>Add Character +</button>
+              {this.props.user && this.props.user.admin ? <button className="nav-link btn" onClick={this.toggleModal}>Add Character +</button> : null}
+              
             </div>
           </li>
         </ul>
         <p className="nav-link">
-            {loggedIn ? "Welcome!" : <Link to='/login'>Login</Link>}
+            {this.props.loggedInStatus ? "Welcome!  " : null}
+            
+            {this.props.loggedInStatus ?  
+            <button type="button" onClick={this.logoutClick}className="btn btn-link">Logout</button> : 
+            
+            <Link to='/login'>Login</Link>}
         </p>
       </div>
       </nav>
@@ -75,7 +89,7 @@ class Nav extends Component {
       
       <br></br>
       
-        <Modal show={isOpen}>
+        <Modal show={isOpen} >
           <Modal.Header>
             <button className="btn btn-primary float-right" onClick={this.toggleModal}>cancel</button>
           </Modal.Header>

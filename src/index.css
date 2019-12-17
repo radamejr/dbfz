@@ -25,6 +25,9 @@ code {
   overflow: hidden;
 }
 
+.error {
+  list-style: none;
+}
 .character-selector > img {
   width: 75%;
 }

@@ -86,13 +86,13 @@ class Character extends Component {
                 <div className="character-picture float-right"><img src={picture} alt="character"></img> <br></br></div>
               </div>
 
-
-              <button className="btn-primary btn btn-sm float-right" onClick={this.toggleModal}>Edit Character</button>
+              {this.props.user && this.props.user.admin ? <button className="btn-primary btn btn-sm float-right" onClick={this.toggleModal}>Edit Character</button> : null}
+              
               
               <br></br>
               <br></br>
 
-              <Modal show={isOpen}>
+              <Modal show={isOpen} >
                 <Modal.Header>
                     <button className="btn btn-primary float-right" onClick={this.toggleModal}>cancel</button>
                 </Modal.Header>
@@ -112,18 +112,21 @@ class Character extends Component {
               <div className="normal-container">
                 <Normals 
                     params={params}
+                    user={this.props.user}
                 />
                 <br></br>
               </div>
               <div className="special-container">
                 <Specials
                     params={params}
+                    user={this.props.user}
                 />
                 <br></br>
               </div>
               <div className="super-container">
                 <Supers
                     params={params}
+                    user={this.props.user}
                 />
               </div>
             </div>

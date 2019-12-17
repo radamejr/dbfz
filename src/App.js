@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import { charactersAPI } from './helpers/urlFor';
+import { charactersAPI, auth } from './helpers/urlFor';
 import axios from 'axios';
 import List from './components/List';
 import Nav from './components/Nav';
@@ -17,10 +17,41 @@ class App extends Component {
     this.state = {
       characters: [],
       character: {},
+      isLoggedIn: false,
+      user: {}
   };
 }
+
+  handleLogin = (data) => {
+    this.setState({
+      isLoggedIn: true,
+      user: data.user
+    })
+  }
+
+  handleLogout = (data) => {
+    this.setState({
+      isLoggedIn: false,
+      user: {}
+    })
+  }
+
+  loginStatus = () => {
+    axios.get(auth("logged_in"), {withCredentials: true})
+    .then(response => {
+      if (response.data.logged_in) {
+        this.handleLogin(response)
+      } else {
+        this.handleLogout()
+      }
+    })
+    .catch(error => console.log('api errors:', error))
+  }
+
+
   componentDidMount = () => {    
-    this.getCharacters()       
+    this.getCharacters() 
+    this.loginStatus()      
   }
 
   async getCharacters() {
@@ -35,21 +66,21 @@ class App extends Component {
   }
 
   render() { 
-    const { characters } = this.state;
+    const { characters, user } = this.state;
     
     return (  
       <div className="App">
-        <Nav characters={characters} />
+        <Nav characters={characters} loggedInStatus={this.state.isLoggedIn} user={user} handleLogout={this.handleLogout} />
         
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/characters/:id' render={props => (<Character {...props} characters={this.state.characters} character={this.state.character} />)} />
+          <Route path='/characters/:id' render={props => (<Character {...props} characters={this.state.characters} character={this.state.character} user={user} />)} />
           <Route path='/characters' render={props => (<List {...props} characters={this.state.characters}/>)}  />
-          <Route exact path='/login' component={SignIn} />
-          <Route exact path='/register' component={Register} />
+          <Route exact path='/login' render={props => (<SignIn {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn} />)} />
+          <Route exact path='/register' render={props => (<Register {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn} />)} />
         </Switch>
       </div>
-    );
+    ); 
   }
 };
  
