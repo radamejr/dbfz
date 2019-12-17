@@ -35,6 +35,9 @@ const characterSuper = (character_id, super_id) => {
 
 }
 
+const auth = (action = '') => {
+  return `http://localhost:3030/${action}`
+}
 
 export {
   characterAPI,
@@ -44,5 +47,6 @@ export {
   characterSpecials,
   characterSpecial,
   characterSupers,
-  characterSuper
+  characterSuper,
+  auth
 }

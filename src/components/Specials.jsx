@@ -85,6 +85,7 @@ class Specials extends Component {
                             </div>                            
                         <br></br>          
                     </div>
+                    {this.props.user && this.props.user.admin ? <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Specials +</button> : null}
                     <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Special</button>   
                 </div>
 
@@ -100,7 +101,8 @@ class Specials extends Component {
             </div>
             <br></br>   
             <br></br>
-            <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Specials +</button>
+            {this.props.user && this.props.user.admin ? <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Specials +</button> : null}
+            
 
             <Modal 
                 show={addModalOpen}

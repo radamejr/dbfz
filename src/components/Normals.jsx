@@ -94,7 +94,8 @@ class Normals extends Component {
                         <br></br>          
                         
                     </div>   
-                    <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Normal</button> 
+                    {this.props.user && this.props.user.admin ? <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Normal</button> : null}
+                     
                 </div>
             );
         });
@@ -108,7 +109,8 @@ class Normals extends Component {
                 </div>
                 <br></br>   
                 <br></br>   
-                <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Normals +</button>
+                {this.props.user && this.props.user.admin ? <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Normals +</button> : null}
+                
 
                 <Modal 
                     show={addModalOpen}
