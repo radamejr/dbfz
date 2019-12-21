@@ -5,6 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import AddNormal from './Modal/AddNormal';
 import EditNormal from './Modal/EditNormal';
 
+
 class Normals extends Component {
     constructor () {
         super();
@@ -72,7 +73,13 @@ class Normals extends Component {
             return(
                 <div key={index}>
                     <div className="normal-move row">
-                        <img className="normal col-4" src={normal.picture.url}  alt="normal"></img>
+                        { normal.picture.url ? 
+                            <img className="normal col-4" src={normal.picture.url}  alt="normal"></img>
+                            :
+                            <img className="normal col-4" src='/question.png'  alt="missing"></img>
+
+                        }
+                        
                             <div className="col">
                                 <div className="float-left">
                                 Input: {normal.input}

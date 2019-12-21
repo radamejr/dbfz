@@ -37,7 +37,9 @@ class EditNormal extends Component {
             immune_to: props.immune_to,
             special_notes: props.special_notes,
             move_type: props.move_type,
-            id: props.id
+            picture: props.picture,
+            id: props.id,
+            isLoading: false
 
         })
     }
@@ -56,10 +58,11 @@ class EditNormal extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, move_type, id } = this.state;
+        const { input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, move_type, picture, id } = this.state;
         let { params } = this.props
 
-        axios.put(characterNormal(params, id), {input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, move_type })
+        this.setState({isLoading: true})
+        axios.put(characterNormal(params, id), {input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, move_type, picture })
         .then((result) => {
             window.location.reload(false);
         });
@@ -74,7 +77,7 @@ class EditNormal extends Component {
     }
   
     render() { 
-               
+        let { isLoading } = this.state       
 
         return ( 
             
@@ -194,8 +197,14 @@ class EditNormal extends Component {
                     </div>
                 </div>
                 <br></br>
-                <button type="submit" className="btn btn-primary float-right">Edit</button>
-                
+                <button type="submit" className="btn btn-primary float-right" disabled={isLoading}>
+                    {isLoading ? 
+                    <div class="spinner-border text-light" role="status">
+                        <span class="sr-only"></span>
+                    </div>
+                    :
+                    "Edit"}
+                </button>
             </form>
         );
     }

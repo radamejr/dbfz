@@ -18,7 +18,8 @@ class AddSuper extends Component {
             immune_to: '',
             special_notes: '',
             meter_used: '',
-            picture: ''
+            picture: '',
+            isLoading: false
         }
         
     }
@@ -28,7 +29,7 @@ class AddSuper extends Component {
         const { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used } = this.state;
         let { params } = this.props
         
-
+        this.setState({isLoading: true})
         axios.post(characterSupers(params), { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used })
         .then((result) => {
             window.location.reload(false);
@@ -56,7 +57,7 @@ class AddSuper extends Component {
     }
   
     render() { 
-               
+        let { isLoading } = this.state       
 
         return ( 
             
@@ -186,8 +187,14 @@ class AddSuper extends Component {
                     </div>
                 </div>
                 <br></br>
-                <button type="submit" className="btn btn-primary float-right">Add</button>
-                
+                <button type="submit" className="btn btn-primary float-right" disabled={isLoading}>
+                    {isLoading ? 
+                    <div class="spinner-border text-light" role="status">
+                        <span class="sr-only"></span>
+                    </div>
+                    :
+                    "Add"}
+                </button>
             </form>
         );
     }

@@ -19,7 +19,8 @@ class EditSuper extends Component {
             special_notes: '',
             meter_used: '',
             picture: '',
-            id: ''
+            id: '',
+            isLoading: false
         }
         
     }
@@ -49,6 +50,7 @@ class EditSuper extends Component {
         const { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used, id } = this.state;
         let { params } = this.props
 
+        this.setState({isLoading: true})
         axios.put(characterSuper(params, id), { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used })
         .then((result) => {
             window.location.reload(false);
@@ -64,7 +66,7 @@ class EditSuper extends Component {
     }
   
     render() { 
-               
+        let { isLoading } = this.state       
 
         return ( 
             
@@ -194,8 +196,14 @@ class EditSuper extends Component {
                 </div>
             </div>
             <br></br>
-            <button type="submit" className="btn btn-primary float-right">Add</button>
-            
+            <button type="submit" className="btn btn-primary float-right" disabled={isLoading}>
+                    {isLoading ? 
+                    <div class="spinner-border text-light" role="status">
+                        <span class="sr-only"></span>
+                    </div>
+                    :
+                    "Edit"}
+            </button>
         </form>
         );
     }

@@ -67,7 +67,13 @@ class Supers extends Component {
             return(
                <div key={index}>
                   <div className="super-move row">
-                        <img className="super col-4" src={superMove.picture.url}  alt="super"></img>
+                  { superMove.picture.url ? 
+                            <img className="super col-4" src={superMove.picture.url}  alt="super"></img>
+                            :
+                            <img className="super col-4" src='/question.png'  alt="missing"></img>
+
+                        }
+                        
                             <div className="col">
                                 <div className="float-left">
                                 Name: {superMove.name}

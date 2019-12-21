@@ -11,8 +11,8 @@ class EditCharacter extends Component {
             discord_link: '',
             combo_doc_link: '',
             icon:'',
-            character_picture: ''
-
+            character_picture: '',
+            twitter_tag: ''
 
         }
         
@@ -25,7 +25,9 @@ class EditCharacter extends Component {
             discord_link: this.props.discord_link,
             combo_doc_link: this.props.combo_doc_link,
             icon: this.props.icon,
-            character_picture: this.props.picture
+            character_picture: this.props.picture,
+            twitter_tag: this.props.twitter_tag,
+            isLoading: false
 
         })
     }
@@ -56,10 +58,11 @@ class EditCharacter extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { name, dlc, discord_link, combo_doc_link, icon, character_picture } = this.state;
+        const { name, dlc, discord_link, combo_doc_link, icon, character_picture, twitter_tag } = this.state;
         let { params } = this.props
         
-        axios.put(characterAPI(params.id), {name, dlc, discord_link, combo_doc_link, icon, character_picture })
+        this.setState({isLoading: true})
+        axios.put(characterAPI(params.id), {name, dlc, discord_link, combo_doc_link, icon, character_picture, twitter_tag })
         .then((result) => {
            window.location.reload(false);
         });
@@ -72,8 +75,9 @@ class EditCharacter extends Component {
     }
   
     render() { 
-        const { name, dlc, discord_link, combo_doc_link } = this.state;
-        
+        const { name, dlc, discord_link, combo_doc_link, twitter_tag } = this.state;
+        let { isLoading } = this.state
+
         return ( 
             <form id="edit-character" onSubmit={this.onSubmit}>
                 
@@ -119,6 +123,16 @@ class EditCharacter extends Component {
                         </div>
                     </div>
                     <div className="category">
+                        Twitter Tag:
+                        <div className="form-input">
+                            <input name="twitter_tag"
+                                type="text"
+                                defaultValue={twitter_tag}
+                                onChange={this.handleChange}
+                            />
+                        </div>
+                    </div>
+                    <div className="category">
                         Character Picture:
                         <div className="form-input">
                             <input name="character_picture"
@@ -138,8 +152,14 @@ class EditCharacter extends Component {
                     </div>
                 </div>
                 <br></br>
-                <button type="submit" className="btn btn-primary float-right">Save Changes</button>
-                
+                <button type="submit" className="btn btn-primary float-right" disabled={isLoading}>
+                    {isLoading ? 
+                    <div class="spinner-border text-light" role="status">
+                        <span class="sr-only"></span>
+                    </div>
+                    :
+                    "Edit"}
+                </button>
             </form>
         );
     }
