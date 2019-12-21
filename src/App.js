@@ -40,7 +40,7 @@ class App extends Component {
     axios.get(auth("logged_in"), {withCredentials: true})
     .then(response => {
       if (response.data.logged_in) {
-        this.handleLogin(response)
+        this.handleLogin(response.data)
       } else {
         this.handleLogout()
       }

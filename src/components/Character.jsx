@@ -69,8 +69,6 @@ class Character extends Component {
         let { character, isOpen, picture, icon } = this.state; 
         let { match: { params } } = this.props;    
         
-       
-        
         return ( 
           
             
@@ -80,8 +78,10 @@ class Character extends Component {
                 <div className="character-text float-left">
                   {character.name}   <br></br>
                   {character.dlc ? "Yes" : "No"} <br></br>
-                  {character.discord_link} <br></br>
-                  {character.combo_doc_link} <br></br>
+                  <a className="btn btn-link" href={character.discord_link} target="_blank" rel="noopener noreferrer" role="button">Discord</a>
+                  <a className="btn btn-link" href={character.combo_doc_link} target="_blank" rel="noopener noreferrer" role="button">Combo Doc</a>
+                  <br></br>
+                  #{character.twitter_tag}
                 </div>
                 <div className="character-picture float-right"><img src={picture} alt="character"></img> <br></br></div>
               </div>

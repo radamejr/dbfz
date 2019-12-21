@@ -68,7 +68,12 @@ class Specials extends Component {
             return(
                 <div key={index}>
                      <div className="special-move row">
-                        <img className="special col-4" src={special.picture.url}  alt="special"></img>
+                     { special.picture.url ? 
+                            <img className="special col-4" src={special.picture.url}  alt="special"></img>
+                            :
+                            <img className="special col-4" src='/question.png'  alt="missing"></img>
+
+                        }
                             <div className="col">
                                 <div className="float-left">
                                 Name: {special.name}

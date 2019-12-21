@@ -17,7 +17,8 @@ class AddNormal extends Component {
             immune_to: '',
             special_notes: '',
             move_type: '',
-            picture: ''
+            picture: '',
+            isLoading: false
         }
         
     }
@@ -27,7 +28,7 @@ class AddNormal extends Component {
         const { input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, move_type } = this.state;
         let { params } = this.props
         
-
+        this.setState({isLoading: true})
         axios.post(characterNormals(params), {input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, move_type })
         .then((result) => {
             window.location.reload(false);
@@ -55,6 +56,7 @@ class AddNormal extends Component {
   
     render() { 
                
+        let { isLoading } = this.state
 
         return ( 
             
@@ -174,7 +176,14 @@ class AddNormal extends Component {
                     </div>
                 </div>
                 <br></br>
-                <button type="submit" className="btn btn-primary float-right">Add</button>
+                <button type="submit" className="btn btn-primary float-right" disabled={isLoading}>
+                    {isLoading ? 
+                    <div class="spinner-border text-light" role="status">
+                        <span class="sr-only"></span>
+                    </div>
+                    :
+                    "Add"}
+                </button>
                 
             </form>
         );
