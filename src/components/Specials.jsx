@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { characterSpecials } from '../helpers/urlFor';
 import axios from 'axios';
 import Modal from 'react-bootstrap/Modal'
+import Variants  from './Variants'
 import AddSpecial from './Modal/AddSpecial'
 import EditSpecial from './Modal/EditSpecial';
 
@@ -66,9 +67,9 @@ class Specials extends Component {
 
         const currentSpecials = specials.map((special, index) => {
             return(
-                <div key={index}>
-                     <div className="special-move row">
-                     { special.picture.url ? 
+                <div className="special-wrapper" key={index}>
+                        <div className="special-move row">
+                        { special.picture.url ? 
                             <img className="special col-4" src={special.picture.url}  alt="special"></img>
                             :
                             <img className="special col-4" src='/question.png'  alt="missing"></img>
@@ -80,17 +81,25 @@ class Specials extends Component {
                                 </div>
                                 <br></br>
                                 <div  className="float-left">
-                                Input Frames:  {special.input}
+                                Input:  {special.input}
                                 </div>
                                 <br></br>
-                                <div  className="float-left">
-                                Active Frames:  {special.active}
-                                </div>
-                                <br></br>
-                            </div>                            
-                        <br></br>
+                            </div>
+                        
+                        <br></br>                              
                         <br></br>          
-                    </div>
+                        </div>
+                        <br></br>
+                        <br></br>
+                        <div className="special-variants row">                            
+                            <div className="col">
+                                <Variants 
+                                    params={this.props.params}
+                                    special_id={special.id}
+                                    user={this.props.user}
+                                />
+                            </div>
+                        </div>
                     {this.props.user && this.props.user.admin ? <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Special</button> : null}   
                 <br></br>
                 </div>

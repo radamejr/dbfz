@@ -199,8 +199,8 @@ class EditNormal extends Component {
                 <br></br>
                 <button type="submit" className="btn btn-primary float-right" disabled={isLoading}>
                     {isLoading ? 
-                    <div class="spinner-border text-light" role="status">
-                        <span class="sr-only"></span>
+                    <div className="spinner-border text-light" role="status">
+                        <span className="sr-only"></span>
                     </div>
                     :
                     "Edit"}

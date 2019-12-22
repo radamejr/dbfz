@@ -5,6 +5,7 @@ import { charactersAPI, auth } from './helpers/urlFor';
 import axios from 'axios';
 import List from './components/List';
 import Nav from './components/Nav';
+import Footer from './components/Footer'
 import Home from './components/Home';
 import SignIn from './components/Authentication/SignIn'
 import Register from './components/Authentication/Registration'
@@ -79,6 +80,8 @@ class App extends Component {
           <Route exact path='/login' render={props => (<SignIn {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn} />)} />
           <Route exact path='/register' render={props => (<Register {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn} />)} />
         </Switch>
+
+       
       </div>
     ); 
   }

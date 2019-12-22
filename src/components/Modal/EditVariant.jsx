@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { characterNormals } from '../../helpers/urlFor';
+import { specialVariant } from '../../helpers/urlFor';
 
-class AddNormal extends Component {
+class EditVariant extends Component {
     constructor () {
         super();
         this.state = {
             params: '',
-            input: '',
+            input_type: '',
             startup: '',
             active: '',
             recovery: '',
@@ -16,20 +16,41 @@ class AddNormal extends Component {
             advantage: '',
             immune_to: '',
             special_notes: '',
-            move_type: '',
+            meter_used: '',
             picture: '',
             isLoading: false
         }
         
     }
 
+    componentDidMount = () => {
+        let { props } = this.props
+              
+        this.setState({
+            input_type: props.input_type,
+            startup: props.startup,
+            active: props.active,
+            recovery: props.recovery,
+            gaurd: props.gaurd,
+            advantage: props.advantage,
+            properties: props.properties,
+            immune_to: props.immune_to,
+            special_notes: props.special_notes,
+            meter_used: props.meter_used,
+            picture: props.picture,
+            variant_id: props.id,
+            isLoading: false
+
+        })
+    }
+
     onSubmit = (e) => {
         e.preventDefault();
-        const { input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, move_type } = this.state;
-        let { params } = this.props
+        const { input_type, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used, variant_id } = this.state;
+        let { params, special_id } = this.props
         
         this.setState({isLoading: true})
-        axios.post(characterNormals(params), {input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, move_type })
+        axios.put(specialVariant(params, special_id, variant_id), { input_type, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used })
         .then((result) => {
             window.location.reload(false);
         });
@@ -55,12 +76,11 @@ class AddNormal extends Component {
     }
   
     render() { 
-               
-        let { isLoading } = this.state
+        let { isLoading } = this.state       
 
         return ( 
             
-            <form id="add-normal" onSubmit={this.onSubmit}>
+            <form id="add-special" onSubmit={this.onSubmit}>
                 
                 <div className="row">
                     <div className="category">
@@ -74,11 +94,11 @@ class AddNormal extends Component {
                         </div>
                     </div>
                     <div className="category">
-                    Input:
+                    Input Variation (L/M/H):
                         <div className="form-input">
-                            <input name="input"
+                            <input name="input_type"
                                 type="text"
-                                defaultValue={this.state.input}
+                                defaultValue={this.state.input_type}
                                 onChange={this.handleChange}
                             />
                         </div>
@@ -165,11 +185,11 @@ class AddNormal extends Component {
                         </div>
                     </div>
                     <div className="category">
-                    Type:
+                    Meter Used:
                         <div className="form-input">
-                            <input name="move_type"
+                            <input name="meter_used"
                                 type="text"
-                                defaultValue={this.state.move_type}
+                                defaultValue={this.state.meter_used}
                                 onChange={this.handleChange}
                             />
                         </div>
@@ -182,7 +202,7 @@ class AddNormal extends Component {
                         <span className="sr-only"></span>
                     </div>
                     :
-                    "Add"}
+                    "Edit"}
                 </button>
                 
             </form>
@@ -190,4 +210,4 @@ class AddNormal extends Component {
     }
 }
  
-export default AddNormal;
+export default EditVariant;

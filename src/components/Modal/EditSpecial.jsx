@@ -29,17 +29,9 @@ class EditSpecial extends Component {
         this.setState({
             name: props.name,
             input: props.input,
-            startup: props.startup,
-            active: props.active,
-            recovery: props.recovery,
-            gaurd: props.gaurd,
-            advantage: props.advantage,
-            properties: props.properties,
-            immune_to: props.immune_to,
             special_notes: props.special_notes,
-            meter_used: props.meter_used,
             picture: props.picture,
-            id: props.id,
+            special_id: props.id,
             isLoading: false
 
         })
@@ -49,11 +41,11 @@ class EditSpecial extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used, id } = this.state;
+        const { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used, special_id } = this.state;
         let { params } = this.props
 
         this.setState({isLoading: true})
-        axios.put(characterSpecial(params, id), { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used })
+        axios.put(characterSpecial(params, special_id), { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used })
         .then((result) => {
             window.location.reload(false);
         });
@@ -211,8 +203,8 @@ class EditSpecial extends Component {
                 <br></br>
                 <button type="submit" className="btn btn-primary float-right" disabled={isLoading}>
                     {isLoading ? 
-                    <div class="spinner-border text-light" role="status">
-                        <span class="sr-only"></span>
+                    <div className="spinner-border text-light" role="status">
+                        <span className="sr-only"></span>
                     </div>
                     :
                     "Edit"}
