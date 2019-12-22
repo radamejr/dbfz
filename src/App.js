@@ -70,19 +70,20 @@ class App extends Component {
     const { characters, user } = this.state;
     
     return (  
-      <div className="App">
-        <Nav characters={characters} loggedInStatus={this.state.isLoggedIn} user={user} handleLogout={this.handleLogout} />
-        
-        <Switch>
-          <Route exact path='/' component={Home} />
-          <Route path='/characters/:id' render={props => (<Character {...props} characters={this.state.characters} character={this.state.character} user={user} />)} />
-          <Route path='/characters' render={props => (<List {...props} characters={this.state.characters}/>)}  />
-          <Route exact path='/login' render={props => (<SignIn {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn} />)} />
-          <Route exact path='/register' render={props => (<Register {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn} />)} />
-        </Switch>
+        <div className="App">
+          
+          <Nav characters={characters} loggedInStatus={this.state.isLoggedIn} user={user} handleLogout={this.handleLogout} />
+          
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route path='/characters/:id' render={props => (<Character {...props} characters={this.state.characters} character={this.state.character} user={user} />)} />
+            <Route path='/characters' render={props => (<List {...props} characters={this.state.characters}/>)}  />
+            <Route exact path='/login' render={props => (<SignIn {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn} />)} />
+            <Route exact path='/register' render={props => (<Register {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn} />)} />
+          </Switch>
 
-       
-      </div>
+          <Footer />
+        </div>
     ); 
   }
 };

@@ -1,4 +1,7 @@
-
+.App {
+  min-height: 100vh;
+  height: 100vh;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -54,10 +57,10 @@ code {
 .dropdown {
   position: inherit;
 }
+
 .dropdown-item {
   padding: 0px;
-  width: auto;
-  
+  width: auto; 
 }
 
 .dropdown-item:hover {
@@ -69,13 +72,8 @@ code {
   width: 100%;
   height: 75px;
   background-color: #f5f5f5;
-  margin: 0;
-  bottom: 0;
- 
-}
-
-.Site-content {
-  flex: 1;
+  margin-top: 50px;
+  bottom: 0; 
 }
 
 .special-wrapper {
