@@ -9,15 +9,7 @@ class AddSpecial extends Component {
             params: '',
             name: '',
             input: '',
-            startup: '',
-            active: '',
-            recovery: '',
-            gaurd: '',
-            properties: '',
-            advantage: '',
-            immune_to: '',
             special_notes: '',
-            meter_used: '',
             picture: '',
             isLoading: false
         }
@@ -26,11 +18,11 @@ class AddSpecial extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used } = this.state;
+        const { input, name, special_notes, picture } = this.state;
         let { params } = this.props
         
         this.setState({isLoading: true})
-        axios.post(characterSpecials(params), { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used })
+        axios.post(characterSpecials(params), { input, name, special_notes, picture })
         .then((result) => {
             window.location.reload(false);
         });
@@ -94,77 +86,6 @@ class AddSpecial extends Component {
                         </div>
                     </div>
                     <div className="category">
-                    Startup Frames:
-                        <div className="form-input">
-                            <input name="startup"
-                                type="text"
-                                defaultValue={this.state.startup}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="category">
-                    Active Frames:
-                        <div className="form-input">
-                            <input name="active"
-                                type="text"
-                                defaultValue={this.state.active}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="category">
-                    Recovery Frames:
-                        <div className="form-input">
-                            <input name="recovery"
-                                type="text"
-                                defaultValue={this.state.advantage}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="category">
-                    Advantage:
-                        <div className="form-input">
-                            <input name="advantage"
-                                type="text"
-                                defaultValue={this.state.advantage}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="category">
-                    Gaurd:
-                        <div className="form-input">
-                            <input name="gaurd"
-                                type="text"
-                                defaultValue={this.state.gaurd}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="category">
-                    Properties:
-                        <div className="form-input">
-                            <input name="properties"
-                                type="text"
-                                defaultValue={this.state.properties}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    
-                    <div className="category">
-                    Immune To:
-                        <div className="form-input">
-                            <input name="immune_to"
-                                type="text"
-                                defaultValue={this.state.immune_to}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="category">
                     Special Notes:
                         <div className="form-input">
                             <input name="special_notes"
@@ -174,22 +95,12 @@ class AddSpecial extends Component {
                             />
                         </div>
                     </div>
-                    <div className="category">
-                    Meter Used:
-                        <div className="form-input">
-                            <input name="meter_used"
-                                type="text"
-                                defaultValue={this.state.meter_used}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
                 </div>
                 <br></br>
                 <button type="submit" className="btn btn-primary float-right" disabled={isLoading}>
                     {isLoading ? 
-                    <div class="spinner-border text-light" role="status">
-                        <span class="sr-only"></span>
+                    <div className="spinner-border text-light" role="status">
+                        <span className="sr-only"></span>
                     </div>
                     :
                     "Add"}
