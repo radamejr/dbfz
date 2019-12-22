@@ -1,50 +1,60 @@
 const characterAPI = (character_id) => {
-    return `https://dbfztech-api.herokuapp.com/api/v1/characters/${character_id}`;
+    return `http://localhost:3030/api/v1/characters/${character_id}`;
 };
 
 const charactersAPI = () => {
-    return 'https://dbfztech-api.herokuapp.com/api/v1/characters';
+    return 'http://localhost:3030/api/v1/characters';
 }
   
 const characterNormals = (character_id) => {
-  return `https://dbfztech-api.herokuapp.com/api/v1/characters/${character_id}/normals`;
+  return `http://localhost:3030/api/v1/characters/${character_id}/normals`;
 
 }
 
 const characterNormal = (character_id, normal_id) => {
-  return `https://dbfztech-api.herokuapp.com/api/v1/characters/${character_id}/normals/${normal_id}`
+  return `http://localhost:3030/api/v1/characters/${character_id}/normals/${normal_id}`
 }
 
 const characterSpecials = (character_id) => {
-  return `https://dbfztech-api.herokuapp.com/api/v1/characters/${character_id}/specials`;
+  return `http://localhost:3030/api/v1/characters/${character_id}/specials`;
 
 }
 
 const characterSpecial = (character_id, special_id) => {
-  return `https://dbfztech-api.herokuapp.com/api/v1/characters/${character_id}/specials/${special_id}`;
+  return `http://localhost:3030/api/v1/characters/${character_id}/specials/${special_id}`;
 
 }
 
 const specialVariants = (character_id, special_id) => {
-  return `https://dbfztech-api.herokuapp.com/api/v1/characters/${character_id}/specials/${special_id}/variants/`;
+  return `http://localhost:3030/api/v1/characters/${character_id}/specials/${special_id}/variants/`;
 }
 
 const specialVariant = (character_id, special_id, variant_id) => {
-  return `https://dbfztech-api.herokuapp.com/api/v1/characters/${character_id}/specials/${special_id}/variants/${variant_id}`;
+  return `http://localhost:3030/api/v1/characters/${character_id}/specials/${special_id}/variants/${variant_id}`;
 }
 
 const characterSupers = (character_id) => {
-  return `https://dbfztech-api.herokuapp.com/api/v1/characters/${character_id}/supers`;
+  return `http://localhost:3030/api/v1/characters/${character_id}/supers`;
 
 }
 
 const characterSuper = (character_id, super_id) => {
-  return `https://dbfztech-api.herokuapp.com/api/v1/characters/${character_id}/supers/${super_id}`;
+  return `http://localhost:3030/api/v1/characters/${character_id}/supers/${super_id}`;
+
+}
+
+const characterAssist = (character_id, assist_id) => {
+  return `http://localhost:3030/api/v1/characters/${character_id}/assists/${assist_id}`;
+
+}
+
+const characterAssists = (character_id) => {
+  return `http://localhost:3030/api/v1/characters/${character_id}/assists/`;
 
 }
 
 const auth = (action = '') => {
-  return `https://dbfztech-api.herokuapp.com/${action}`
+  return `http://localhost:3030/${action}`
 }
 
 export {
@@ -58,6 +68,8 @@ export {
   specialVariant,
   characterSupers,
   characterSuper,
+  characterAssist,
+  characterAssists,
   auth
 }
 

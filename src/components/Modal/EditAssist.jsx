@@ -1,25 +1,37 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { characterNormal } from '../../helpers/urlFor';
+import { characterAssist } from '../../helpers/urlFor';
 
-class EditNormal extends Component {
+class EditAssist extends Component {
     constructor () {
         super();
         this.state = {
             params: '',
-            input: '',
             startup: '',
             active: '',
-            recovery: '',
-            gaurd: '',
-            properties: '',
-            advantage: '',
-            immune_to: '',
+            onscreen: '',
+            hitstop_block: '',
+            hitstop_hit: '',
+            blockstun: '',
             special_notes: '',
             picture: '',
-            move_type: '',
+            isLoading: false,
             id: ''
         }
+        
+    }
+
+    onSubmit = (e) => {
+        e.preventDefault();
+        const { input, startup, active, onscreen, hitstop_block, hitstop_hit, blockstun, special_notes, picture, id } = this.state;
+        let { params } = this.props
+        
+        this.setState({isLoading: true})
+        axios.put(characterAssist(params.id, id), { input, startup, active, onscreen, hitstop_block, hitstop_hit, blockstun, special_notes, picture })
+        .then((result) => {
+            window.location.reload(false);
+        });
+        
         
     }
 
@@ -27,23 +39,21 @@ class EditNormal extends Component {
         let { props } = this.props
               
         this.setState({
-            input: props.input,
             startup: props.startup,
             active: props.active,
-            recovery: props.recovery,
-            gaurd: props.gaurd,
-            advantage: props.advantage,
-            properties: props.properties,
+            onscreen: props.onscreen,
+            blockstun: props.blockstun,
+            hitstop_block: props.hitstop_block,
+            hitstop_hit: props.hitstop_hit,
             immune_to: props.immune_to,
             special_notes: props.special_notes,
-            move_type: props.move_type,
             picture: props.picture,
             id: props.id,
             isLoading: false
 
         })
     }
-    
+
     convertMoveImage = (e) => {
 
         let file = e.target.files[0]
@@ -56,30 +66,18 @@ class EditNormal extends Component {
         }
     }
 
-    onSubmit = (e) => {
-        e.preventDefault();
-        const { input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, move_type, picture, id } = this.state;
-        let { params } = this.props
-
-        this.setState({isLoading: true})
-        axios.put(characterNormal(params, id), {input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, move_type, picture })
-        .then((result) => {
-            window.location.reload(false);
-        });
-        
-        
-    }
 
     handleChange = (e) => {
         this.setState({ [e.target.name ]: e.target.value })
     }
   
     render() { 
-        let { isLoading } = this.state       
+               
+        let { isLoading } = this.state
 
         return ( 
             
-            <form id="edit-normal" onSubmit={this.onSubmit}>
+            <form id="edit-assist" onSubmit={this.onSubmit}>
                 
                 <div className="row">
                     <div className="category">
@@ -89,16 +87,6 @@ class EditNormal extends Component {
                                 type="file"
                                 defaultValue={this.state.picture}
                                 onChange={this.convertMoveImage}
-                            />
-                        </div>
-                    </div>
-                    <div className="category">
-                    Input:
-                        <div className="form-input">
-                            <input name="input"
-                                type="text"
-                                defaultValue={this.state.input}
-                                onChange={this.handleChange}
                             />
                         </div>
                     </div>
@@ -123,52 +111,31 @@ class EditNormal extends Component {
                         </div>
                     </div>
                     <div className="category">
-                    Recovery Frames:
+                    Onscreen Frames:
                         <div className="form-input">
-                            <input name="recovery"
+                            <input name="onscreen"
                                 type="text"
-                                defaultValue={this.state.advantage}
+                                defaultValue={this.state.onscreen}
                                 onChange={this.handleChange}
                             />
                         </div>
                     </div>
                     <div className="category">
-                    Advantage:
+                    Hitstop On Block:
                         <div className="form-input">
-                            <input name="advantage"
+                            <input name="hitstop_block"
                                 type="text"
-                                defaultValue={this.state.advantage}
+                                defaultValue={this.state.hitstop_block}
                                 onChange={this.handleChange}
                             />
                         </div>
                     </div>
                     <div className="category">
-                    Gaurd:
+                    Histop On Hit:
                         <div className="form-input">
-                            <input name="gaurd"
+                            <input name="hitstop_hit"
                                 type="text"
-                                defaultValue={this.state.gaurd}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="category">
-                    Properties:
-                        <div className="form-input">
-                            <input name="properties"
-                                type="text"
-                                defaultValue={this.state.properties}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    
-                    <div className="category">
-                    Immune To:
-                        <div className="form-input">
-                            <input name="immune_to"
-                                type="text"
-                                defaultValue={this.state.immune_to}
+                                defaultValue={this.state.hitstop_hit}
                                 onChange={this.handleChange}
                             />
                         </div>
@@ -184,11 +151,11 @@ class EditNormal extends Component {
                         </div>
                     </div>
                     <div className="category">
-                    Type:
+                    Blockstun:
                         <div className="form-input">
-                            <input name="move_type"
+                            <input name="blockstun"
                                 type="text"
-                                defaultValue={this.state.move_type}
+                                defaultValue={this.state.blockstun}
                                 onChange={this.handleChange}
                             />
                         </div>
@@ -203,9 +170,10 @@ class EditNormal extends Component {
                     :
                     "Edit"}
                 </button>
+                
             </form>
         );
     }
 }
  
-export default EditNormal;
+export default EditAssist;
