@@ -88,10 +88,11 @@ class Specials extends Component {
                                 </div>
                                 <br></br>
                             </div>                            
+                        <br></br>
                         <br></br>          
                     </div>
-                    {this.props.user && this.props.user.admin ? <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Specials +</button> : null}
                     {this.props.user && this.props.user.admin ? <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Special</button> : null}   
+                <br></br>
                 </div>
 
             );
@@ -99,11 +100,8 @@ class Specials extends Component {
         });
 
         return (  
-        <div>   
-            <div>
-                Here are the Specials:
-                {currentSpecials}
-            </div>
+        <div>               
+            {currentSpecials}            
             <br></br>   
             <br></br>
             {this.props.user && this.props.user.admin ? <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Specials +</button> : null}

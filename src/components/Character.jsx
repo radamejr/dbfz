@@ -108,26 +108,62 @@ class Character extends Component {
                 
               </Modal>
 
-              
-              <div className="normal-container">
-                <Normals 
-                    params={params}
-                    user={this.props.user}
-                />
-                <br></br>
-              </div>
-              <div className="special-container">
-                <Specials
-                    params={params}
-                    user={this.props.user}
-                />
-                <br></br>
-              </div>
-              <div className="super-container">
-                <Supers
-                    params={params}
-                    user={this.props.user}
-                />
+              <div id="accordion">
+                <div className="card">
+                  <div className="card-header" id="headingOne">
+                    <h5 className="mb-0">
+                      <button className="btn btn-link" data-toggle="collapse" data-target="#normals" aria-expanded="true" aria-controls="collapseOne">
+                        Normals
+                      </button>
+                    </h5>
+                  </div>
+
+                  <div id="normals" className="collapse normal-container" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div className="card-body">                   
+                    <Normals 
+                        params={params}
+                        user={this.props.user}
+                    />
+                    <br></br>
+                    </div>
+                  </div>
+
+                  <div className="card-header" id="headingTwo">
+                    <h5 className="mb-0">
+                      <button className="btn btn-link" data-toggle="collapse" data-target="#specials" aria-expanded="false" aria-controls="collapseTwo">
+                        Specials
+                      </button>
+                    </h5>
+                  </div>
+
+
+                  <div id="specials" className="collapse special-container" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <br></br>
+                    <Specials
+                        params={params}
+                        user={this.props.user}
+                    />
+                    <br></br>
+                  </div>
+
+                  <div className="card-header" id="headingThree">
+                    <h5 className="mb-0">
+                      <button className="btn btn-link" data-toggle="collapse" data-target="#supers" aria-expanded="false" aria-controls="collapseThree">
+                        Supers
+                      </button>
+                    </h5>
+                  </div>
+
+
+                      <div id="supers" className="collapse super-container" aria-labelledby="headingThree" data-parent="#accordion">
+                        <br></br>
+                        <Supers
+                            params={params}
+                            user={this.props.user}
+                        />
+                      </div>
+                  
+                </div>
               </div>
             </div>
             

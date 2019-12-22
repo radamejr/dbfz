@@ -100,10 +100,8 @@ class Supers extends Component {
 
         return (  
         <div>
-            <div>
-                Here are the Supers:
-                {currentSupers}
-            </div>
+            {currentSupers}
+
             <br></br>
             <br></br>
             {this.props.user && this.props.user.admin ? <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Supers +</button> : null}

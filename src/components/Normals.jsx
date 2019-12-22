@@ -92,28 +92,23 @@ class Normals extends Component {
                                 <div  className="float-left">
                                 Active Frames:  {normal.active}
                                 </div>
-                                <br></br>
-
-
-                                
-                            </div>
-                            
+                                <br></br>    
+                            </div>                            
                         <br></br>          
-                        
+                        <br></br>
                     </div>   
                     {this.props.user && this.props.user.admin ? <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Normal</button> : null}
-                     
+                    <br></br>
                 </div>
+                
             );
         });
 
         
         return (  
             <div>
-                <div>
-                    Here are the Normals:
-                    {currentNormals}
-                </div>
+                {currentNormals}
+                
                 <br></br>   
                 <br></br>   
                 {this.props.user && this.props.user.admin ? <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Normals +</button> : null}
