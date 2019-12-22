@@ -91,7 +91,7 @@ class Supers extends Component {
                         <br></br>          
                     </div>
                     {this.props.user && this.props.user.admin ? <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Supers +</button> : null}
-                    <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Super</button> 
+                    {this.props.user && this.props.user.admin ? <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Super</button> : null} 
                </div>
 
             );
