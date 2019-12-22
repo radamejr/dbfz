@@ -4,6 +4,7 @@ import axios from 'axios';
 import Normals from './Normals';
 import Specials from './Specials';
 import Supers from './Supers';
+import Assist from './Assist'
 import Modal from 'react-bootstrap/Modal'
 import EditCharacter from './Modal/EditCharacter'
 
@@ -155,13 +156,30 @@ class Character extends Component {
                   </div>
 
 
-                      <div id="supers" className="collapse super-container" aria-labelledby="headingThree" data-parent="#accordion">
-                        <br></br>
-                        <Supers
-                            params={params}
-                            user={this.props.user}
-                        />
-                      </div>
+                  <div id="supers" className="collapse super-container" aria-labelledby="headingThree" data-parent="#accordion">
+                    <br></br>
+                    <Supers
+                        params={params}
+                        user={this.props.user}
+                    />
+                  </div>
+
+                  <div className="card-header" id="headingThree">
+                    <h5 className="mb-0">
+                      <button className="btn btn-link" data-toggle="collapse" data-target="#assists" aria-expanded="false" aria-controls="collapseFour">
+                        Assist(s)
+                      </button>
+                    </h5>
+                  </div>
+
+
+                  <div id="assists" className="collapse assist-container" aria-labelledby="headingFour" data-parent="#accordion">
+                    <br></br>
+                    <Assist
+                        params={params}
+                        user={this.props.user}
+                    />
+                  </div>
                   
                 </div>
               </div>
