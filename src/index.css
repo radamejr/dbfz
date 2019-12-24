@@ -5,6 +5,10 @@
   justify-content: space-between;
 
 }
+.assist-move.container {
+  border-style: double;
+  border-color: black;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -78,10 +82,25 @@ code {
   bottom: 0;
 }
 
-
-.special-wrapper {
-  padding: 5px;
+.normal-move.container {
+  border-style: double;
+  border-color: black;
 }
+
+.special-move.container {
+  border-style: double;
+  border-color: black;
+}
+.super-move.container {
+  border-style: double;
+  border-color: black;
+}
+
 .variants.row {
   margin: 0;
+}
+
+.variants.container {
+  border-style: double;
+  border-color: black;
 }

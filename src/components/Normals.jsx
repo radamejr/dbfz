@@ -72,32 +72,83 @@ class Normals extends Component {
         const currentNormals = normals.map((normal, index) => {
             return(
                 <div key={index}>
-                    <div className="normal-move row">
-                        { normal.picture.url ? 
-                            <img className="normal col-4" src={normal.picture.url}  alt="normal"></img>
-                            :
-                            <img className="normal col-4" src='/question.png'  alt="missing"></img>
-
-                        }
-                        
+                    <div className="normal-move container">
+                        <div className="row mt-1">
+                            { normal.picture.url ? 
+                                <div className="col-4 d-none d-sm-block">
+                                    <img className="normal img-fluid" src={normal.picture.url}  alt="normal"></img>
+                                </div>
+                                :
+                                <div className="col-4 d-none d-sm-block">
+                                    <img className="normal img-fluid" src='/question.png'  alt="missing"></img>
+                                </div>
+                            }
+                                          
                             <div className="col">
-                                <div className="float-left">
-                                Input: {normal.input}
-                                </div>
-                                <br></br>
-                                <div  className="float-left">
-                                Startup Frames:  {normal.startup}
-                                </div>
-                                <br></br>
-                                <div  className="float-left">
-                                Active Frames:  {normal.active}
-                                </div>
-                                <br></br>    
-                            </div>                            
-                        <br></br>          
+                                <div className="row">
+                                    <div className="col my-lg-4 my-md-3">
+                                        <div className="">
+                                            Input: 
+                                            <br></br>
+                                            {normal.input}
+                                        </div>
+                                    </div>
+                                    <div className="col my-lg-4 my-md-3">
+                                        <div className="">
+                                            Startup Frames:  
+                                            <br></br>
+                                            {normal.startup}
+                                        </div>
+                                    </div>
+                                    <div className="col my-lg-4 my-md-3">
+                                        <div className="">
+                                            Active Frames:  
+                                            <br></br>
+                                            {normal.active}
+                                        </div>
+                                    </div>  
+                                    <div className="w-100">
+                                    </div>
+                                    <div className="col my-lg-4 my-md-3">
+                                        <div className="">
+                                            Recovery Frames: 
+                                            <br></br>
+                                            {normal.recovery}
+                                        </div>
+                                    </div>
+                                    <div className="col my-lg-4 my-md-3">
+                                        <div className="">
+                                            Advantage Frames: 
+                                            <br></br>
+                                            {normal.advantage}
+                                        </div>
+                                    </div>
+                                    <div className="col my-lg-4 my-md-3">
+                                        <div className="">
+                                            Gaurd: 
+                                            <br></br>
+                                            {normal.gaurd}
+                                        </div>
+                                    </div>
+                                    <div className="w-100">
+                                    </div>
+                                    <div className="col">
+                                        <div className="text-left">
+                                            Notes: {normal.special_notes}
+                                        </div>
+                                    </div>
+                                </div>     
+                            </div>
+                        </div>
                         <br></br>
-                    </div>   
-                    {this.props.user && this.props.user.admin ? <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Normal</button> : null}
+                        <div className="row col mb-2 ">                               
+                            {this.props.user && this.props.user.admin ? 
+                            <div className="float-right col">
+                                <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Normal</button> 
+                            </div>
+                            : null} 
+                        </div>                               
+                    </div>                     
                     <br></br>
                 </div>
                 
@@ -106,7 +157,7 @@ class Normals extends Component {
 
         
         return (  
-            <div>
+            <div className="container">
                 {currentNormals}
                 
                 <br></br>   
@@ -138,9 +189,7 @@ class Normals extends Component {
                         props={normals[normal_index]}
                         />
                     
-                </Modal>
-                <br></br>
-                
+                </Modal>           
             </div>
         );
     }

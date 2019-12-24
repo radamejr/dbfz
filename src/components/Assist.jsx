@@ -74,30 +74,83 @@ class Assist extends Component {
         const currentAssists = assists.map((assist, index) => {
             return(
                 <div key={index}>
-                    <div className="assist-move row">
-                        { assist.picture.url ? 
-                            <img className="assist col-4" src={assist.picture.url}  alt="assist"></img>
-                            :
-                            <img className="assist col-4" src='/question.png'  alt="missing"></img>
-
-                        }
-                        
-                            <div className="col">
-                                <br></br>
-                                <div  className="float-left">
-                                Startup Frames:  {assist.startup}
+                    <div className="assist-move container">
+                        <div className="row mt-1">
+                            { assist.picture.url ? 
+                                <div className="assist col-4 d-none d-sm-block">
+                                    <img className="assist img-fluid" src={assist.picture.url}  alt="assist"></img>
                                 </div>
-                                <br></br>
-                                <div  className="float-left">
-                                Active Frames:  {assist.active}
+                                :
+                                <div className="assist col-4 d-none d-sm-block">
+                                    <img className="assist img-fluid" src='/question.png'  alt="missing"></img>
                                 </div>
-                                <br></br>    
-                            </div>                            
-                        <br></br>          
-                        <br></br>
+                            }
+                            
+                            <div className="col text-left">
+                                <div className="row">
+                                    <div className="col my-md-3">
+                                        <div  className="float-left">
+                                            Startup Frames:  
+                                            <br></br>
+                                            {assist.startup}
+                                        </div>  
+                                    </div>
+                                    <div className="col my-md-3">
+                                        <div  className="float-left">
+                                            Blockstun Frames:  
+                                            <br></br>
+                                            {assist.blockstun}
+                                        </div>  
+                                    </div>
+                                    <div className="col my-md-3">
+                                        <div  className="float-left">
+                                            Active Frames:  
+                                            <br></br>
+                                            {assist.active}
+                                        </div>  
+                                    </div>
+                                    <div className="w-100"></div>
+                                    <div className="col my-md-3">
+                                        <div  className="float-left">
+                                            OnScreen Frames:  
+                                            <br></br>
+                                            {assist.onscreen}
+                                        </div>  
+                                    </div>
+                                    <div className="col my-md-3">
+                                        <div  className="float-left">
+                                            Hitstop on Block Frames:  
+                                            <br></br>
+                                            {assist.hitstop_block}
+                                        </div>  
+                                    </div>
+                                    <div className="col my-md-3">
+                                        <div  className="float-left">
+                                            Hitstop on Hit Frames:  
+                                            <br></br>
+                                            {assist.hitstop_hit}
+                                        </div>  
+                                    </div>
+                                    <div className="w-100"></div>
+                                    <div className="col my-md-3">
+                                        <div  className="float-left">
+                                            Notes:  
+                                            <br></br>
+                                            {assist.special_notes}
+                                        </div>  
+                                    </div>
+                                </div>              
+                            </div>
+                        </div>
+                        {this.props.user && this.props.user.admin 
+                        ? 
+                        <div className="float-right col">
+                            <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Assist</button> 
+                        </div>
+                        : 
+                        null}                            
                     </div>   
-                    {this.props.user && this.props.user.admin ? <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Assist</button> : null}
-                    <br></br>
+           
                 </div>
                 
             );
@@ -107,12 +160,10 @@ class Assist extends Component {
         return ( 
 <div>
                 {currentAssists}
-                
-                <br></br>   
-                <br></br>   
+                <br></br>
+                <br></br>
                 {this.props.user && this.props.user.admin ? <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Assist +</button> : null}
                 
-
                 <Modal 
                     show={addModalOpen}
                     >

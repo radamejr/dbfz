@@ -125,7 +125,6 @@ class Character extends Component {
                         params={params}
                         user={this.props.user}
                     />
-                    <br></br>
                     </div>
                   </div>
 
@@ -139,12 +138,12 @@ class Character extends Component {
 
 
                   <div id="specials" className="collapse special-container" aria-labelledby="headingTwo" data-parent="#accordion">
-                    <br></br>
-                    <Specials
-                        params={params}
-                        user={this.props.user}
-                    />
-                    <br></br>
+                    <div className="card-body">
+                      <Specials
+                          params={params}
+                          user={this.props.user}
+                      />
+                    </div>
                   </div>
 
                   <div className="card-header" id="headingThree">
@@ -157,11 +156,13 @@ class Character extends Component {
 
 
                   <div id="supers" className="collapse super-container" aria-labelledby="headingThree" data-parent="#accordion">
-                    <br></br>
-                    <Supers
-                        params={params}
-                        user={this.props.user}
-                    />
+                    
+                    <div className="card-body">
+                      <Supers
+                          params={params}
+                          user={this.props.user}
+                      />
+                    </div>
                   </div>
 
                   <div className="card-header" id="headingThree">
@@ -174,11 +175,13 @@ class Character extends Component {
 
 
                   <div id="assists" className="collapse assist-container" aria-labelledby="headingFour" data-parent="#accordion">
-                    <br></br>
-                    <Assist
-                        params={params}
-                        user={this.props.user}
-                    />
+                    
+                   <div className="card-body">
+                      <Assist
+                          params={params}
+                          user={this.props.user}
+                      />
+                   </div>
                   </div>
                   
                 </div>
