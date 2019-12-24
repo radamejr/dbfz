@@ -72,40 +72,94 @@ class Variants extends Component {
         const currentVariants = variants.map((variant, index) => {
             return (
                 <div key={index}>
-                    <div className="variants row">
-                        { variant.picture.url ? 
-                            <img className="variant col-4" src={variant.picture.url}  alt="variant"></img>
-                            :
-                            null
-                        }
-                        <div className="col">
-                            <div  className="float-left">
-                            Input Type:  {variant.input_type}
-                            </div>
-                            <br></br>
+                    <div className="variants container mt-0">
+                        <div className="row mt-1">
+                            { variant.picture.url ? 
+                                <div className="col-4 d-none d-sm-block">
+                                    <img className="variant img-fluid" src={variant.picture.url}  alt="variant"></img>
+                                </div>
+                                :
+                                null
+                            }
                         </div>
-                        {this.props.user && this.props.user.admin ? <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Variant</button> : null}   
+                        <div className="col">
+                            <div className="row">
+                                <div className="col my-xl-5 my-lg-4 my-md-3">
+                                    <div  className="">
+                                    Type:  {variant.input_type}
+                                    </div>
+                                </div>
+                                <div className="col my-xl-5 my-lg-4 my-md-3">
+                                    <div  className="">
+                                    Startup:  {variant.startup}
+                                    </div>
+                                </div>
+                                <div className="col my-xl-5 my-lg-4 my-md-3">
+                                    <div  className="">
+                                    Active:  {variant.active}
+                                    </div>
+                                </div>
+                                <div className="w-100"></div>
+                                <div className="col my-xl-5 my-lg-4 my-md-3">
+                                    <div  className="">
+                                    Advantage:  {variant.advantage !== null ? <div>{variant.advantage}</div> : "N/A"}
+                                    </div>
+                                </div>
+                                <div className="col my-xl-5 my-lg-4 my-md-3">
+                                    <div  className="">
+                                    Gaurd:  {variant.gaurd}
+                                    </div>
+                                </div>
+                                <div className="col my-xl-5 my-lg-4 my-md-3">
+                                    <div  className="">
+                                    Meter Used:  {variant.meter_used}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row col mb-2">
+                            <div  className=" text-left">
+                                Notes:  {variant.special_notes}
+                            </div>
+                            {this.props.user && this.props.user.admin ? 
+                            <div className="float-right col">
+                                <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Variant</button>
+                            </div> 
+                            : null}  
+                        </div>
+                         
                         
                     </div>
-                    <br></br>
-                    <br></br>
                 </div>
             );
         });
 
         return ( 
-            <div className="jsx-wrapper">
+            <div>
+                {this.props.user && this.props.user.admin ?
+                <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Variants</button> 
+                : 
+                null}
                 {variants !== "" ? 
-                
-               <div>
-                    {currentVariants}     
-               </div>
-                
-                : null}
-            {this.props.user && this.props.user.admin ? <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Variants</button> : null}
-            <br></br>
-            <br></br>
+                <div id="variant-accordion">
+                    <div className="card">
+                        <div className="card-header" id="variantHeading">
+                            <h5 className="mb-0">
+                                <button className="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Light/Medium/Heavy Input Information
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseOne" className="collapse" aria-labelledby="headingOne" data-parent="#variant-accordion">
+                            <div className="card-body">
+                                {currentVariants} 
+                            </div>
+                        </div>
+                    </div>
 
+                     
+                </div>                  
+                : null}
 
                 <Modal 
                     show={addModalOpen}

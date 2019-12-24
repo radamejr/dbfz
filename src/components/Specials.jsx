@@ -67,41 +67,61 @@ class Specials extends Component {
 
         const currentSpecials = specials.map((special, index) => {
             return(
-                <div className="special-wrapper" key={index}>
-                        <div className="special-move row">
-                        { special.picture.url ? 
-                            <img className="special col-4" src={special.picture.url}  alt="special"></img>
-                            :
-                            <img className="special col-4" src='/question.png'  alt="missing"></img>
+                <div key={index}>
+                    <div className="special-move container">
+                        <div className="row mt-1">
+                            { special.picture.url ? 
+                                <div className="col-4 d-none d-sm-block">
+                                    <img className="special img-fluid" src={special.picture.url}  alt="special"></img>
+                                </div>
+                                :
+                                <div className="col-4 d-none d-sm-block">
+                                    <img className="special img-fluid" src='/question.png'  alt="missing"></img>
+                                </div>
+                            }
 
-                        }
                             <div className="col">
-                                <div className="float-left">
-                                Name: {special.name}
-                                </div>
-                                <br></br>
-                                <div  className="float-left">
-                                Input:  {special.input}
-                                </div>
-                                <br></br>
-                            </div>
+                                <div className="row">
+                                    <div className="col mb-xl-5 my-lg-4 my-md-2">
+                                        <div className="">
+                                            Move Name: 
+                                            <br></br>
+                                            {special.name}
+                                        </div>
+                                    </div>
+                                    <div className="col mb-xl-5 my-lg-4 my-md-2">
+                                        <div className="">
+                                            Move Input: 
+                                            <br></br>
+                                            {special.input}
+                                        </div>
+                                    </div>
+                                    <div className="w-100">
+                                    </div>
+                                    <div className="col mt-xl-5 my-lg-4 my-md-2">
+                                        <div className="float-left">
+                                            Notes: 
+                                            <br></br>
+                                            {special.special_notes}
+                                        </div>
+                                    </div>
+                                    {this.props.user && this.props.user.admin ? 
+                                    <div className="float-right col">
+                                        <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Special</button> 
+                                    </div>
+                                    : null}
+                                </div>  
+                            </div>                                         
+                        </div>
+                                           
+                            <Variants 
+                                params={this.props.params}
+                                special_id={special.id}
+                                user={this.props.user}
+                            />
+                             
                         
-                        <br></br>                              
-                        <br></br>          
-                        </div>
-                        <br></br>
-                        <br></br>
-                        <div className="special-variants row">                            
-                            <div className="col">
-                                <Variants 
-                                    params={this.props.params}
-                                    special_id={special.id}
-                                    user={this.props.user}
-                                />
-                            </div>
-                        </div>
-                    {this.props.user && this.props.user.admin ? <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Special</button> : null}   
-                <br></br>
+                    </div>
                 </div>
 
             );
@@ -111,8 +131,6 @@ class Specials extends Component {
         return (  
         <div>               
             {currentSpecials}            
-            <br></br>   
-            <br></br>
             {this.props.user && this.props.user.admin ? <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Specials +</button> : null}
             
 
@@ -140,7 +158,6 @@ class Specials extends Component {
                 />
                 
             </Modal>
-            <br></br>
         </div>
         );
     }
