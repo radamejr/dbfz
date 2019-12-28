@@ -67,8 +67,8 @@ class Variants extends Component {
 
 
     render() { 
-        let { variants, params, special_id, addModalOpen, editModalOpen, variant_index } = this.state
-
+        const { variants, params, special_id, addModalOpen, editModalOpen, variant_index } = this.state
+ 
         const currentVariants = variants.map((variant, index) => {
             return (
                 <div key={index}>
@@ -141,16 +141,16 @@ class Variants extends Component {
                 : 
                 null}
                 {variants !== "" ? 
-                <div id="variant-accordion">
+                <div id={`variant-accordion-${special_id}`}>
                     <div className="card">
                         <div className="card-header" id="variantHeading">
                             <h5 className="mb-0">
-                                <button className="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <button className="btn btn-link" data-toggle="collapse" data-target={`#variant-${special_id}`} aria-expanded="true" aria-controls="collapseOne">
                                     Light/Medium/Heavy Input Information
                                 </button>
                             </h5>
                         </div>
-                        <div id="collapseOne" className="collapse" aria-labelledby="headingOne" data-parent="#variant-accordion">
+                        <div id={`variant-${special_id}`} className="collapse" aria-labelledby="headingOne" data-parent={`#variant-accordion-${special_id}`}>
                             <div className="card-body">
                                 {currentVariants} 
                             </div>
