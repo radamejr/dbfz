@@ -118,7 +118,7 @@ class Variants extends Component {
                             </div>
                         </div>
                         <div className="row col mb-2">
-                            <div  className=" text-left">
+                            <div  className="notes-box text-left">
                                 Notes:  {variant.special_notes}
                             </div>
                             {this.props.user && this.props.user.admin ? 
