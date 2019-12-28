@@ -70,21 +70,37 @@ class Character extends Component {
         let { character, isOpen, picture, icon } = this.state; 
         let { match: { params } } = this.props;    
         
+
         return ( 
-          
+
             
             <div className="container">
               
-              <div className="row">
-                <div className="character-text float-left">
-                  {character.name}   <br></br>
-                  {character.dlc ? "Yes" : "No"} <br></br>
-                  <a className="btn btn-link" href={character.discord_link} target="_blank" rel="noopener noreferrer" role="button">Discord</a>
-                  <a className="btn btn-link" href={character.combo_doc_link} target="_blank" rel="noopener noreferrer" role="button">Combo Doc</a>
-                  <br></br>
-                  #{character.twitter_tag}
+              <div className="character container">
+                <div className="row">
+                  <div className="col character-text text-left">
+                    <h1>
+                      {character.name} 
+                    </h1>  
+                    <br></br>
+                    <h4>
+                      DLC?: {character.dlc ? "Yes" : "No"} 
+                    </h4>
+                    
+                    <br></br>
+                    <p className="notes-box">
+                      {character.about}
+                    </p>
+                    <br></br>
+                    <p className="notes-box">
+                      For additional {character.name} details and resources be sure to visit the <a href={character.discord_link} target="_blank" rel="noopener noreferrer" role="button">Discord Server</a> and the <a href={character.combo_doc_link} target="_blank" rel="noopener noreferrer" role="button">Combo Document</a>.
+                    </p>
+                  </div>
+                  <div className="col character-picture justify-content-center float-right d-none d-sm-block">
+                    <img  src={picture} alt="character"></img> 
+                    <br></br>
+                  </div>
                 </div>
-                <div className="character-picture float-right"><img src={picture} alt="character"></img> <br></br></div>
               </div>
 
               {this.props.user && this.props.user.admin ? <button className="btn-primary btn btn-sm float-right" onClick={this.toggleModal}>Edit Character</button> : null}
@@ -93,7 +109,7 @@ class Character extends Component {
               <br></br>
               <br></br>
 
-              <Modal show={isOpen} >
+              <Modal show={isOpen} size='lg' >
                 <Modal.Header>
                     <button className="btn btn-primary float-right" onClick={this.toggleModal}>cancel</button>
                 </Modal.Header>
@@ -105,6 +121,9 @@ class Character extends Component {
                     combo_doc_link={character.combo_doc_link}
                     character_picture={picture}
                     character_icon={icon}
+                    twitter_tag={character.twitter_tag}
+                    about={character.about}
+                    
                 />
                 
               </Modal>
@@ -124,6 +143,7 @@ class Character extends Component {
                     <Normals 
                         params={params}
                         user={this.props.user}
+                        
                     />
                     </div>
                   </div>

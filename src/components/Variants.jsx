@@ -163,6 +163,7 @@ class Variants extends Component {
 
                 <Modal 
                     show={addModalOpen}
+                    size="lg"
                 >
                     <Modal.Header>
                         <button className="btn btn-primary float-right" onClick={this.toggleAddModal}>cancel</button>
@@ -177,6 +178,7 @@ class Variants extends Component {
 
             <Modal 
                 show={editModalOpen}
+                size="lg"
                 >
                 <Modal.Header>
                     <button className="btn btn-primary float-right" onClick={this.toggleEditModal}>cancel</button>

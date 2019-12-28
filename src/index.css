@@ -82,6 +82,9 @@ code {
   bottom: 0;
 }
 
+.notes-box{
+  white-space: pre-wrap;
+}
 .normal-move.container {
   border-style: double;
   border-color: black;

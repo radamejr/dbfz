@@ -39,7 +39,7 @@ class SignIn extends Component {
     }
     
     redirect = () => {
-        this.props.history.push('/')
+        this.props.history.goBack()
     }
 
     handleChange = (e) => {

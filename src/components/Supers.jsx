@@ -141,8 +141,8 @@ class Supers extends Component {
                                         </div>
                                     </div>
                                     <div className="w-100"></div>
-                                    <div className="col my-md-3">
-                                        <div className="text-left">
+                                    <div className="col my-md-3"> 
+                                        <div className="text-left notes-box">
                                             Notes: {superMove.special_notes}
                                         </div>
                                     </div>
@@ -165,15 +165,21 @@ class Supers extends Component {
 
         return (  
         <div>
-            {currentSupers}
-
-            <br></br>
-            <br></br>
-            {this.props.user && this.props.user.admin ? <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Supers +</button> : null}
             
-
+            {this.props.user && this.props.user.admin 
+            ?
+            <div>
+                <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Supers +</button>
+                <br></br>
+                <br></br>
+            </div>
+            :
+             null}
+            
+            {currentSupers}
             <Modal 
                 show={addModalOpen}
+                size="lg"
                 >
                 <Modal.Header>
                     <button className="btn btn-primary float-right" onClick={this.toggleAddModal}>cancel</button>
@@ -187,6 +193,7 @@ class Supers extends Component {
 
             <Modal 
                 show={editModalOpen}
+                size="lg"
                 >
                 <Modal.Header>
                     <button className="btn btn-primary float-right" onClick={this.toggleEditModal}>cancel</button>

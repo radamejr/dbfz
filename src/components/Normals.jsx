@@ -133,7 +133,7 @@ class Normals extends Component {
                                     <div className="w-100">
                                     </div>
                                     <div className="col">
-                                        <div className="text-left">
+                                        <div className="text-left notes-box">
                                             Notes: {normal.special_notes}
                                         </div>
                                     </div>
@@ -158,15 +158,22 @@ class Normals extends Component {
         
         return (  
             <div className="container">
-                {currentNormals}
+                {this.props.user && this.props.user.admin 
+                ?
+                <div>
+                    <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Normals +</button>
+                    <br></br>
+                    <br></br>
+                </div>
+                : null
+                }
                 
-                <br></br>   
-                <br></br>   
-                {this.props.user && this.props.user.admin ? <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Normals +</button> : null}
+                {currentNormals}
                 
 
                 <Modal 
                     show={addModalOpen}
+                    size='lg'
                     >
                     <Modal.Header>
                         <button className="btn btn-primary float-right" onClick={this.toggleAddModal}>cancel</button>
@@ -180,6 +187,7 @@ class Normals extends Component {
 
                 <Modal 
                     show={editModalOpen}
+                    size='lg'
                     >
                     <Modal.Header>
                         <button className="btn btn-primary float-right" onClick={this.toggleEditModal}>cancel</button>

@@ -41,7 +41,7 @@ class Registration extends Component {
     }
 
     redirect = () => {
-        this.props.history.push('/')
+        this.props.history.goBack()
     }
 
     handleErrors = () => {

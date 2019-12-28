@@ -133,7 +133,7 @@ class Assist extends Component {
                                     </div>
                                     <div className="w-100"></div>
                                     <div className="col my-md-3">
-                                        <div  className="float-left">
+                                        <div  className="text-left notes-box">
                                             Notes:  
                                             <br></br>
                                             {assist.special_notes}
@@ -141,14 +141,15 @@ class Assist extends Component {
                                     </div>
                                 </div>              
                             </div>
+                            {this.props.user && this.props.user.admin 
+                            ? 
+                            <div className="float-right col">
+                                <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Assist</button> 
+                            </div>
+                            : 
+                            null} 
                         </div>
-                        {this.props.user && this.props.user.admin 
-                        ? 
-                        <div className="float-right col">
-                            <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Assist</button> 
-                        </div>
-                        : 
-                        null}                            
+                             
                     </div>   
            
                 </div>
@@ -159,13 +160,20 @@ class Assist extends Component {
 
         return ( 
 <div>
-                {currentAssists}
-                <br></br>
-                <br></br>
-                {this.props.user && this.props.user.admin ? <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Assist +</button> : null}
                 
+                {this.props.user && this.props.user.admin 
+                ?
+                <div>
+                    <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Assist</button>
+                    <br></br>
+                    <br></br>
+                </div>
+                :
+                null}
+                {currentAssists}
                 <Modal 
                     show={addModalOpen}
+                    size="lg"
                     >
                     <Modal.Header>
                         <button className="btn btn-primary float-right" onClick={this.toggleAddModal}>cancel</button>
@@ -179,6 +187,7 @@ class Assist extends Component {
 
                 <Modal 
                     show={editModalOpen}
+                    size="lg"
                     >
                     <Modal.Header>
                         <button className="btn btn-primary float-right" onClick={this.toggleEditModal}>cancel</button>
