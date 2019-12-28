@@ -13,13 +13,16 @@
     "react-dom": "^16.12.0",
     "react-file-base64": "^1.0.3",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.3.0"
+    "react-scripts": "^3.3.0",
+    "serve": "^11.2.0"
   },
   "scripts": {
-    "start": "PORT=8000 react-scripts start",
+    "dev": "PORT=8000 react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
