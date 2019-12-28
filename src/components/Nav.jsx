@@ -32,7 +32,7 @@ class Nav extends Component {
   }
 
   render() { 
-  const { characters } = this.props
+  const { characters, user } = this.props
   const { isOpen } = this.state
 
   const selections = characters.map((character, index) => {
@@ -53,7 +53,7 @@ class Nav extends Component {
       <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <p className="navbar-brand">
-          <Link to="/">DBFZ</Link>
+          <Link to="/">Home</Link>
         </p>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
@@ -75,21 +75,23 @@ class Nav extends Component {
             </div>
           </li>
         </ul>
-        <p className="nav-link">
-            {this.props.loggedInStatus ? "Welcome!  " : null}
-            
-            {this.props.loggedInStatus ?  
-            <button type="button" onClick={this.logoutClick}className="btn btn-link">Logout</button> : 
-            
+        <div className="nav-link">
+            {this.props.loggedInStatus 
+            ? 
+            <div>
+              Welcome, {user.username}!
+                <button type="button" onClick={this.logoutClick} className="btn btn-link">Logout</button>
+            </div>  
+            : 
             <Link to='/login'>Login</Link>}
-        </p>
+        </div>
       </div>
       </nav>
 
       
       <br></br>
       
-        <Modal show={isOpen} >
+        <Modal show={isOpen} size='lg' >
           <Modal.Header>
             <button className="btn btn-primary float-right" onClick={this.toggleModal}>cancel</button>
           </Modal.Header>

@@ -144,7 +144,19 @@ class AddCharacter extends Component {
                         </div>
                     </div>
                 </div>
-                <br></br>
+                <div className="category">
+                    About:
+                    <div className="form-input">
+                        <textarea name="about"
+                            type="text"
+                            defaultValue=""
+                            onChange={this.handleChange}
+                            cols="50"
+                            rows="5"
+                        >
+                        </textarea>
+                    </div>
+                </div>
                 <button type="submit" className="btn btn-primary float-right" disabled={isLoading}>
                     {isLoading ? 
                     <div className="spinner-border text-light" role="status">

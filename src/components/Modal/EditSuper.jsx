@@ -175,22 +175,24 @@ class EditSuper extends Component {
                     </div>
                 </div>
                 <div className="category">
-                Special Notes:
-                    <div className="form-input">
-                        <input name="special_notes"
-                            type="text"
-                            defaultValue={this.state.special_notes}
-                            onChange={this.handleChange}
-                        />
-                    </div>
-                </div>
-                <div className="category">
                 Meter Used:
                     <div className="form-input">
                         <input name="meter_used"
                             type="text"
                             defaultValue={this.state.meter_used}
                             onChange={this.handleChange}
+                        />
+                    </div>
+                </div>
+                <div className="category">
+                Special Notes:
+                    <div className="form-input">
+                        <textarea name="special_notes"
+                            type="text"
+                            defaultValue={this.state.special_notes}
+                            onChange={this.handleChange}
+                            cols="50"
+                            rows="5"
                         />
                     </div>
                 </div>

@@ -141,22 +141,24 @@ class EditAssist extends Component {
                         </div>
                     </div>
                     <div className="category">
-                    Special Notes:
-                        <div className="form-input">
-                            <input name="special_notes"
-                                type="text"
-                                defaultValue={this.state.special_notes}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="category">
                     Blockstun:
                         <div className="form-input">
                             <input name="blockstun"
                                 type="text"
                                 defaultValue={this.state.blockstun}
                                 onChange={this.handleChange}
+                            />
+                        </div>
+                    </div>
+                    <div className="category">
+                    Special Notes:
+                        <div className="form-input">
+                            <textarea name="special_notes"
+                                type="text"
+                                defaultValue={this.state.special_notes}
+                                onChange={this.handleChange}
+                                cols="50"
+                                rows="5"
                             />
                         </div>
                     </div>

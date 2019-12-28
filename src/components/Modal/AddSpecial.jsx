@@ -88,10 +88,12 @@ class AddSpecial extends Component {
                     <div className="category">
                     Special Notes:
                         <div className="form-input">
-                            <input name="special_notes"
+                            <textarea name="special_notes"
                                 type="text"
                                 defaultValue={this.state.special_notes}
                                 onChange={this.handleChange}
+                                cols="50"
+                                rows="5"
                             />
                         </div>
                     </div>

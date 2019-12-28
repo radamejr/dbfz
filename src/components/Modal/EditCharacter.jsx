@@ -12,7 +12,8 @@ class EditCharacter extends Component {
             combo_doc_link: '',
             icon:'',
             character_picture: '',
-            twitter_tag: ''
+            twitter_tag: '',
+            about: ''
 
         }
         
@@ -27,6 +28,7 @@ class EditCharacter extends Component {
             icon: this.props.icon,
             character_picture: this.props.picture,
             twitter_tag: this.props.twitter_tag,
+            about: this.props.about,
             isLoading: false
 
         })
@@ -58,11 +60,11 @@ class EditCharacter extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { name, dlc, discord_link, combo_doc_link, icon, character_picture, twitter_tag } = this.state;
+        const { name, dlc, discord_link, combo_doc_link, icon, character_picture, twitter_tag, about } = this.state;
         let { params } = this.props
         
         this.setState({isLoading: true})
-        axios.put(characterAPI(params.id), {name, dlc, discord_link, combo_doc_link, icon, character_picture, twitter_tag })
+        axios.put(characterAPI(params.id), {name, dlc, discord_link, combo_doc_link, icon, character_picture, twitter_tag, about })
         .then((result) => {
            window.location.reload(false);
         });
@@ -75,7 +77,7 @@ class EditCharacter extends Component {
     }
   
     render() { 
-        const { name, dlc, discord_link, combo_doc_link, twitter_tag } = this.state;
+        const { name, dlc, discord_link, combo_doc_link, twitter_tag, about } = this.state;
         let { isLoading } = this.state
 
         return ( 
@@ -151,7 +153,19 @@ class EditCharacter extends Component {
                         </div>
                     </div>
                 </div>
-                <br></br>
+                <div className="category">
+                    About:
+                    <div className="form-input">
+                        <textarea name="about"
+                            type="text"
+                            defaultValue={about}
+                            onChange={this.handleChange}
+                            cols="50"
+                            rows="5"
+                        >
+                        </textarea>
+                    </div>
+                </div>
                 <button type="submit" className="btn btn-primary float-right" disabled={isLoading}>
                     {isLoading ? 
                     <div className="spinner-border text-light" role="status">

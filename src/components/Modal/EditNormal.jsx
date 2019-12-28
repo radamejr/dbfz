@@ -174,22 +174,24 @@ class EditNormal extends Component {
                         </div>
                     </div>
                     <div className="category">
-                    Special Notes:
-                        <div className="form-input">
-                            <input name="special_notes"
-                                type="text"
-                                defaultValue={this.state.special_notes}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="category">
                     Type:
                         <div className="form-input">
                             <input name="move_type"
                                 type="text"
                                 defaultValue={this.state.move_type}
                                 onChange={this.handleChange}
+                            />
+                        </div>
+                    </div>
+                    <div className="category">
+                    Special Notes:
+                        <div className="form-input">
+                            <textarea name="special_notes"
+                                type="text"
+                                defaultValue={this.state.special_notes}
+                                onChange={this.handleChange}
+                                cols="50"
+                                rows="5"
                             />
                         </div>
                     </div>
