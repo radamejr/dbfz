@@ -86,40 +86,54 @@ class Variants extends Component {
                             <div className="row">
                                 <div className="col my-xl-5 my-lg-4 my-md-3">
                                     <div  className="">
-                                    Type:  {variant.input_type}
+                                    Type:  
+                                    <br></br>
+                                    {variant.input_type}
                                     </div>
                                 </div>
                                 <div className="col my-xl-5 my-lg-4 my-md-3">
                                     <div  className="">
-                                    Startup:  {variant.startup}
+                                    Startup:  
+                                    <br></br>
+                                    {variant.startup}
                                     </div>
                                 </div>
                                 <div className="col my-xl-5 my-lg-4 my-md-3">
                                     <div  className="">
-                                    Active:  {variant.active}
+                                    Active:  
+                                    <br></br>
+                                    {variant.active}
                                     </div>
                                 </div>
                                 <div className="w-100"></div>
                                 <div className="col my-xl-5 my-lg-4 my-md-3">
                                     <div  className="">
-                                    Advantage:  {variant.advantage !== null ? <div>{variant.advantage}</div> : "N/A"}
+                                    Advantage:  
+                                    <br></br>
+                                    {variant.advantage !== null ? <div>{variant.advantage}</div> : "N/A"}
                                     </div>
                                 </div>
                                 <div className="col my-xl-5 my-lg-4 my-md-3">
                                     <div  className="">
-                                    Gaurd:  {variant.gaurd}
+                                    Gaurd:  
+                                    <br></br>
+                                    {variant.gaurd}
                                     </div>
                                 </div>
                                 <div className="col my-xl-5 my-lg-4 my-md-3">
                                     <div  className="">
-                                    Meter Used:  {variant.meter_used}
+                                    Meter Used:  
+                                    <br></br>
+                                    {variant.meter_used}
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="row col mb-2">
                             <div  className="notes-box text-left">
-                                Notes:  {variant.special_notes}
+                                Notes:  
+                                <br></br>
+                                {variant.special_notes}
                             </div>
                             {this.props.user && this.props.user.admin ? 
                             <div className="float-right col">
@@ -137,16 +151,20 @@ class Variants extends Component {
         return ( 
             <div>
                 {this.props.user && this.props.user.admin ?
-                <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Variants</button> 
+                <div>
+                    <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Variants</button> 
+                    <br></br>
+                    <br></br>
+                </div>
                 : 
                 null}
-                {variants !== "" ? 
+                {variants.length !== 0 ? 
                 <div id={`variant-accordion-${special_id}`}>
                     <div className="card">
                         <div className="card-header" id="variantHeading">
                             <h5 className="mb-0">
                                 <button className="btn btn-link" data-toggle="collapse" data-target={`#variant-${special_id}`} aria-expanded="true" aria-controls="collapseOne">
-                                    Light/Medium/Heavy Input Information
+                                    Input Variant Information
                                 </button>
                             </h5>
                         </div>
@@ -161,6 +179,7 @@ class Variants extends Component {
                 </div>                  
                 : null}
 
+                
                 <Modal 
                     show={addModalOpen}
                     size="lg"
