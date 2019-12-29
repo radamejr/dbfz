@@ -59,6 +59,17 @@ class EditSuper extends Component {
         
     }
 
+    convertMoveImage = (e) => {
+
+        let file = e.target.files[0]
+        let reader = new FileReader();        
+
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+           
+           this.setState({picture: reader.result})
+        }
+    }
 
 
     handleChange = (e) => {

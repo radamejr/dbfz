@@ -149,13 +149,15 @@ class Variants extends Component {
                                 <br></br>
                                 {variant.special_notes}
                             </div>
+                        </div>
+                        <div className="row col mb-2">
                             {this.props.user && this.props.user.admin ? 
                             <div className="float-right col">
                                 <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Variant</button>
                                 <button className="btn btn-danger btn-sm float-left" onClick={ (event) => window.confirm("Are you sure you want to delete that?") && this.deleteButtonClick(variant.id)}>Delete Variant</button>  
                             </div> 
-                            : null}  
-                        </div>
+                            : null} 
+                        </div> 
                          
                         
                     </div>
