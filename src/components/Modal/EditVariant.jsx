@@ -128,7 +128,7 @@ class EditVariant extends Component {
                         <div className="form-input">
                             <input name="recovery"
                                 type="text"
-                                defaultValue={this.state.advantage}
+                                defaultValue={this.state.recovery}
                                 onChange={this.handleChange}
                             />
                         </div>
