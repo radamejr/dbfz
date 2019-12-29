@@ -87,7 +87,7 @@ class Variants extends Component {
             return (
                 <div key={index}>
                     <div className="variants container mt-0">
-                        <div className="row mt-1">
+                        <div className="row mt-1 justify-content-center">
                             { variant.picture.url ? 
                                 <div className="col-4 d-none d-sm-block">
                                     <img className="variant img-fluid" src={variant.picture.url}  alt="variant"></img>
@@ -97,72 +97,49 @@ class Variants extends Component {
                             }
                         </div>
                         <div className="col">
-                            <div className="row">
-                                <div className="col my-xl-5 my-lg-4 my-md-3">
-                                    <div  className="">
-                                    Type:  
-                                    <br></br>
-                                    {variant.input_type}
-                                    </div>
-                                </div>
-                                <div className="col my-xl-5 my-lg-4 my-md-3">
-                                    <div  className="">
-                                    Startup:  
-                                    <br></br>
-                                    {variant.startup}
-                                    </div>
-                                </div>
-                                <div className="col my-xl-5 my-lg-4 my-md-3">
-                                    <div  className="">
-                                    Active:  
-                                    <br></br>
-                                    {variant.active}
-                                    </div>
-                                </div>
-                                <div className="w-100"></div>
-                                <div className="col my-xl-5 my-lg-4 my-md-3">
-                                    <div  className="">
-                                    Recovery:  
-                                    <br></br>
-                                    {variant.recovery !== null ? <div>{variant.recovery}</div> : "N/A"}
-                                    </div>
-                                </div>
-                                <div className="col my-xl-5 my-lg-4 my-md-3">
-                                    <div  className="">
-                                    Advantage:  
-                                    <br></br>
-                                    {variant.advantage !== null ? <div>{variant.advantage}</div> : "N/A"}
-                                    </div>
-                                </div>
-                                <div className="col my-xl-5 my-lg-4 my-md-3">
-                                    <div  className="">
-                                    Gaurd:  
-                                    <br></br>
-                                    {variant.gaurd}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row col mb-2">
-                            <div  className="notes-box text-left col-6">
-                                Notes:  
-                                <br></br>
-                                {variant.special_notes}
-                            </div>
-                            { variant.meter_used !== 0
-                            ?
-                            <div>
+                            <div className="row mt-1 text-left">
                                 <div className="col">
-                                    <div  className="">
-                                    Meter Used:  
-                                    <br></br>
-                                    {variant.meter_used}
+                                    <div className="row mx-md-3">
+                                        <div className="col my-xl-5 my-lg-4 my-md-3">
+                                            <div  className="">
+                                            Type: {variant.input_type}
+                                            </div>
+                                        </div>
+                                        <div className="col my-xl-5 my-lg-4 my-md-3">
+                                            <div  className="">
+                                            Startup: {variant.startup}
+                                            </div>
+                                        </div>
+                                        <div className="col my-xl-5 my-lg-4 my-md-3">
+                                            <div  className="">
+                                            Active: {variant.active}
+                                            </div>
+                                        </div>
+                                        <div className="w-100"></div>
+                                        <div className="col my-xl-5 my-lg-4 my-md-3">
+                                            <div  className="">
+                                            Recovery: {variant.recovery !== null ? variant.recovery : "N/A"}
+                                            </div>
+                                        </div>
+                                        <div className="col my-xl-5 my-lg-4 my-md-3">
+                                            <div  className="">
+                                            Advantage: {variant.advantage !== null ? variant.advantage : "N/A"}
+                                            </div>
+                                        </div>
+                                        <div className="col my-xl-5 my-lg-4 my-md-3">
+                                            <div  className="">
+                                            Gaurd: {variant.gaurd}
+                                            </div>
+                                        </div>
+                                        <div className="w-100"></div>
+                                        <div className="col">
+                                            <div  className="notes-box text-left">
+                                                Notes: {variant.special_notes}
+                                            </div>    
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            :
-                            null
-                            }
                         </div>
                         <div className="row col mb-2">
                             {this.props.user && this.props.user.admin ? 

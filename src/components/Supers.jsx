@@ -81,7 +81,7 @@ class Supers extends Component {
             return(
                <div key={index}>
                     <div className="super-move container">
-                        <div className="row mt-1">
+                        <div className="row mt-1 justify-content-center">
                             { superMove.picture.url ? 
                                 <div className="super col-4 d-none d-sm-block">
                                     <img className="super img-fluid" src={superMove.picture.url}  alt="super"></img>
@@ -92,77 +92,64 @@ class Supers extends Component {
                                     <img className="super img-fluid" src='/question.png'  alt="missing"></img>
                                 </div>
                             }
-    
-                            <div className="col text-left">
-                                <div className="row">
-                                    <div className="col my-md-3">
-                                        <div className="">
-                                            Name: 
-                                            <br></br>
-                                            {superMove.name}
+                        </div>
+                        <div className="col">
+                            <div className="row mt-1 text-left">
+                                <div className="col">
+                                    <div className="row mx-md-3 mx-lg-5">
+                                        <div className="col my-md-3">
+                                            <div className="">
+                                                Name: {superMove.name}
+                                            </div>
+                                        </div>
+                                        <div className="col my-md-3">
+                                            <div className="">
+                                                Input: {superMove.input}
+                                            </div>
+                                        </div>
+                                        <div className="col my-md-3">
+                                            <div className="">
+                                                Startup: {superMove.startup}
+                                            </div>
+                                        </div>
+                                        <div className="w-100">
+                                        </div>
+                                        <div className="col my-md-3">
+                                            <div className="">
+                                                Recovery: {superMove.recovery}
+                                            </div>
+                                        </div>
+                                        <div className="col my-md-3">
+                                            <div className="">
+                                                Advantage: {superMove.advantage}
+                                            </div>
+                                        </div>                                    
+                                        <div className="col my-md-3">
+                                            <div className="">
+                                                Immunity: {superMove.immune_to}
+                                            </div>
+                                        </div>
+                                        <div className="w-100"></div>
+                                        <div className="col-4 my-md-3">
+                                            <div className="">
+                                                Gaurd: {superMove.gaurd}
+                                            </div>
+                                        </div>
+                                        <div className="col-4 my-md-3">
+                                            <div className="">
+                                                Meter: {superMove.meter_used}
+                                            </div>
+                                        </div>
+                                        <div className="w-100"></div>
+                                        <div className="col my-md-3"> 
+                                            <div className="text-left notes-box">
+                                                Notes: {superMove.special_notes}
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="col my-md-3">
-                                        <div className="">
-                                            Input: 
-                                            <br></br>
-                                            {superMove.input}
-                                        </div>
-                                    </div>
-                                    <div className="col my-md-3">
-                                        <div className="">
-                                            Startup: 
-                                            <br></br>
-                                            {superMove.startup}
-                                        </div>
-                                    </div>
-                                    <div className="w-100">
-                                    </div>
-                                    <div className="col my-md-3">
-                                        <div className="">
-                                            Recovery: 
-                                            <br></br>
-                                            {superMove.recovery}
-                                        </div>
-                                    </div>
-                                    <div className="col my-md-3">
-                                        <div className="">
-                                            Advantage: 
-                                            <br></br>
-                                            {superMove.advantage}
-                                        </div>
-                                    </div>                                    
-                                    <div className="col my-md-3">
-                                        <div className="">
-                                            Immunity: 
-                                            <br></br>
-                                            {superMove.immune_to}
-                                        </div>
-                                    </div>
-                                    <div className="w-100"></div>
-                                    <div className="col-4 my-md-3">
-                                        <div className="">
-                                            Gaurd: 
-                                            <br></br>
-                                            {superMove.gaurd}
-                                        </div>
-                                    </div>
-                                    <div className="col-4 my-md-3">
-                                        <div className="">
-                                            Meter: 
-                                            <br></br>
-                                            {superMove.meter_used}
-                                        </div>
-                                    </div>
-                                    <div className="w-100"></div>
-                                    <div className="col my-md-3"> 
-                                        <div className="text-left notes-box">
-                                            Notes: {superMove.special_notes}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
-                        </div>  
+                                </div> 
+                            </div>  
+                        </div>
                         <div className="row col mb-2">
                             {this.props.user && this.props.user.admin ? 
                                 <div className="float-right col">

@@ -85,71 +85,61 @@ class Normals extends Component {
             return(
                 <div key={index}>
                     <div className="normal-move container">
-                        <div className="row mt-1">
+                        <div className="row mt-1 justify-content-center">
                             { normal.picture.url ? 
-                                <div className="col-4 d-none d-sm-block">
-                                    <img className="normal img-fluid" src={normal.picture.url}  alt="normal"></img>
+                                    <div className="col-4 d-none d-sm-block">
+                                        <img className="normal img-fluid" src={normal.picture.url}  alt="normal"></img>
+                                    </div>
+                                    :
+                                    <div className="col-4 d-none d-sm-block">
+                                        <img className="normal img-fluid" src='/question.png'  alt="missing"></img>
+                                    </div>
+                                }
+                        </div>
+                        <div className="col">
+                            <div className="row mt-1 text-left">                                 
+                                <div className="col">
+                                    <div className="row mx-md-3">
+                                        <div className="col my-lg-4 my-md-3">
+                                            <div className="">
+                                                Input: {normal.input}
+                                            </div>
+                                        </div>
+                                        <div className="col my-lg-4 my-md-3">
+                                            <div className="">
+                                                Startup Frames: {normal.startup}
+                                            </div>
+                                        </div>
+                                        <div className="col my-lg-4 my-md-3">
+                                            <div className="">
+                                                Active Frames: {normal.active}
+                                            </div>
+                                        </div>  
+                                        <div className="w-100">
+                                        </div>
+                                        <div className="col my-lg-4 my-md-3">
+                                            <div className="">
+                                                Recovery Frames: {normal.recovery}
+                                            </div>
+                                        </div>
+                                        <div className="col my-lg-4 my-md-3">
+                                            <div className="">
+                                                Advantage Frames: {normal.advantage}
+                                            </div>
+                                        </div>
+                                        <div className="col my-lg-4 my-md-3">
+                                            <div className="">
+                                                Gaurd: {normal.gaurd}
+                                            </div>
+                                        </div>
+                                        <div className="w-100"></div>
+                                        <div className="col">
+                                            <div className="text-left notes-box">
+                                                Notes: {normal.special_notes}
+                                            </div>
+                                        </div>
+                                    </div>     
                                 </div>
-                                :
-                                <div className="col-4 d-none d-sm-block">
-                                    <img className="normal img-fluid" src='/question.png'  alt="missing"></img>
-                                </div>
-                            }
-                                          
-                            <div className="col">
-                                <div className="row">
-                                    <div className="col my-lg-4 my-md-3">
-                                        <div className="">
-                                            Input: 
-                                            <br></br>
-                                            {normal.input}
-                                        </div>
-                                    </div>
-                                    <div className="col my-lg-4 my-md-3">
-                                        <div className="">
-                                            Startup Frames:  
-                                            <br></br>
-                                            {normal.startup}
-                                        </div>
-                                    </div>
-                                    <div className="col my-lg-4 my-md-3">
-                                        <div className="">
-                                            Active Frames:  
-                                            <br></br>
-                                            {normal.active}
-                                        </div>
-                                    </div>  
-                                    <div className="w-100">
-                                    </div>
-                                    <div className="col my-lg-4 my-md-3">
-                                        <div className="">
-                                            Recovery Frames: 
-                                            <br></br>
-                                            {normal.recovery}
-                                        </div>
-                                    </div>
-                                    <div className="col my-lg-4 my-md-3">
-                                        <div className="">
-                                            Advantage Frames: 
-                                            <br></br>
-                                            {normal.advantage}
-                                        </div>
-                                    </div>
-                                    <div className="col my-lg-4 my-md-3">
-                                        <div className="">
-                                            Gaurd: 
-                                            <br></br>
-                                            {normal.gaurd}
-                                        </div>
-                                    </div>
-                                    <div className="w-100">
-                                    </div>
-                                    <div className="col">
-                                        <div className="text-left notes-box">
-                                            Notes: {normal.special_notes}
-                                        </div>
-                                    </div>
-                                </div>     
                             </div>
                         </div>
                         <br></br>

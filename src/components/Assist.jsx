@@ -86,7 +86,7 @@ class Assist extends Component {
             return(
                 <div key={index}>
                     <div className="assist-move container">
-                        <div className="row mt-1">
+                        <div className="row mt-1 justify-content-center">
                             { assist.picture.url ? 
                                 <div className="assist col-4 d-none d-sm-block">
                                     <img className="assist img-fluid" src={assist.picture.url}  alt="assist"></img>
@@ -96,56 +96,45 @@ class Assist extends Component {
                                     <img className="assist img-fluid" src='/question.png'  alt="missing"></img>
                                 </div>
                             }
-                            
-                            <div className="col text-left">
-                                <div className="row">
+                        </div>
+                        <div className="row mt-1 text-left">    
+                            <div className="col">
+                                <div className="row mx-md-3">
                                     <div className="col my-md-3">
-                                        <div  className="float-left">
-                                            Startup Frames:  
-                                            <br></br>
-                                            {assist.startup}
+                                        <div  className="">
+                                            Startup Frames: {assist.startup}
                                         </div>  
                                     </div>
                                     <div className="col my-md-3">
-                                        <div  className="float-left">
-                                            Blockstun Frames:  
-                                            <br></br>
-                                            {assist.blockstun}
+                                        <div  className="">
+                                            Blockstun Frames: {assist.blockstun}
                                         </div>  
                                     </div>
                                     <div className="col my-md-3">
-                                        <div  className="float-left">
-                                            Active Frames:  
-                                            <br></br>
-                                            {assist.active}
+                                        <div  className="">
+                                            Active Frames: {assist.active}
                                         </div>  
                                     </div>
                                     <div className="w-100"></div>
                                     <div className="col my-md-3">
-                                        <div  className="float-left">
-                                            OnScreen Frames:  
-                                            <br></br>
-                                            {assist.onscreen}
+                                        <div  className="">
+                                            OnScreen Frames: {assist.onscreen}
                                         </div>  
                                     </div>
                                     <div className="col my-md-3">
-                                        <div  className="float-left">
-                                            Hitstop on Block Frames:  
-                                            <br></br>
-                                            {assist.hitstop_block}
+                                        <div  className="">
+                                            Hitstop on Block Frames: {assist.hitstop_block}
                                         </div>  
                                     </div>
                                     <div className="col my-md-3">
-                                        <div  className="float-left">
-                                            Hitstop on Hit Frames:  
-                                            <br></br>
-                                            {assist.hitstop_hit}
+                                        <div  className="">
+                                            Hitstop on Hit Frames: {assist.hitstop_hit}
                                         </div>  
                                     </div>
                                     <div className="w-100"></div>
                                     <div className="col my-md-3">
                                         <div  className="text-left notes-box">
-                                            Notes:  
+                                            Notes: 
                                             <br></br>
                                             {assist.special_notes}
                                         </div>  

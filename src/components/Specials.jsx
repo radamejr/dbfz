@@ -83,7 +83,7 @@ class Specials extends Component {
             return(
                 <div key={index}>
                     <div className="special-move container">
-                        <div className="row mt-1">
+                        <div className="row mt-1 justify-content-center">
                             { special.picture.url ? 
                                 <div className="col-4 d-none d-sm-block">
                                     <img className="special img-fluid" src={special.picture.url}  alt="special"></img>
@@ -93,21 +93,18 @@ class Specials extends Component {
                                     <img className="special img-fluid" src='/question.png'  alt="missing"></img>
                                 </div>
                             }
-
+                        </div>
+                        <div className="row mt-1 text-left">        
                             <div className="col">
-                                <div className="row">
+                                <div className="row mx-md-3 mx-lg-5">
                                     <div className="col mb-xl-5 my-lg-4 my-md-2">
                                         <div className="">
-                                            Move Name: 
-                                            <br></br>
-                                            {special.name}
+                                            Move Name: {special.name}
                                         </div>
                                     </div>
                                     <div className="col mb-xl-5 my-lg-4 my-md-2">
                                         <div className="">
-                                            Move Input: 
-                                            <br></br>
-                                            {special.input}
+                                            Move Input: {special.input}
                                         </div>
                                     </div>
                                     <div className="w-100">
@@ -115,7 +112,6 @@ class Specials extends Component {
                                     <div className="col mt-xl-5 my-lg-4 my-md-2">
                                         <div className="text-left notes-box">
                                             Notes: 
-                                            <br></br>
                                             {special.special_notes}
                                         </div>
                                     </div>
