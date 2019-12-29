@@ -122,6 +122,13 @@ class Variants extends Component {
                                 <div className="w-100"></div>
                                 <div className="col my-xl-5 my-lg-4 my-md-3">
                                     <div  className="">
+                                    Recovery:  
+                                    <br></br>
+                                    {variant.recovery !== null ? <div>{variant.recovery}</div> : "N/A"}
+                                    </div>
+                                </div>
+                                <div className="col my-xl-5 my-lg-4 my-md-3">
+                                    <div  className="">
                                     Advantage:  
                                     <br></br>
                                     {variant.advantage !== null ? <div>{variant.advantage}</div> : "N/A"}
@@ -134,7 +141,18 @@ class Variants extends Component {
                                     {variant.gaurd}
                                     </div>
                                 </div>
-                                <div className="col my-xl-5 my-lg-4 my-md-3">
+                            </div>
+                        </div>
+                        <div className="row col mb-2">
+                            <div  className="notes-box text-left col-6">
+                                Notes:  
+                                <br></br>
+                                {variant.special_notes}
+                            </div>
+                            { variant.meter_used !== 0
+                            ?
+                            <div>
+                                <div className="col">
                                     <div  className="">
                                     Meter Used:  
                                     <br></br>
@@ -142,13 +160,9 @@ class Variants extends Component {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="row col mb-2">
-                            <div  className="notes-box text-left">
-                                Notes:  
-                                <br></br>
-                                {variant.special_notes}
-                            </div>
+                            :
+                            null
+                            }
                         </div>
                         <div className="row col mb-2">
                             {this.props.user && this.props.user.admin ? 
