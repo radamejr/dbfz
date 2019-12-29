@@ -31,6 +31,20 @@ class Variants extends Component {
         this.setState({editModalOpen: !editModalOpen})
     }
 
+    deleteButtonClick = (id) => {
+
+        this.deleteVariant(id)
+    }
+
+     deleteVariant = (id) => {
+        let {  special_id , params  } = this.props
+        
+        axios.delete(specialVariants(params.id, special_id, id), {withCredentials: true})
+        .then((result) => {
+            window.location.reload(false);
+        });
+    }
+
     editButtonClicked = (id) => {
         
         this.setState({variant_index: id})
@@ -138,6 +152,7 @@ class Variants extends Component {
                             {this.props.user && this.props.user.admin ? 
                             <div className="float-right col">
                                 <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Variant</button>
+                                <button className="btn btn-danger btn-sm float-left" onClick={ (event) => window.confirm("Are you sure you want to delete that?") && this.deleteButtonClick(variant.id)}>Delete Variant</button>  
                             </div> 
                             : null}  
                         </div>

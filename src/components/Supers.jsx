@@ -34,6 +34,20 @@ class Supers extends Component {
         this.toggleEditModal()
     }
 
+    deleteButtonClick = (id) => {
+
+        this.deleteSuper(id)
+    }
+
+     deleteSuper = (id) => {
+        let {  params  } = this.props
+        
+        axios.delete(characterSupers(params.id, id), {withCredentials: true})
+        .then((result) => {
+            window.location.reload(false);
+        });
+    }
+
     componentDidMount = () => {
 
         this.setState({ supers: [], params: this.props.params.id}); 
@@ -153,6 +167,7 @@ class Supers extends Component {
                             {this.props.user && this.props.user.admin ? 
                                 <div className="float-right col">
                                     <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Super</button> 
+                                    <button className="btn btn-danger btn-sm float-left" onClick={ (event) => window.confirm("Are you sure you want to delete that?") && this.deleteButtonClick(superMove.id)}>Delete Super</button>  
                                 </div>
                             : null} 
                         </div>                               

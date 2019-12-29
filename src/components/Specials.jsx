@@ -49,7 +49,21 @@ class Specials extends Component {
         }
         
     }
-   
+    
+    deleteButtonClick = (id) => {
+
+        this.deleteSpecial(id)
+    }
+
+     deleteSpecial = (id) => {
+        let {  params  } = this.props
+        
+        axios.delete(characterSpecials(params.id, id), {withCredentials: true})
+        .then((result) => {
+            window.location.reload(false);
+        });
+    }
+
     async getSpecials() {
         let { params } = this.props
         try {
@@ -109,6 +123,7 @@ class Specials extends Component {
                                 {this.props.user && this.props.user.admin ? 
                                 <div className="float-right col">
                                     <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Special</button> 
+                                    <button className="btn btn-danger btn-sm float-left" onClick={ (event) => window.confirm("Are you sure you want to delete that?") && this.deleteButtonClick(special.id)}>Delete Special</button>  
                                 </div>
                                 : null} 
                                 <br></br>

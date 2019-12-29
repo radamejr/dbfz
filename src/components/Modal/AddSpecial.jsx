@@ -22,7 +22,7 @@ class AddSpecial extends Component {
         let { params } = this.props
         
         this.setState({isLoading: true})
-        axios.post(characterSpecials(params), { input, name, special_notes, picture })
+        axios.post(characterSpecials(params), { input, name, special_notes, picture }, {withCredentials: true})
         .then((result) => {
             window.location.reload(false);
         });

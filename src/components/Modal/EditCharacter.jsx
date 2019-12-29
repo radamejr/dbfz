@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { characterAPI } from '../../helpers/urlFor';
+import { charactersAPI } from '../../helpers/urlFor';
 
 class EditCharacter extends Component {
     constructor () {
@@ -64,7 +64,7 @@ class EditCharacter extends Component {
         let { params } = this.props
         
         this.setState({isLoading: true})
-        axios.put(characterAPI(params.id), {name, dlc, discord_link, combo_doc_link, icon, character_picture, twitter_tag, about })
+        axios.put(charactersAPI(params.id), {name, dlc, discord_link, combo_doc_link, icon, character_picture, twitter_tag, about }, {withCredentials: true})
         .then((result) => {
            window.location.reload(false);
         });

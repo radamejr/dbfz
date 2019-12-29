@@ -29,7 +29,7 @@ class AddNormal extends Component {
         let { params } = this.props
         
         this.setState({isLoading: true})
-        axios.post(characterNormals(params), {input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, move_type })
+        axios.post(characterNormals(params), {input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, move_type }, {withCredentials: true})
         .then((result) => {
             window.location.reload(false);
         });

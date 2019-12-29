@@ -33,10 +33,22 @@ class Normals extends Component {
         this.setState({normal_index: id})
         
         this.toggleEditModal()
-        
-
     }
     
+    deleteButtonClick = (id) => {
+
+        this.deleteNormal(id)
+    }
+
+     deleteNormal = (id) => {
+        let {  params  } = this.props
+        
+        axios.delete(characterNormals(params.id, id), {withCredentials: true})
+        .then((result) => {
+            window.location.reload(false);
+        });
+    }
+
     componentDidMount = () => {
         
         this.setState({ normals: [], params: this.props.params.id});
@@ -144,8 +156,10 @@ class Normals extends Component {
                         <div className="row col mb-2 ">                               
                             {this.props.user && this.props.user.admin ? 
                             <div className="float-right col">
-                                <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Normal</button> 
+                                <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Normal</button>
+                                <button className="btn btn-danger btn-sm float-left" onClick={ (event) => window.confirm("Are you sure you want to delete that?") && this.deleteButtonClick(normal.id)}>Delete Normal</button>  
                             </div>
+                            
                             : null} 
                         </div>                               
                     </div>                     

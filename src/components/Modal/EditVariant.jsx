@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { specialVariant } from '../../helpers/urlFor';
+import { specialVariants } from '../../helpers/urlFor';
 
 class EditVariant extends Component {
     constructor () {
@@ -50,7 +50,7 @@ class EditVariant extends Component {
         let { params, special_id } = this.props
         
         this.setState({isLoading: true})
-        axios.put(specialVariant(params, special_id, variant_id), { input_type, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used })
+        axios.put(specialVariants(params, special_id, variant_id), { input_type, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used }, {withCredentials: true})
         .then((result) => {
             window.location.reload(false);
         });

@@ -26,7 +26,7 @@ class AddAssist extends Component {
         let { params } = this.props
         
         this.setState({isLoading: true})
-        axios.post(characterAssists(params.id), { input, startup, active, onscreen, hitstop_block, hitstop_hit, blockstun, special_notes, picture })
+        axios.post(characterAssists(params.id), { input, startup, active, onscreen, hitstop_block, hitstop_hit, blockstun, special_notes, picture }, {withCredentials: true})
         .then((result) => {
             window.location.reload(false);
         });

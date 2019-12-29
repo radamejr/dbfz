@@ -30,7 +30,7 @@ class AddCharacter extends Component {
         const { name, dlc, discord_link, combo_doc_link, icon, character_picture, twitter_tag, about} = this.state;
         
         this.setState({isLoading: true})
-        axios.post(charactersAPI(), {name, dlc, discord_link, combo_doc_link, icon, character_picture, twitter_tag, about })
+        axios.post(charactersAPI(), {name, dlc, discord_link, combo_doc_link, icon, character_picture, twitter_tag, about }, {withCredentials: true})
         .then((result) => {
             window.location.reload(false);
         });

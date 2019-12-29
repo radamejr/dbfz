@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { characterAPI } from './../helpers/urlFor';
+import { charactersAPI } from './../helpers/urlFor';
 import axios from 'axios';
 import Normals from './Normals';
 import Specials from './Specials';
@@ -53,7 +53,7 @@ class Character extends Component {
         let { match: { params } } = this.props;
         
        try {
-          const response = await axios.get(characterAPI(params.id));
+          const response = await axios.get(charactersAPI(params.id));
             this.setState({
               character: response.data,
               picture: response.data.character_picture.url,

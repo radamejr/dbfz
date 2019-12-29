@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { characterSuper } from '../../helpers/urlFor';
+import { characterSupers } from '../../helpers/urlFor';
 
 class EditSuper extends Component {
     constructor () {
@@ -51,7 +51,7 @@ class EditSuper extends Component {
         let { params } = this.props
 
         this.setState({isLoading: true})
-        axios.put(characterSuper(params, id), { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used })
+        axios.put(characterSupers(params, id), { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used }, {withCredentials: true})
         .then((result) => {
             window.location.reload(false);
         });

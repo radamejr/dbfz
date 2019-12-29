@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { characterNormal } from '../../helpers/urlFor';
+import { characterNormals } from '../../helpers/urlFor';
 
 class EditNormal extends Component {
     constructor () {
@@ -62,7 +62,7 @@ class EditNormal extends Component {
         let { params } = this.props
 
         this.setState({isLoading: true})
-        axios.put(characterNormal(params, id), {input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, move_type, picture })
+        axios.put(characterNormals(params, id), {input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, move_type, picture }, {withCredentials: true})
         .then((result) => {
             window.location.reload(false);
         });

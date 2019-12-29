@@ -30,7 +30,7 @@ class AddSuper extends Component {
         let { params } = this.props
         
         this.setState({isLoading: true})
-        axios.post(characterSupers(params), { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used })
+        axios.post(characterSupers(params), { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used }, {withCredentials: true})
         .then((result) => {
             window.location.reload(false);
         });
