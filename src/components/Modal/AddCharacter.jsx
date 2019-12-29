@@ -15,6 +15,7 @@ class AddCharacter extends Component {
             icon: '',
             character_picture: '',
             twitter_tag: '',
+            about: '',
             isLoading: false
 
 
@@ -26,10 +27,10 @@ class AddCharacter extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { name, dlc, discord_link, combo_doc_link, icon, character_picture, twitter_tag} = this.state;
+        const { name, dlc, discord_link, combo_doc_link, icon, character_picture, twitter_tag, about} = this.state;
         
         this.setState({isLoading: true})
-        axios.post(charactersAPI(), {name, dlc, discord_link, combo_doc_link, icon, character_picture, twitter_tag })
+        axios.post(charactersAPI(), {name, dlc, discord_link, combo_doc_link, icon, character_picture, twitter_tag, about })
         .then((result) => {
             window.location.reload(false);
         });
