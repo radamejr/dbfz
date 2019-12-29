@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { characterAssist } from '../../helpers/urlFor';
+import { characterAssists } from '../../helpers/urlFor';
 
 class EditAssist extends Component {
     constructor () {
@@ -27,7 +27,7 @@ class EditAssist extends Component {
         let { params } = this.props
         
         this.setState({isLoading: true})
-        axios.put(characterAssist(params.id, id), { input, startup, active, onscreen, hitstop_block, hitstop_hit, blockstun, special_notes, picture })
+        axios.put(characterAssists(params.id, id), { input, startup, active, onscreen, hitstop_block, hitstop_hit, blockstun, special_notes, picture }, {withCredentials: true})
         .then((result) => {
             window.location.reload(false);
         });

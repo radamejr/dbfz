@@ -33,10 +33,21 @@ class Assist extends Component {
         this.setState({assist_index: id})
         
         this.toggleEditModal()
-        
-
     }
     
+    deleteButtonClick = (id) => {
+        this.deleteAssist(id)
+    }
+
+     deleteAssist = (id) => {
+        let {  params  } = this.props
+        
+        axios.delete(characterAssists(params.id, id), {withCredentials: true})
+        .then((result) => {
+            window.location.reload(false);
+        });
+    }
+
     componentDidMount = () => {
         
         this.setState({ assists: [], params: this.props.params});
@@ -141,15 +152,18 @@ class Assist extends Component {
                                     </div>
                                 </div>              
                             </div>
-                            {this.props.user && this.props.user.admin 
-                            ? 
-                            <div className="float-right col">
-                                <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Assist</button> 
-                            </div>
-                            : 
-                            null} 
-                        </div>
                              
+                        </div>
+                        {this.props.user && this.props.user.admin 
+                        ? 
+                        <div className="float-right col">
+                            <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Assist</button> 
+                            <button className="btn btn-danger btn-sm float-left" onClick={ (event) => window.confirm("Are you sure you want to delete that?") && this.deleteButtonClick(assist.id)}>Delete Assist</button>  
+                        </div>
+                        : 
+                        null}
+                        <br></br>   
+                        <br></br>      
                     </div>   
            
                 </div>
