@@ -52,7 +52,7 @@ class EditVariant extends Component {
         this.setState({isLoading: true})
         axios.put(specialVariants(params, special_id, variant_id), { input_type, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used }, {withCredentials: true})
         .then((result) => {
-            //window.location.reload(false);
+            window.location.reload(false);
         });
         
         

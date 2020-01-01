@@ -47,7 +47,7 @@ class EditSpecial extends Component {
         this.setState({isLoading: true})
         axios.put(characterSpecials(params, special_id), { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used }, {withCredentials: true})
         .then((result) => {
-            //window.location.reload(false);
+            window.location.reload(false);
         });
         
         
