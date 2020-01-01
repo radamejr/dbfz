@@ -107,7 +107,7 @@ class Variants extends Component {
                                         </div>
                                         <div className="col my-xl-5 my-lg-4 my-md-3">
                                             <div  className="">
-                                            Startup: {variant.startup}
+                                            First Active: {variant.startup}
                                             </div>
                                         </div>
                                         <div className="col my-xl-5 my-lg-4 my-md-3">

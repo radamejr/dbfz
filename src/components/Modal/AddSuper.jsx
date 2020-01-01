@@ -95,7 +95,7 @@ class AddSuper extends Component {
                         </div>
                     </div>
                     <div className="category">
-                    Startup Frames:
+                    First Active Name:
                         <div className="form-input">
                             <input name="startup"
                                 type="text"

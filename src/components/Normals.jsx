@@ -107,7 +107,7 @@ class Normals extends Component {
                                         </div>
                                         <div className="col my-lg-4 my-md-3">
                                             <div className="">
-                                                Startup Frames: {normal.startup}
+                                                First Active Frame: {normal.startup}
                                             </div>
                                         </div>
                                         <div className="col my-lg-4 my-md-3">

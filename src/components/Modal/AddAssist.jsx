@@ -71,7 +71,7 @@ class AddAssist extends Component {
                         </div>
                     </div>
                     <div className="category">
-                    Startup Frames:
+                    First Active:
                         <div className="form-input">
                             <input name="startup"
                                 type="text"

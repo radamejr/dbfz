@@ -115,7 +115,7 @@ class EditSuper extends Component {
                     </div>
                 </div>
                 <div className="category">
-                Startup Frames:
+                First Active Frame:
                     <div className="form-input">
                         <input name="startup"
                             type="text"

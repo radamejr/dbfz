@@ -109,7 +109,7 @@ class Supers extends Component {
                                         </div>
                                         <div className="col my-md-3">
                                             <div className="">
-                                                Startup: {superMove.startup}
+                                                First Active: {superMove.startup}
                                             </div>
                                         </div>
                                         <div className="w-100">

@@ -102,7 +102,7 @@ class Assist extends Component {
                                 <div className="row mx-md-3">
                                     <div className="col my-md-3">
                                         <div  className="">
-                                            Startup Frames: {assist.startup}
+                                            First Active: {assist.startup}
                                         </div>  
                                     </div>
                                     <div className="col my-md-3">
