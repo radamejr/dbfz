@@ -64,7 +64,7 @@ class EditNormal extends Component {
         this.setState({isLoading: true})
         axios.put(characterNormals(params, id), {input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, move_type, picture }, {withCredentials: true})
         .then((result) => {
-            window.location.reload(false);
+            //window.location.reload(false);
         });
         
         
