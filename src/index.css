@@ -32,7 +32,6 @@ code {
 }
 
 .character-selector {
-  display: inline-block;
   list-style: none;
   overflow: hidden;
 }
@@ -45,7 +44,7 @@ code {
 }
 
 .character-selector > li {
-  float: left;
+  display: inline-block;
   margin-left: -1em;
 }
 
