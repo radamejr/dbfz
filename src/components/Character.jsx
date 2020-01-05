@@ -13,6 +13,8 @@ import EditCharacter from './Modal/EditCharacter'
 class Character extends Component {
     constructor () {
       super();
+      this.toggleModal = this.toggleModal.bind(this);
+      this.getCharacter = this.getCharacter.bind(this);
       this.state = {
         character: {},
         isOpen: false,
@@ -123,7 +125,8 @@ class Character extends Component {
                     character_icon={icon}
                     twitter_tag={character.twitter_tag}
                     about={character.about}
-                    
+                    getCharacter={this.getCharacter}
+                    toggleModal={this.toggleModal}
                 />
                 
               </Modal>
