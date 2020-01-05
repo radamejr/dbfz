@@ -28,7 +28,8 @@ class AddAssist extends Component {
         this.setState({isLoading: true})
         axios.post(characterAssists(params.id), { input, startup, active, onscreen, hitstop_block, hitstop_hit, blockstun, special_notes, picture }, {withCredentials: true})
         .then((result) => {
-            window.location.reload(false);
+            this.props.getAssists();
+            this.props.toggleAddModal();
         });
         
         

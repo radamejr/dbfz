@@ -9,6 +9,9 @@ import EditNormal from './Modal/EditNormal';
 class Normals extends Component {
     constructor () {
         super();
+        this.toggleAddModal = this.toggleAddModal.bind(this);
+        this.toggleEditModal = this.toggleEditModal.bind(this);
+        this.getNormals = this.getNormals.bind(this);
         this.state = {
             params: '',
             normals: [],
@@ -40,7 +43,7 @@ class Normals extends Component {
         this.deleteNormal(id)
     }
 
-     deleteNormal = (id) => {
+    deleteNormal = (id) => {
         let {  params  } = this.props
         
         axios.delete(characterNormals(params.id, id), {withCredentials: true})
@@ -183,8 +186,9 @@ class Normals extends Component {
                         <button className="btn btn-primary float-right" onClick={this.toggleAddModal}>cancel</button>
                     </Modal.Header>
                     <AddNormal 
-                        
                         params={params}
+                        getNormals={this.getNormals}
+                        toggleAddModal={this.toggleAddModal}
                         />
                     
                 </Modal>
@@ -199,6 +203,8 @@ class Normals extends Component {
                     <EditNormal 
                         params={params}
                         props={normals[normal_index]}
+                        getNormals={this.getNormals}
+                        toggleEditModal={this.toggleEditModal}
                         />
                     
                 </Modal>           

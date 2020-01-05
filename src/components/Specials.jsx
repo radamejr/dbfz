@@ -9,6 +9,9 @@ import EditSpecial from './Modal/EditSpecial';
 class Specials extends Component {
     constructor () {
         super();
+        this.toggleAddModal = this.toggleAddModal.bind(this);
+        this.toggleEditModal = this.toggleEditModal.bind(this);
+        this.getSpecials = this.getSpecials.bind(this);
         this.state = {
             params: '',
             specials: [],
@@ -165,6 +168,8 @@ class Specials extends Component {
                 </Modal.Header>
                 <AddSpecial 
                 params={params}
+                getSpecials={this.getSpecials}
+                toggleAddModal={this.toggleAddModal}
                 />
                 
             </Modal>
@@ -179,6 +184,8 @@ class Specials extends Component {
                 <EditSpecial 
                 params={params}
                 props={specials[special_index]}
+                getSpecials={this.getSpecials}
+                toggleEditModal={this.toggleEditModal}
                 />
                 
             </Modal>
