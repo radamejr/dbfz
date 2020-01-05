@@ -24,7 +24,8 @@ class AddSpecial extends Component {
         this.setState({isLoading: true})
         axios.post(characterSpecials(params), { input, name, special_notes, picture }, {withCredentials: true})
         .then((result) => {
-            //window.location.reload(false);
+            this.props.getSpecials();
+            this.props.toggleAddModal();
         });
         
         

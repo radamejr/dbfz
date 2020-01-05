@@ -66,7 +66,8 @@ class EditCharacter extends Component {
         this.setState({isLoading: true})
         axios.put(charactersAPI(params.id), {name, dlc, discord_link, combo_doc_link, icon, character_picture, twitter_tag, about }, {withCredentials: true})
         .then((result) => {
-           window.location.reload(false);
+           this.props.getCharacter()
+           this.props.toggleModal()
         });
         
         

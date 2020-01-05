@@ -8,6 +8,9 @@ import EditSuper from './Modal/EditSuper'
 class Supers extends Component {
     constructor () {
         super();
+        this.toggleAddModal = this.toggleAddModal.bind(this);
+        this.toggleEditModal = this.toggleEditModal.bind(this);
+        this.getSupers = this.getSupers.bind(this);
         this.state = {
             params: '',
             supers: [],
@@ -188,6 +191,8 @@ class Supers extends Component {
                 </Modal.Header>
                 <AddSuper 
                     params={params}
+                    getSupers={this.getSupers}
+                    toggleAddModal={this.toggleAddModal}
                 />
                 
             </Modal>
@@ -203,6 +208,8 @@ class Supers extends Component {
                 <EditSuper 
                     params={params}
                     props={supers[super_index]}
+                    getSupers={this.getSupers}
+                    toggleEditModal={this.toggleEditModal}
                 />
                 
             </Modal>

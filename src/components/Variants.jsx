@@ -10,6 +10,9 @@ import EditVariant from './Modal/EditVariant'
 class Variants extends Component {
     constructor() {
         super();
+        this.toggleAddModal = this.toggleAddModal.bind(this);
+        this.toggleEditModal = this.toggleEditModal.bind(this);
+        this.getVariants = this.getVariants.bind(this);
         this.state = {
             params: '',
             special_id: '',
@@ -198,6 +201,8 @@ class Variants extends Component {
                     <AddVariant 
                     params={params}
                     special_id={special_id}
+                    getVariants={this.getVariants}
+                    toggleAddModal={this.toggleAddModal}
                 
                 />
                 
@@ -214,6 +219,8 @@ class Variants extends Component {
                 params={params}
                 props={variants[variant_index]}
                 special_id={special_id}
+                getVariants={this.getVariants}
+                toggleEditModal={this.toggleEditModal}
                 />
                 
             </Modal>

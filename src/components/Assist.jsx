@@ -9,6 +9,9 @@ import EditAssist from './Modal/EditAssist'
 class Assist extends Component {
     constructor () {
         super();
+        this.toggleAddModal = this.toggleAddModal.bind(this);
+        this.toggleEditModal = this.toggleEditModal.bind(this);
+        this.getAssists = this.getAssists.bind(this);
         this.state = {
             params: '',
             assists: [],
@@ -182,8 +185,9 @@ class Assist extends Component {
                         <button className="btn btn-primary float-right" onClick={this.toggleAddModal}>cancel</button>
                     </Modal.Header>
                     <AddAssist 
-                        
                         params={params}
+                        getAssists={this.getAssists}
+                        toggleAddModal={this.toggleAddModal}
                         />
                     
                 </Modal>
@@ -198,6 +202,8 @@ class Assist extends Component {
                     <EditAssist 
                         params={params}
                         props={assists[assist_index]}
+                        getAssists={this.getAssists}
+                        toggleEditModal={this.toggleEditModal}
                         />
                     
                 </Modal>

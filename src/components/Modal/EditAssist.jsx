@@ -29,7 +29,8 @@ class EditAssist extends Component {
         this.setState({isLoading: true})
         axios.put(characterAssists(params.id, id), { input, startup, active, onscreen, hitstop_block, hitstop_hit, blockstun, special_notes, picture }, {withCredentials: true})
         .then((result) => {
-            window.location.reload(false);
+            this.props.getAssists()
+            this.props.toggleEditModal()
         });
         
         
