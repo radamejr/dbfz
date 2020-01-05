@@ -31,7 +31,7 @@ class AddNormal extends Component {
         this.setState({isLoading: true})
         axios.post(characterNormals(params), {input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, move_type }, {withCredentials: true})
         .then((result) => {
-            window.location.reload(false);
+            //window.location.reload(false);
         });
         
         

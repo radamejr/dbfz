@@ -32,7 +32,7 @@ class AddSuper extends Component {
         this.setState({isLoading: true})
         axios.post(characterSupers(params), { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used }, {withCredentials: true})
         .then((result) => {
-            window.location.reload(false);
+            //window.location.reload(false);
         });
         
         
@@ -95,7 +95,7 @@ class AddSuper extends Component {
                         </div>
                     </div>
                     <div className="category">
-                    First Active Name:
+                    First Active Frame:
                         <div className="form-input">
                             <input name="startup"
                                 type="text"
