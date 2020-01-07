@@ -119,11 +119,6 @@ class Supers extends Component {
                                         </div>
                                         <div className="col my-md-3">
                                             <div className="">
-                                                Recovery: {superMove.recovery}
-                                            </div>
-                                        </div>
-                                        <div className="col my-md-3">
-                                            <div className="">
                                                 Advantage: {superMove.advantage}
                                             </div>
                                         </div>                                    
@@ -141,6 +136,16 @@ class Supers extends Component {
                                         <div className="col-4 my-md-3">
                                             <div className="">
                                                 Meter: {superMove.meter_used}
+                                            </div>
+                                        </div>
+                                        <div className="col-4 my-md-3">
+                                            <div className="">
+                                                Raw Damage: {superMove.raw_damage}
+                                            </div>
+                                        </div>
+                                        <div className="col-4 my-md-3">
+                                            <div className="">
+                                                Scaled Damage: {superMove.scaled_damage}
                                             </div>
                                         </div>
                                         <div className="w-100"></div>

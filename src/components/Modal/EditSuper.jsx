@@ -180,25 +180,25 @@ class EditSuper extends Component {
                     </div>
                 </div>
                 <div className="category">
-                    Raw Damage:
-                        <div className="form-input">
-                            <input name="raw_damage"
-                                type="text"
-                                defaultValue={this.state.raw_damage}
-                                onChange={this.handleChange}
-                            />
-                        </div>
+                Raw Damage:
+                    <div className="form-input">
+                        <input name="raw_damage"
+                            type="text"
+                            defaultValue={this.state.raw_damage}
+                            onChange={this.handleChange}
+                        />
                     </div>
-                    <div>
-                    Scaled Damage:
-                        <div className="form-input">
-                            <input name="scaled_damage"
-                                type="text"
-                                defaultValue={this.state.scaled_damage}
-                                onChange={this.handleChange}
-                            />
-                        </div>
+                </div>
+                <div>
+                Scaled Damage:
+                    <div className="form-input">
+                        <input name="scaled_damage"
+                            type="text"
+                            defaultValue={this.state.scaled_damage}
+                            onChange={this.handleChange}
+                        />
                     </div>
+                </div>
                 <div className="category">
                 Meter Used:
                     <div className="form-input">
@@ -209,6 +209,7 @@ class EditSuper extends Component {
                         />
                     </div>
                 </div>
+                <br></br>
                 <div className="category">
                 Special Notes:
                     <div className="form-input">

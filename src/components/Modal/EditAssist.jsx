@@ -122,7 +122,7 @@ class EditAssist extends Component {
                         </div>
                     </div>
                     <div className="category">
-                    Hitstop On Block:
+                    Hitstop On Block/Hit:
                         <div className="form-input">
                             <input name="hitstop"
                                 type="text"
@@ -132,7 +132,7 @@ class EditAssist extends Component {
                         </div>
                     </div>
                     <div className="category">
-                    Histop On Hit:
+                    Histun:
                         <div className="form-input">
                             <input name="hit_stun"
                                 type="text"
