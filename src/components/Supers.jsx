@@ -127,12 +127,12 @@ class Supers extends Component {
                                                 Immunity: {superMove.immune_to}
                                             </div>
                                         </div>
-                                        <div className="w-100"></div>
                                         <div className="col-4 my-md-3">
                                             <div className="">
                                                 Gaurd: {superMove.gaurd}
                                             </div>
                                         </div>
+                                        <div className="w-100"></div>
                                         <div className="col-4 my-md-3">
                                             <div className="">
                                                 Meter: {superMove.meter_used}
