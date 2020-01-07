@@ -10,8 +10,8 @@ class AddAssist extends Component {
             startup: '',
             active: '',
             onscreen: '',
-            hitstop_block: '',
-            hitstop_hit: '',
+            hitstop: '',
+            hit_stun: '',
             blockstun: '',
             special_notes: '',
             picture: '',
@@ -22,11 +22,11 @@ class AddAssist extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { input, startup, active, onscreen, hitstop_block, hitstop_hit, blockstun, special_notes, picture } = this.state;
+        const { input, startup, active, onscreen, hitstop, hit_stun, blockstun, special_notes, picture } = this.state;
         let { params } = this.props
         
         this.setState({isLoading: true})
-        axios.post(characterAssists(params.id), { input, startup, active, onscreen, hitstop_block, hitstop_hit, blockstun, special_notes, picture }, {withCredentials: true})
+        axios.post(characterAssists(params.id), { input, startup, active, onscreen, hitstop, hit_stun, blockstun, special_notes, picture }, {withCredentials: true})
         .then((result) => {
             this.props.getAssists();
             this.props.toggleAddModal();
@@ -102,21 +102,21 @@ class AddAssist extends Component {
                         </div>
                     </div>
                     <div className="category">
-                    Hitstop On Block:
+                    Hitstop On Block/Hit:
                         <div className="form-input">
-                            <input name="hitstop_block"
+                            <input name="hitstop"
                                 type="text"
-                                defaultValue={this.state.hitstop_block}
+                                defaultValue={this.state.hitstop}
                                 onChange={this.handleChange}
                             />
                         </div>
                     </div>
                     <div className="category">
-                    Histop On Hit:
+                    Histun:
                         <div className="form-input">
-                            <input name="hitstop_hit"
+                            <input name="hit_stun"
                                 type="text"
-                                defaultValue={this.state.hitstop_hit}
+                                defaultValue={this.state.hit_stun}
                                 onChange={this.handleChange}
                             />
                         </div>

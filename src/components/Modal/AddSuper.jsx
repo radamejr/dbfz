@@ -19,6 +19,8 @@ class AddSuper extends Component {
             special_notes: '',
             meter_used: '',
             picture: '',
+            raw_damage: '',
+            scaled_damage: '',
             isLoading: false
         }
         
@@ -26,11 +28,11 @@ class AddSuper extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used } = this.state;
+        const { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used, raw_damage, scaled_damage } = this.state;
         let { params } = this.props
         
         this.setState({isLoading: true})
-        axios.post(characterSupers(params), { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used }, {withCredentials: true})
+        axios.post(characterSupers(params), { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used, raw_damage, scaled_damage }, {withCredentials: true})
         .then((result) => {
             this.props.getSupers();
             this.props.toggleAddModal();
@@ -146,16 +148,25 @@ class AddSuper extends Component {
                         </div>
                     </div>
                     <div className="category">
-                    Properties:
+                    Raw Damage:
                         <div className="form-input">
-                            <input name="properties"
+                            <input name="raw_damage"
                                 type="text"
-                                defaultValue={this.state.properties}
+                                defaultValue={this.state.raw_damage}
                                 onChange={this.handleChange}
                             />
                         </div>
                     </div>
-                    
+                    <div>
+                    Scaled Damage:
+                        <div className="form-input">
+                            <input name="scaled_damage"
+                                type="text"
+                                defaultValue={this.state.scaled_damage}
+                                onChange={this.handleChange}
+                            />
+                        </div>
+                    </div>
                     <div className="category">
                     Immune To:
                         <div className="form-input">
