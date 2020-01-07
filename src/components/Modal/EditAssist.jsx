@@ -10,8 +10,8 @@ class EditAssist extends Component {
             startup: '',
             active: '',
             onscreen: '',
-            hitstop_block: '',
-            hitstop_hit: '',
+            hitstop: '',
+            hit_stun: '',
             blockstun: '',
             special_notes: '',
             picture: '',
@@ -23,11 +23,11 @@ class EditAssist extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { input, startup, active, onscreen, hitstop_block, hitstop_hit, blockstun, special_notes, picture, id } = this.state;
+        const { input, startup, active, onscreen, hitstop, hit_stun, blockstun, special_notes, picture, id } = this.state;
         let { params } = this.props
         
         this.setState({isLoading: true})
-        axios.put(characterAssists(params.id, id), { input, startup, active, onscreen, hitstop_block, hitstop_hit, blockstun, special_notes, picture }, {withCredentials: true})
+        axios.put(characterAssists(params.id, id), { input, startup, active, onscreen, hitstop, hit_stun, blockstun, special_notes, picture }, {withCredentials: true})
         .then((result) => {
             window.location.reload(false);
         });
@@ -43,8 +43,8 @@ class EditAssist extends Component {
             active: props.active,
             onscreen: props.onscreen,
             blockstun: props.blockstun,
-            hitstop_block: props.hitstop_block,
-            hitstop_hit: props.hitstop_hit,
+            hitstop: props.hitstop,
+            hit_stun: props.hit_stun,
             immune_to: props.immune_to,
             special_notes: props.special_notes,
             picture: props.picture,
@@ -123,9 +123,9 @@ class EditAssist extends Component {
                     <div className="category">
                     Hitstop On Block:
                         <div className="form-input">
-                            <input name="hitstop_block"
+                            <input name="hitstop"
                                 type="text"
-                                defaultValue={this.state.hitstop_block}
+                                defaultValue={this.state.hitstop}
                                 onChange={this.handleChange}
                             />
                         </div>
@@ -133,9 +133,9 @@ class EditAssist extends Component {
                     <div className="category">
                     Histop On Hit:
                         <div className="form-input">
-                            <input name="hitstop_hit"
+                            <input name="hit_stun"
                                 type="text"
-                                defaultValue={this.state.hitstop_hit}
+                                defaultValue={this.state.hit_stun}
                                 onChange={this.handleChange}
                             />
                         </div>

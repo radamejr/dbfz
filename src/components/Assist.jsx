@@ -123,12 +123,12 @@ class Assist extends Component {
                                     </div>
                                     <div className="col my-md-3">
                                         <div  className="">
-                                            Hitstop on Block Frames: {assist.hitstop_block}
+                                            Hitstop on Block;Hit: {assist.hitstop_block}
                                         </div>  
                                     </div>
                                     <div className="col my-md-3">
                                         <div  className="">
-                                            Hitstop on Hit Frames: {assist.hitstop_hit}
+                                            Hitstun: {assist.hit_stun}
                                         </div>  
                                     </div>
                                     <div className="w-100"></div>

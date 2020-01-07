@@ -20,6 +20,8 @@ class EditSuper extends Component {
             meter_used: '',
             picture: '',
             id: '',
+            raw_damage: '',
+            scaled_damage: '',
             isLoading: false
         }
         
@@ -40,6 +42,8 @@ class EditSuper extends Component {
             immune_to: props.immune_to,
             special_notes: props.special_notes,
             meter_used: props.meter_used,
+            raw_damage: props.raw_damage,
+            scaled_damage: props.scaled_damage,
             id: props.id
 
         })
@@ -47,11 +51,11 @@ class EditSuper extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used, id } = this.state;
+        const { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used, raw_damage, scaled_damage, id } = this.state;
         let { params } = this.props
 
         this.setState({isLoading: true})
-        axios.put(characterSupers(params, id), { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used }, {withCredentials: true})
+        axios.put(characterSupers(params, id), { input, name, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used, raw_damage, scaled_damage }, {withCredentials: true})
         .then((result) => {
             window.location.reload(false);
         });
@@ -163,18 +167,7 @@ class EditSuper extends Component {
                             onChange={this.handleChange}
                         />
                     </div>
-                </div>
-                <div className="category">
-                Properties:
-                    <div className="form-input">
-                        <input name="properties"
-                            type="text"
-                            defaultValue={this.state.properties}
-                            onChange={this.handleChange}
-                        />
-                    </div>
-                </div>
-                
+                </div>                
                 <div className="category">
                 Immune To:
                     <div className="form-input">
@@ -185,6 +178,26 @@ class EditSuper extends Component {
                         />
                     </div>
                 </div>
+                <div className="category">
+                    Raw Damage:
+                        <div className="form-input">
+                            <input name="raw_damage"
+                                type="text"
+                                defaultValue={this.state.raw_damage}
+                                onChange={this.handleChange}
+                            />
+                        </div>
+                    </div>
+                    <div>
+                    Scaled Damage:
+                        <div className="form-input">
+                            <input name="scaled_damage"
+                                type="text"
+                                defaultValue={this.state.scaled_damage}
+                                onChange={this.handleChange}
+                            />
+                        </div>
+                    </div>
                 <div className="category">
                 Meter Used:
                     <div className="form-input">
