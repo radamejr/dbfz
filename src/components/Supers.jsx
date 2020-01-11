@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { characterSupers } from '../helpers/urlFor';
 import axios from 'axios';
 import Modal from 'react-bootstrap/Modal'
+import SuperVariants from './SuperVariants'
 import AddSuper from './Modal/AddSuper'
 import EditSuper from './Modal/EditSuper'
 
@@ -42,7 +43,7 @@ class Supers extends Component {
         this.deleteSuper(id)
     }
 
-     deleteSuper = (id) => {
+    deleteSuper = (id) => {
         let {  params  } = this.props
         
         axios.delete(characterSupers(params.id, id), {withCredentials: true})
@@ -165,8 +166,16 @@ class Supers extends Component {
                                     <button className="btn btn-danger btn-sm float-left" onClick={ (event) => window.confirm("Are you sure you want to delete that?") && this.deleteButtonClick(superMove.id)}>Delete Super</button>  
                                 </div>
                             : null} 
-                        </div>                               
+                            <br></br>
+                            <br></br>
+                        </div>  
+                    <SuperVariants 
+                    params={this.props.params}
+                    super_id={superMove.id}
+                    user={this.props.user}
+                    />                             
                     </div>
+                    
                </div>
 
             );

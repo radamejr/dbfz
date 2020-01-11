@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { specialVariants } from '../../helpers/urlFor';
+import { specialVariants, superVariants } from '../../helpers/urlFor';
 
 class EditVariant extends Component {
     constructor () {
@@ -18,7 +18,8 @@ class EditVariant extends Component {
             special_notes: '',
             meter_used: '',
             picture: '',
-            isLoading: false
+            isLoading: false,
+            isSpecial: false
         }
         
     }
@@ -47,16 +48,38 @@ class EditVariant extends Component {
     onSubmit = (e) => {
         e.preventDefault();
         const { input_type, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used, variant_id } = this.state;
-        let { params, special_id } = this.props
+        const { params, move_id } = this.props
+
+        let { isSpecial } = this.props
+                
         
+        isSpecial 
+        ?
+        this.editSpecial( input_type, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used, params, move_id, variant_id )
+        :
+        this.editSuper( input_type, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used, params, move_id, variant_id )
+            
+        
+    }
+
+    editSpecial = (input_type, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used, params, move_id, variant_id) => {
+
         this.setState({isLoading: true})
-        axios.put(specialVariants(params, special_id, variant_id), { input_type, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used }, {withCredentials: true})
+        axios.put(specialVariants(params, move_id, variant_id), { input_type, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used }, {withCredentials: true})
         .then((result) => {
-            this.props.getVariants()
-            this.props.toggleEditModal()
+            this.props.getVariants();
+            this.props.toggleEditModal();
         });
-        
-        
+    }
+
+    editSuper = (input_type, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used, params, move_id, variant_id) => {
+
+        this.setState({isLoading: true})
+        axios.put(superVariants(params, move_id, variant_id), { input_type, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used }, {withCredentials: true})
+        .then((result) => {
+            this.props.getVariants();
+            this.props.toggleEditModal();
+        });
     }
 
     convertMoveImage = (e) => {
