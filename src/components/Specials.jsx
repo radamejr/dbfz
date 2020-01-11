@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { characterSpecials } from '../helpers/urlFor';
 import axios from 'axios';
 import Modal from 'react-bootstrap/Modal'
-import Variants  from './Variants'
+import SpecialVariants  from './SpecialVariants'
 import AddSpecial from './Modal/AddSpecial'
 import EditSpecial from './Modal/EditSpecial';
 
@@ -130,7 +130,7 @@ class Specials extends Component {
                             </div>                                         
                         </div>
                                            
-                            <Variants 
+                            <SpecialVariants 
                                 params={this.props.params}
                                 special_id={special.id}
                                 user={this.props.user}

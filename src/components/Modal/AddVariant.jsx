@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { specialVariants } from '../../helpers/urlFor';
+import { specialVariants, superVariants } from '../../helpers/urlFor';
 
 class AddVariant extends Component {
     constructor () {
@@ -18,7 +18,8 @@ class AddVariant extends Component {
             special_notes: '',
             meter_used: '',
             picture: '',
-            isLoading: false
+            isLoading: false,
+            isSpecial: false
         }
         
     }
@@ -26,18 +27,37 @@ class AddVariant extends Component {
     onSubmit = (e) => {
         e.preventDefault();
         const { input_type, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used } = this.state;
-        let { params, special_id } = this.props
+        const { params, move_id, isSpecial } = this.props
         
-        this.setState({isLoading: true})
-        axios.post(specialVariants(params, special_id), { input_type, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used }, {withCredentials: true})
-        .then((result) => {
-            this.props.getVariants();
-            this.props.toggleAddModal();
-        });
+        
+        isSpecial 
+        ?
+        this.addSpecial(input_type, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used, params, move_id)
+        :
+        this.addSuper(input_type, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used, params, move_id)
         
         
     }
 
+    addSpecial = (input_type, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used, params, move_id) => {
+
+        this.setState({isLoading: true})
+        axios.post(specialVariants(params, move_id), { input_type, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used }, {withCredentials: true})
+        .then((result) => {
+            this.props.getVariants();
+            this.props.toggleAddModal();
+        });
+    }
+
+    addSuper = (input_type, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used, params, move_id) => {
+
+        this.setState({isLoading: true})
+        axios.post(superVariants(params, move_id), { input_type, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, meter_used }, {withCredentials: true})
+        .then((result) => {
+            this.props.getVariants();
+            this.props.toggleAddModal();
+        });
+    }
     convertMoveImage = (e) => {
 
         let file = e.target.files[0]

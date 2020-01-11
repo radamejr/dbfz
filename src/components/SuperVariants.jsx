@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { specialVariants } from '../helpers/urlFor'
+import { superVariants } from '../helpers/urlFor'
 import axios from 'axios'
 import Modal from 'react-bootstrap/Modal'
 import AddVariant from './Modal/AddVariant'
@@ -7,7 +7,7 @@ import EditVariant from './Modal/EditVariant'
 
 
 
-class Variants extends Component {
+class SuperVariants extends Component {
     constructor() {
         super();
         this.toggleAddModal = this.toggleAddModal.bind(this);
@@ -15,7 +15,7 @@ class Variants extends Component {
         this.getVariants = this.getVariants.bind(this);
         this.state = {
             params: '',
-            special_id: '',
+            super_id: '',
             variants: [],
             addModalOpen: false,
             editModalOpen: false,
@@ -40,9 +40,9 @@ class Variants extends Component {
     }
 
      deleteVariant = (id) => {
-        let {  special_id , params  } = this.props
+        let {  super_id , params  } = this.props
         
-        axios.delete(specialVariants(params.id, special_id, id), {withCredentials: true})
+        axios.delete(superVariants(params.id, super_id, id), {withCredentials: true})
         .then((result) => {
             window.location.reload(false);
         });
@@ -55,14 +55,14 @@ class Variants extends Component {
     }
 
     componentDidMount = () => {  
-        this.setState({ variants: [], params: this.props.params.id, special_id: this.props.special_id});
+        this.setState({ variants: [], params: this.props.params.id, super_id: this.props.super_id});
         this.getVariants();          
     }    
 
     componentDidUpdate(prevProps) {
         
         if (prevProps.params.id !== this.props.params.id) {
-            this.setState({ variants: [], params: this.props.params.id, special_id: this.props.special_id});     
+            this.setState({ variants: [], params: this.props.params.id, super_id: this.props.super_id});     
             this.getVariants();
             
         }
@@ -70,10 +70,10 @@ class Variants extends Component {
     }
 
     async getVariants() {
-        let { special_id, params } = this.props
+        let { super_id, params } = this.props
 
         try {
-            const response = await axios.get(specialVariants(params.id, special_id));
+            const response = await axios.get(superVariants(params.id, super_id));
             response.data.sort((a, b) => a.id - b.id)
             this.setState({variants: response.data})
           } catch (error) {
@@ -84,7 +84,7 @@ class Variants extends Component {
 
 
     render() { 
-        const { variants, params, special_id, addModalOpen, editModalOpen, variant_index } = this.state
+        const { variants, params, super_id, addModalOpen, editModalOpen, variant_index } = this.state
  
         const currentVariants = variants.map((variant, index) => {
             return (
@@ -170,16 +170,16 @@ class Variants extends Component {
                 : 
                 null}
                 {variants.length !== 0 ? 
-                <div id={`variant-accordion-${special_id}`}>
+                <div id={`variant-accordion-${super_id}`}>
                     <div className="card">
                         <div className="card-header" id="variantHeading">
                             <h5 className="mb-0">
-                                <button className="btn btn-link" data-toggle="collapse" data-target={`#variant-${special_id}`} aria-expanded="true" aria-controls="collapseOne">
+                                <button className="btn btn-link" data-toggle="collapse" data-target={`#variant-${super_id}`} aria-expanded="true" aria-controls="collapseOne">
                                     Input Variant Information
                                 </button>
                             </h5>
                         </div>
-                        <div id={`variant-${special_id}`} className="collapse" aria-labelledby="headingOne" data-parent={`#variant-accordion-${special_id}`}>
+                        <div id={`variant-${super_id}`} className="collapse" aria-labelledby="headingOne" data-parent={`#variant-accordion-${super_id}`}>
                             <div className="card-body">
                                 {currentVariants} 
                             </div>
@@ -200,7 +200,7 @@ class Variants extends Component {
                     </Modal.Header>
                     <AddVariant 
                     params={params}
-                    special_id={special_id}
+                    move_id={super_id}
                     getVariants={this.getVariants}
                     toggleAddModal={this.toggleAddModal}
                 
@@ -218,7 +218,7 @@ class Variants extends Component {
                 <EditVariant 
                 params={params}
                 props={variants[variant_index]}
-                special_id={special_id}
+                move_id={super_id}
                 getVariants={this.getVariants}
                 toggleEditModal={this.toggleEditModal}
                 />
@@ -230,4 +230,4 @@ class Variants extends Component {
     }
 }
  
-export default Variants;
+export default SuperVariants;
