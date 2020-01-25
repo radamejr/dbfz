@@ -126,7 +126,7 @@ class Assist extends Component {
                                     </div>
                                     <div className="col my-md-3">
                                         <div  className="">
-                                            Hitstop on Block;Hit: {assist.hitstop_block}
+                                            Hitstop on Block;Hit: {assist.hitstop}
                                         </div>  
                                     </div>
                                     <div className="col my-md-3">
