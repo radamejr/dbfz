@@ -4,7 +4,7 @@ class Home extends Component {
     
     render() { 
         return (  
-            <div className="container text-left">
+            <div className="container text-left col-md-11 col-sm-12">
                 <h5>
                     Hello Everyone,
 
