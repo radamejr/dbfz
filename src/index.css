@@ -153,6 +153,15 @@ code {
   border-color: black;
 }
 
+.normal-move h4 {
+  text-decoration: underline;
+}
+.normal-move p {
+  font-size: larger;
+
+}
+
+
 .special-move.container {
   border-style: double;
   border-color: black;
