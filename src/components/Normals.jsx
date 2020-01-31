@@ -99,52 +99,60 @@ class Normals extends Component {
                                     </div>
                                 }
                         </div>
-                        <div className="col">
-                            <div className="row mt-1 text-left">                                 
-                                <div className="col">
-                                    <div className="row mx-md-3">
-                                        <div className="col my-lg-4 my-md-3">
-                                            <div className="">
-                                                Input: {normal.input}
-                                            </div>
-                                        </div>
-                                        <div className="col my-lg-4 my-md-3">
-                                            <div className="">
-                                                First Active Frame: {normal.startup}
-                                            </div>
-                                        </div>
-                                        <div className="col my-lg-4 my-md-3">
-                                            <div className="">
-                                                Active Frames: {normal.active}
-                                            </div>
-                                        </div>  
-                                        <div className="w-100">
-                                        </div>
-                                        <div className="col my-lg-4 my-md-3">
-                                            <div className="">
-                                                Recovery Frames: {normal.recovery}
-                                            </div>
-                                        </div>
-                                        <div className="col my-lg-4 my-md-3">
-                                            <div className="">
-                                                Advantage Frames: {normal.advantage}
-                                            </div>
-                                        </div>
-                                        <div className="col my-lg-4 my-md-3">
-                                            <div className="">
-                                                Gaurd: {normal.gaurd}
-                                            </div>
-                                        </div>
-                                        <div className="w-100"></div>
-                                        <div className="col">
-                                            <div className="text-left notes-box">
-                                                Notes: {normal.special_notes}
-                                            </div>
-                                        </div>
-                                    </div>     
-                                </div>
+                        <div className="row">
+                            <div className="col mx-auto">
+                                <h4 className="">
+                                    Input: {normal.input}
+                                </h4>
                             </div>
                         </div>
+                        <div className="col mt-1">                                 
+                            <div className="row text-left">
+                                <div className="col-sm-6 my-md-3">
+                                    <p className="">
+                                        First Active: {normal.startup}
+                                    </p>
+                                </div>
+                                <div className="col-sm-6 my-md-3">
+                                    <p className="">
+                                        Active: {normal.active}
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="row text-left">  
+                                <div className="col-sm-6 my-md-3">
+                                    <p className="">
+                                        Recovery: {normal.recovery}
+                                    </p>
+                                </div>
+                                <div className="col-sm-6 my-md-3">
+                                    <p className="">
+                                        Advantage: {normal.advantage}
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="row text-left">
+                                <div className="col-sm-6 my-md-3">
+                                    <p className="">
+                                        Gaurd: {normal.gaurd}
+                                    </p>
+                                </div>
+                                <div className="col-sm-6 my-md-3">
+                                    
+                                </div>
+                            </div>
+                            <div className="row text-left">
+                                <div className="col-sm">
+                                    <p className="text-left notes-box">
+                                        Notes: 
+                                    </p>
+                                    <p className="text-left notes-box">
+                                        {normal.special_notes}
+                                    </p>
+                                </div> 
+                            </div>
+                        </div>
+                        
                         <br></br>
                         <div className="row col mb-2 ">                               
                             {this.props.user && this.props.user.admin ? 
