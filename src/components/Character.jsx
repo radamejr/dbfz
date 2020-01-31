@@ -76,7 +76,7 @@ class Character extends Component {
         return ( 
 
             
-            <div className="container col-9">
+            <div className="container col-lg-7 col-md-11 col-sm-12">
               
               <div className="character container">
                 <div className="row">
@@ -85,10 +85,9 @@ class Character extends Component {
                       {character.name} 
                     </h1>  
                     <br></br>
-                    <h4>
-                      DLC?: {character.dlc ? "Yes" : "No"} 
-                    </h4>
                     
+                    {character.dlc ? <h4>"DLC Only"</h4> : null } 
+                   
                     <br></br>
                     <p className="notes-box">
                       {character.about}
