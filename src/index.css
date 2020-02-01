@@ -173,6 +173,20 @@ margin: 100px, 0px, 100px, 0px;
 
 }
 
+.scroll-to-top {
+  position: fixed;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  animation: fadeIn 700ms ease-in-out 1s both;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.scroll-to-top .btn-primary {
+  color: black;
+  background-color: orange;
+  border: orange;
+}
 
 .special-move.container {
   border-style: solid;

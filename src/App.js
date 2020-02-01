@@ -10,6 +10,7 @@ import Home from './components/Home';
 import SignIn from './components/Authentication/SignIn'
 import Register from './components/Authentication/Registration'
 import Character from './components/Character'
+import ScrollToTop from './components/ScrollToTop';
 
 
 class App extends Component {
@@ -82,6 +83,7 @@ class App extends Component {
             </Switch>
           <br></br>
           <br></br>
+          <ScrollToTop />
           <Footer />
         </div>
     ); 
