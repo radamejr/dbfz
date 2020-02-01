@@ -12,8 +12,10 @@ class Footer extends Component {
         return ( 
             
                 <footer className="footer">
-                    <div className="footer-container">
-                        
+                    <div className="col footer-container">
+                        <div className="row pl-3">
+
+                        </div>
                     </div>
                 </footer>
             
