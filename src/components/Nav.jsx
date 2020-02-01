@@ -51,7 +51,7 @@ class Nav extends Component {
     return (  
       // This is the navbar
       <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <p className="navbar-brand">
           <Link to="/">Home</Link>
         </p>

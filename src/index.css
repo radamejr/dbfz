@@ -21,6 +21,10 @@ body {
 
 }
 
+.content-container {
+  margin-top: 100px;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -75,8 +79,7 @@ code {
 }
 
 .container {
-  margin: 100px, 0px, 100px, 0px;
-  
+margin: 100px, 0px, 100px, 0px;
 }
 
 .dropdown {
@@ -101,6 +104,10 @@ code {
   background-image: url('/broken_noise.png');
   position: relative;
   bottom: 0;
+}
+
+.footer a {
+  color: orange;
 }
 
 .loading-container > img {
@@ -154,7 +161,7 @@ code {
 }
 
 .normal-move.container {
-  border-style: double;
+  border-style: solid;
   border-color: black;
 }
 
@@ -168,11 +175,11 @@ code {
 
 
 .special-move.container {
-  border-style: double;
+  border-style: solid;
   border-color: black;
 }
 .super-move.container {
-  border-style: double;
+  border-style: solid;
   border-color: black;
 }
 

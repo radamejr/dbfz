@@ -76,13 +76,13 @@ class Character extends Component {
         return ( 
 
             
-            <div className="container col-lg-7 col-md-11 col-sm-12">
+            <div className="content-container container col-lg-7 col-md-11 col-sm-12">
               
-              <div className="character container">
+              <div className="character">
                 <div className="row">
                   <div className="col character-text text-left">
                     <h1>
-                      {character.name} 
+                    {character.name} 
                     </h1>  
                     <br></br>
                     
