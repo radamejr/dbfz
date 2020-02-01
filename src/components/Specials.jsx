@@ -88,48 +88,49 @@ class Specials extends Component {
                     <div className="special-move container">
                         <div className="row mt-1 justify-content-center">
                             { special.picture.url ? 
-                                <div className="col-4 d-none d-sm-block">
+                                <div className="col-6 d-none d-sm-block">
                                     <img className="special img-fluid" src={special.picture.url}  alt="special"></img>
                                 </div>
                                 :
-                                <div className="col-4 d-none d-sm-block">
+                                <div className="col-6 d-none d-sm-block">
                                     <img className="special img-fluid" src='/question.png'  alt="missing"></img>
                                 </div>
                             }
                         </div>
-                        <div className="row mt-1 text-left">        
-                            <div className="col">
-                                <div className="row mx-md-3 mx-lg-5">
-                                    <div className="col mb-xl-5 my-lg-4 my-md-2">
-                                        <div className="">
-                                            Move Name: {special.name}
-                                        </div>
-                                    </div>
-                                    <div className="col mb-xl-5 my-lg-4 my-md-2">
-                                        <div className="">
-                                            Move Input: {special.input}
-                                        </div>
-                                    </div>
-                                    <div className="w-100">
-                                    </div>
-                                    <div className="col mt-xl-5 my-lg-4 my-md-2">
-                                        <div className="text-left notes-box">
-                                            Notes: 
-                                            {special.special_notes}
-                                        </div>
-                                    </div>
-                                </div> 
-                                {this.props.user && this.props.user.admin ? 
-                                <div className="float-right col">
-                                    <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Special</button> 
-                                    <button className="btn btn-danger btn-sm float-left" onClick={ (event) => window.confirm("Are you sure you want to delete that?") && this.deleteButtonClick(special.id)}>Delete Special</button>  
+                        <div className="col">
+                            <div className="row text-left ml-3">
+                                <div className="col-sm-6">
+                                    <h4 className="">
+                                        <u>Move Name: {special.name}</u>
+                                    </h4>
                                 </div>
-                                : null} 
-                                <br></br>
-                                <br></br>
-                            </div>                                         
+                                <div className="col-sm-6">
+                                    <h4 className="">
+                                       <u>Input: {special.input}</u>
+                                    </h4>
+                                </div>
+                            </div>
                         </div>
-                                           
+
+                        <div className="col">
+                            <div className="row text-left ml-3">
+                                <div className="col mx-auto mt-3">
+                                    <h4 className="">
+                                        Description: {special.special_notes}
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br></br>
+                        <br></br>
+                        {this.props.user && this.props.user.admin ? 
+                        <div className="float-right col">
+                            <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Special</button> 
+                            <button className="btn btn-danger btn-sm float-left" onClick={ (event) => window.confirm("Are you sure you want to delete that?") && this.deleteButtonClick(special.id)}>Delete Special</button>  
+                        </div>
+                        : null}        
+
                             <SpecialVariants 
                                 params={this.props.params}
                                 special_id={special.id}

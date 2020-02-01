@@ -100,51 +100,54 @@ class SpecialVariants extends Component {
                                 null
                             }
                         </div>
-                        <div className="col">
-                            <div className="row mt-1 text-left">
-                                <div className="col">
-                                    <div className="row mx-md-3">
-                                        <div className="col my-xl-5 my-lg-4 my-md-3">
-                                            <div  className="">
-                                            Type: {variant.input_type}
-                                            </div>
-                                        </div>
-                                        <div className="col my-xl-5 my-lg-4 my-md-3">
-                                            <div  className="">
-                                            First Active: {variant.startup}
-                                            </div>
-                                        </div>
-                                        <div className="col my-xl-5 my-lg-4 my-md-3">
-                                            <div  className="">
-                                            Active: {variant.active}
-                                            </div>
-                                        </div>
-                                        <div className="w-100"></div>
-                                        <div className="col my-xl-5 my-lg-4 my-md-3">
-                                            <div  className="">
-                                            Recovery: {variant.recovery !== null ? variant.recovery : "N/A"}
-                                            </div>
-                                        </div>
-                                        <div className="col my-xl-5 my-lg-4 my-md-3">
-                                            <div  className="">
-                                            Advantage: {variant.advantage !== null ? variant.advantage : "N/A"}
-                                            </div>
-                                        </div>
-                                        <div className="col my-xl-5 my-lg-4 my-md-3">
-                                            <div  className="">
-                                            Gaurd: {variant.gaurd}
-                                            </div>
-                                        </div>
-                                        <div className="w-100"></div>
-                                        <div className="col">
-                                            <div  className="notes-box text-left">
-                                                Notes: {variant.special_notes}
-                                            </div>    
-                                        </div>
-                                    </div>
+                        <div className="col mt-1">                                 
+                            <div className="row text-left">
+                                <div className="col-sm">
+                                    <p className="">
+                                        Input:    {variant.input}
+                                    </p>
+                                </div>
+                                <div className="col-sm">
+                                    <p className="">
+                                        First Active:    {variant.startup}
+                                    </p>
+                                </div>
+                                <div className="col-sm">
+                                    <p className="">
+                                        Active:  {variant.active}
+                                    </p>
                                 </div>
                             </div>
+                            <div className="row text-left">  
+                                <div className="col-sm">
+                                    <p className="">
+                                        Recovery:    {variant.recovery}
+                                    </p>
+                                </div>
+                                <div className="col-sm">
+                                    <p className="">
+                                        Advantage:   {variant.advantage}
+                                    </p>
+                                </div>
+                                <div className="col-sm">
+                                    <p className="">
+                                        Gaurd:   {variant.gaurd}
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="row text-left">
+                                <div className="col-sm">
+                                    <p className="text-left notes-box">
+                                        Notes: 
+                                    </p>
+                                    <p className="text-left notes-box">
+                                        {variant.special_notes}
+                                    </p>
+                                </div> 
+                            </div>
                         </div>
+                    
+
                         <div className="row col mb-2">
                             {this.props.user && this.props.user.admin ? 
                             <div className="float-right col">
@@ -162,21 +165,27 @@ class SpecialVariants extends Component {
 
         return ( 
             <div>
+                
                 {this.props.user && this.props.user.admin ?
                 <div>
-                    <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Variants</button> 
+                    <br></br>
+                    <br></br>
+                    <div>
+                        <button className="btn btn-primary btn-sm float-right" onClick={this.toggleAddModal}>Add Variants</button>
+                    </div>
                     <br></br>
                     <br></br>
                 </div>
                 : 
                 null}
+                
                 {variants.length !== 0 ? 
                 <div id={`variant-accordion-${special_id}`}>
                     <div className="card">
                         <div className="card-header" id="variantHeading">
                             <h5 className="mb-0">
                                 <button className="btn btn-link" data-toggle="collapse" data-target={`#variant-${special_id}`} aria-expanded="true" aria-controls="collapseOne">
-                                    Input Variant Information
+                                    Special Move Input Variations
                                 </button>
                             </h5>
                         </div>
