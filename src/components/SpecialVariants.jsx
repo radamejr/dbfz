@@ -93,7 +93,7 @@ class SpecialVariants extends Component {
                     <div className="variants container mt-0">
                         <div className="row mt-1 justify-content-center">
                             { variant.picture.url ? 
-                                <div className="col-4 d-none d-sm-block">
+                                <div className="col-6 d-none d-sm-block">
                                     <img className="variant img-fluid" src={variant.picture.url}  alt="variant"></img>
                                 </div>
                                 :

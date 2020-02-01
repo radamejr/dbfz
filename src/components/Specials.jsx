@@ -115,7 +115,7 @@ class Specials extends Component {
                         <div className="col">
                             <div className="row text-left ml-3">
                                 <div className="col mx-auto mt-3">
-                                    <h4 className="">
+                                    <h4 className="notes-box">
                                         Description: {special.special_notes}
                                     </h4>
                                 </div>
