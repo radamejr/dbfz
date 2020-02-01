@@ -104,7 +104,7 @@ class SpecialVariants extends Component {
                             <div className="row text-left">
                                 <div className="col-sm">
                                     <p className="">
-                                        Input:    {variant.input}
+                                        Input:    {variant.input_type}
                                     </p>
                                 </div>
                                 <div className="col-sm">
