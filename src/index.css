@@ -123,6 +123,11 @@ code {
   color: orange;
 }
 
+.navbar .btn-link {
+  color: orange;
+}
+
+
 .navbar-light:hover .navbar-nav:hover .nav-link:hover{
   color: purple;
 }

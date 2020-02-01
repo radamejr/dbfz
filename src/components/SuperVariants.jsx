@@ -92,56 +92,57 @@ class SuperVariants extends Component {
                     <div className="variants container mt-0">
                         <div className="row mt-1 justify-content-center">
                             { variant.picture.url ? 
-                                <div className="col-4 d-none d-sm-block">
+                                <div className="col-6 d-none d-sm-block">
                                     <img className="variant img-fluid" src={variant.picture.url}  alt="variant"></img>
                                 </div>
                                 :
                                 null
                             }
                         </div>
-                        <div className="col">
-                            <div className="row mt-1 text-left">
-                                <div className="col">
-                                    <div className="row mx-md-3">
-                                        <div className="col my-xl-5 my-lg-4 my-md-3">
-                                            <div  className="">
-                                            Type: {variant.input_type}
-                                            </div>
-                                        </div>
-                                        <div className="col my-xl-5 my-lg-4 my-md-3">
-                                            <div  className="">
-                                            First Active: {variant.startup}
-                                            </div>
-                                        </div>
-                                        <div className="col my-xl-5 my-lg-4 my-md-3">
-                                            <div  className="">
-                                            Active: {variant.active}
-                                            </div>
-                                        </div>
-                                        <div className="w-100"></div>
-                                        <div className="col my-xl-5 my-lg-4 my-md-3">
-                                            <div  className="">
-                                            Recovery: {variant.recovery !== null ? variant.recovery : "N/A"}
-                                            </div>
-                                        </div>
-                                        <div className="col my-xl-5 my-lg-4 my-md-3">
-                                            <div  className="">
-                                            Advantage: {variant.advantage !== null ? variant.advantage : "N/A"}
-                                            </div>
-                                        </div>
-                                        <div className="col my-xl-5 my-lg-4 my-md-3">
-                                            <div  className="">
-                                            Gaurd: {variant.gaurd}
-                                            </div>
-                                        </div>
-                                        <div className="w-100"></div>
-                                        <div className="col">
-                                            <div  className="notes-box text-left">
-                                                Notes: {variant.special_notes}
-                                            </div>    
-                                        </div>
-                                    </div>
+                        <div className="col mt-1">                                 
+                            <div className="row text-left">
+                                <div className="col-sm">
+                                    <p className="">
+                                        Input:    {variant.input}
+                                    </p>
                                 </div>
+                                <div className="col-sm">
+                                    <p className="">
+                                        First Active:    {variant.startup}
+                                    </p>
+                                </div>
+                                <div className="col-sm">
+                                    <p className="">
+                                        Active:  {variant.active}
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="row text-left">  
+                                <div className="col-sm">
+                                    <p className="">
+                                        Recovery:    {variant.recovery}
+                                    </p>
+                                </div>
+                                <div className="col-sm">
+                                    <p className="">
+                                        Advantage:   {variant.advantage}
+                                    </p>
+                                </div>
+                                <div className="col-sm">
+                                    <p className="">
+                                        Gaurd:   {variant.gaurd}
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="row text-left">
+                                <div className="col-sm">
+                                    <p className="text-left notes-box">
+                                        Notes: 
+                                    </p>
+                                    <p className="text-left notes-box">
+                                        {variant.special_notes}
+                                    </p>
+                                </div> 
                             </div>
                         </div>
                         <div className="row col mb-2">

@@ -91,61 +91,64 @@ class Assist extends Component {
                     <div className="assist-move container">
                         <div className="row mt-1 justify-content-center">
                             { assist.picture.url ? 
-                                <div className="assist col-4 d-none d-sm-block">
+                                <div className="assist col-6 d-none d-sm-block">
                                     <img className="assist img-fluid" src={assist.picture.url}  alt="assist"></img>
                                 </div>
                                 :
-                                <div className="assist col-4 d-none d-sm-block">
+                                <div className="assist col-6 d-none d-sm-block">
                                     <img className="assist img-fluid" src='/question.png'  alt="missing"></img>
                                 </div>
                             }
                         </div>
-                        <div className="row mt-1 text-left">    
-                            <div className="col">
-                                <div className="row mx-md-3">
-                                    <div className="col my-md-3">
-                                        <div  className="">
-                                            First Active: {assist.startup}
-                                        </div>  
-                                    </div>
-                                    <div className="col my-md-3">
-                                        <div  className="">
-                                            Blockstun Frames: {assist.blockstun}
-                                        </div>  
-                                    </div>
-                                    <div className="col my-md-3">
-                                        <div  className="">
-                                            Active Frames: {assist.active}
-                                        </div>  
-                                    </div>
-                                    <div className="w-100"></div>
-                                    <div className="col my-md-3">
-                                        <div  className="">
-                                            OnScreen Frames: {assist.onscreen}
-                                        </div>  
-                                    </div>
-                                    <div className="col my-md-3">
-                                        <div  className="">
-                                            Hitstop on Block;Hit: {assist.hitstop}
-                                        </div>  
-                                    </div>
-                                    <div className="col my-md-3">
-                                        <div  className="">
-                                            Hitstun: {assist.hit_stun}
-                                        </div>  
-                                    </div>
-                                    <div className="w-100"></div>
-                                    <div className="col my-md-3">
-                                        <div  className="text-left notes-box">
-                                            Notes: 
-                                            <br></br>
-                                            {assist.special_notes}
-                                        </div>  
-                                    </div>
-                                </div>              
+                        
+                        <div className="col mt-1">
+                            <div className="row text-left">
+                                <div className="col-sm ">
+                                    <p className="">
+                                        First Active: {assist.startup}
+                                    </p>  
+                                </div>
+                                <div className="col-sm ">
+                                    <p className="">
+                                        Blockstun Frames: {assist.blockstun}
+                                    </p>  
+                                </div>
+                                <div className="col-sm ">
+                                    <p className="">
+                                        Active Frames: {assist.active}
+                                    </p>  
+                                </div>
                             </div>
-                             
+                            <div className="row text-left">
+                                <div className="col-sm ">
+                                    <p className="">
+                                        OnScreen Frames: {assist.onscreen}
+                                    </p>  
+                                </div>
+                                <div className="col-sm ">
+                                    <p className="">
+                                        Hitstop on Block;Hit: {assist.hitstop}
+                                    </p>  
+                                </div>
+                                <div className="col-sm ">
+                                    <p className="">
+                                        Hitstun: {assist.hit_stun}
+                                    </p>  
+                                </div>
+                            </div>
+                            <div className="row text-left">
+                                <div className="col-sm">
+                                    <p className="text-left notes-box">
+                                        Notes:
+                                    </p>
+                                    <p className="text-left notes-box">    
+                                        {assist.special_notes}
+                                    </p>  
+                                </div>
+                            </div>              
                         </div>
+                            
+            
                         {this.props.user && this.props.user.admin 
                         ? 
                         <div className="float-right col">

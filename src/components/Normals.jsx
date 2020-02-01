@@ -90,15 +90,16 @@ class Normals extends Component {
                     <div className="normal-move container">
                         <div className="row mt-1 justify-content-center">
                             { normal.picture.url ? 
-                                    <div className="col-4 d-none d-sm-block">
+                                    <div className="col-6 d-none d-sm-block">
                                         <img className="normal img-fluid" src={normal.picture.url}  alt="normal"></img>
                                     </div>
                                     :
-                                    <div className="col-4 d-none d-sm-block">
+                                    <div className="col-6 d-none d-sm-block">
                                         <img className="normal img-fluid" src='/question.png'  alt="missing"></img>
                                     </div>
                                 }
                         </div>
+
                         <div className="row">
                             <div className="col mx-auto">
                                 <h4 className="">
@@ -108,36 +109,36 @@ class Normals extends Component {
                         </div>
                         <div className="col mt-1">                                 
                             <div className="row text-left">
-                                <div className="col-sm-6 my-md-3">
+                                <div className="col-sm-7">
                                     <p className="">
-                                        First Active: {normal.startup}
+                                        First Active:    {normal.startup}
                                     </p>
                                 </div>
-                                <div className="col-sm-6 my-md-3">
+                                <div className="col-sm-5">
                                     <p className="">
-                                        Active: {normal.active}
+                                        Active:  {normal.active}
                                     </p>
                                 </div>
                             </div>
                             <div className="row text-left">  
-                                <div className="col-sm-6 my-md-3">
+                                <div className="col-sm-7">
                                     <p className="">
-                                        Recovery: {normal.recovery}
+                                        Recovery:    {normal.recovery}
                                     </p>
                                 </div>
-                                <div className="col-sm-6 my-md-3">
+                                <div className="col-sm-5">
                                     <p className="">
-                                        Advantage: {normal.advantage}
+                                        Advantage:   {normal.advantage}
                                     </p>
                                 </div>
                             </div>
                             <div className="row text-left">
-                                <div className="col-sm-6 my-md-3">
+                                <div className="col-sm-7">
                                     <p className="">
-                                        Gaurd: {normal.gaurd}
+                                        Gaurd:   {normal.gaurd}
                                     </p>
                                 </div>
-                                <div className="col-sm-6 my-md-3">
+                                <div className="col-sm-5">
                                     
                                 </div>
                             </div>

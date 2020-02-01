@@ -86,7 +86,7 @@ class Character extends Component {
                     </h1>  
                     <br></br>
                     
-                    {character.dlc ? <h4>"DLC Only"</h4> : null } 
+                    {character.dlc ? <h4>DLC Only!</h4> : null } 
                    
                     <br></br>
                     <p className="notes-box">
