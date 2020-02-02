@@ -84,7 +84,7 @@ class UniversalData extends Component {
 
                 <div className="row universal-move">
                     <div className='col-sm-5 d-none d-sm-block'>
-                        <span className="helper"></span><img className="img-fluid" src={'./images/dragon rush.gif' }></img>
+                        <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'./images/dragon rush.gif' }></img>
                     </div>
                     <div className='col-sm'>
                         <div className="row">
@@ -157,7 +157,7 @@ class UniversalData extends Component {
 
                 <div className="row universal-move">
                     <div className='col-sm-5 d-none d-sm-block'>
-                    <span className="helper"></span><img className="img-fluid" src={'./images/snap.gif' }></img>
+                    <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'./images/snap.gif' }></img>
                     </div>
                     <div className='col-sm'>
                         <div className="row">
@@ -231,7 +231,7 @@ class UniversalData extends Component {
 
                 <div className="row universal-move">
                     <div className='col-sm-5 d-none d-sm-block'>
-                    <span className="helper"></span><img className="img-fluid" src={'./images/superdash.gif' }></img>
+                    <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'./images/superdash.gif' }></img>
                     </div>
                     <div className='col-sm'>
                         <div className="row">
@@ -304,7 +304,7 @@ class UniversalData extends Component {
 
                 <div className="row universal-move">
                     <div className='col-sm-5 d-none d-sm-block'>
-                    <span className="helper"></span><img className="img-fluid" src={'./images/gaurd cancel.gif' }></img>
+                    <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'./images/gaurd cancel.gif' }></img>
                     </div>
                     <div className='col-sm'>
                         <div className="row">
@@ -381,7 +381,7 @@ class UniversalData extends Component {
 
                 <div className="row universal-move">
                     <div className='col-sm-5 d-none d-sm-block'>
-                    <span className="helper"></span><img className="img-fluid" src={'./images/gaurd cancel solo.gif' }></img>
+                    <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'./images/gaurd cancel solo.gif' }></img>
                     </div>
                     <div className='col-sm'>
                         <div className="row">
@@ -456,7 +456,7 @@ class UniversalData extends Component {
 
                 <div className="row universal-move">
                     <div className='col-sm-5 d-none d-sm-block'>
-                    <span className="helper"></span><img className="img-fluid" src={'./images/vanish.gif' }></img>
+                    <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'./images/vanish.gif' }></img>
                     </div>
                     <div className='col-sm'>
                         <div className="row">
@@ -531,7 +531,7 @@ class UniversalData extends Component {
 
                 <div className="row universal-move">
                     <div className='col-sm-5 d-none d-sm-block'>
-                    <span className="helper"></span><img className="img-fluid" src={'./images/empty vanish.gif' }></img>
+                    <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'./images/empty vanish.gif' }></img>
                     </div>
                     <div className='col-sm'>
                         <div className="row">
@@ -605,7 +605,7 @@ class UniversalData extends Component {
 
                 <div className="row universal-move">
                     <div className='col-sm-5 d-none d-sm-block'>
-                    <span className="helper"></span><img className="img-fluid" src={'./images/spark.gif' }></img>
+                    <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'./images/spark.gif' }></img>
                     </div>
                     <div className='col-sm'>
                         <div className="row">
@@ -680,7 +680,7 @@ class UniversalData extends Component {
 
                 <div className="row universal-move">
                     <div className='col-sm-5 d-none d-sm-block'>
-                    <span className="helper"></span><img className="img-fluid" src={'./images/jump.gif' }></img>
+                    <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'./images/jump.gif' }></img>
                     </div>
                     <div className='col-sm'>
                         <div className="row">
@@ -753,7 +753,7 @@ class UniversalData extends Component {
 
                 <div className="row universal-move">
                     <div className='col-sm-5 d-none d-sm-block'>
-                    <span className="helper"></span><img className="img-fluid" src={'./images/forward air dash.gif' }></img>
+                    <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'./images/forward air dash.gif' }></img>
                     </div>
                     <div className='col-sm'>
                         <div className="row">
@@ -825,7 +825,7 @@ class UniversalData extends Component {
 
                 <div className="row universal-move">
                     <div className='col-sm-5 d-none d-sm-block'>
-                    <span className="helper"></span><img className="img-fluid" src={'./images/air backdash.gif' }></img>
+                    <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'./images/air backdash.gif' }></img>
                     </div>
                     <div className='col-sm'>
                         <div className="row">
@@ -899,7 +899,7 @@ class UniversalData extends Component {
                 <br></br>
                 <div className="row universal-move">
                     <div className='col-sm-5 d-none d-sm-block'>
-                    <span className="helper"></span><img className="img-fluid" src={'./images/instant air dash.gif' }></img>
+                    <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'./images/instant air dash.gif' }></img>
                     </div>
                     <div className='col-sm'>
                         <div className="row">
@@ -973,7 +973,7 @@ class UniversalData extends Component {
                 <br></br>
                 <div className="row universal-move">
                     <div className='col-sm-5 d-none d-sm-block'>
-                    <span className="helper"></span><img className="img-fluid" src={'./images/backdash.gif' }></img>
+                    <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'./images/backdash.gif' }></img>
                     </div>
                     <div className='col-sm'>
                         <div className="row">
@@ -1045,7 +1045,7 @@ class UniversalData extends Component {
                 <br></br>
                 <div className="row universal-move">
                     <div className='col-sm-5 d-none d-sm-block'>
-                    <span className="helper"></span><img className="img-fluid" src={'./images/ground-recovery.gif' }></img>
+                    <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'./images/ground-recovery.gif' }></img>
                     </div>
                     <div className='col-sm'>
                         <div className="row">
@@ -1117,7 +1117,7 @@ class UniversalData extends Component {
                 <br></br>
                 <div className="row universal-move">
                     <div className='col-sm-5 d-none d-sm-block'>
-                    <span className="helper"></span><img className="img-fluid" src={'./images/clash.gif' }></img>
+                    <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'./images/clash.gif' }></img>
                     </div>
                     <div className='col-sm'>
                         <div className="row">
@@ -1189,7 +1189,7 @@ class UniversalData extends Component {
                 <br></br>
                 <div className="row universal-move">
                     <div className='col-sm-5 d-none d-sm-block'>
-                    <span className="helper"></span><img className="img-fluid" src={'./images/groundtech.gif' }></img>
+                    <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'./images/groundtech.gif' }></img>
                     </div>
                     <div className='col-sm'>
                         <div className="row">
@@ -1261,7 +1261,7 @@ class UniversalData extends Component {
                 <br></br>
                 <div className="row universal-move">
                     <div className='col-sm-5 d-none d-sm-block'>
-                    <span className="helper"></span><img className="img-fluid" src={'./images/delay tech.gif' }></img>
+                    <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'./images/delay tech.gif' }></img>
                     </div>
                     <div className='col-sm'>
                         <div className="row">
@@ -1333,7 +1333,7 @@ class UniversalData extends Component {
                 <br></br>
                 <div className="row universal-move">
                     <div className='col-sm-5 d-none d-sm-block'>
-                    <span className="helper"></span><img className="img-fluid" src={'./images/down tech.gif' }></img>
+                    <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'./images/down tech.gif' }></img>
                     </div>
                     <div className='col-sm'>
                         <div className="row">
