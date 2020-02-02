@@ -41,8 +41,6 @@ class ScrollToTop extends Component {
 
     render() { 
         const { visible } = this.state;
-
-        console.log(visible)
         return ( 
             <div>
                 {visible ?

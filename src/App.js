@@ -3,7 +3,6 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import { charactersAPI, auth } from './helpers/urlFor';
 import axios from 'axios';
-import List from './components/List';
 import Nav from './components/Nav';
 import Footer from './components/Footer'
 import Home from './components/Home';
@@ -11,6 +10,7 @@ import SignIn from './components/Authentication/SignIn'
 import Register from './components/Authentication/Registration'
 import Character from './components/Character'
 import ScrollToTop from './components/ScrollToTop';
+import NotFound from './components/NotFound'
 
 
 class App extends Component {
@@ -69,7 +69,7 @@ class App extends Component {
 
   render() { 
     const { characters, user } = this.state;
-    
+
     return (  
         <div className="App">         
             <Nav characters={characters} loggedInStatus={this.state.isLoggedIn} user={user} handleLogout={this.handleLogout} />
@@ -77,9 +77,9 @@ class App extends Component {
             <Switch>
               <Route exact path='/' component={Home} />
               <Route path='/characters/:id' render={props => (<Character {...props} characters={this.state.characters} character={this.state.character} user={user} />)} />
-              <Route path='/characters' render={props => (<List {...props} characters={this.state.characters}/>)}  />
               <Route exact path='/login' render={props => (<SignIn {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn} />)} />
               <Route exact path='/register' render={props => (<Register {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn} />)} />
+              <Route path= '*' component={NotFound} />
             </Switch>
           <br></br>
           <br></br>
