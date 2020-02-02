@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import { charactersAPI } from './../helpers/urlFor';
 import axios from 'axios';
 import Normals from './Normals';
@@ -53,8 +54,8 @@ class Character extends Component {
 
     async getCharacter() {
         let { match: { params } } = this.props;
-        
-       try {
+
+        try {
           const response = await axios.get(charactersAPI(params.id));
             this.setState({
               character: response.data,
@@ -71,8 +72,11 @@ class Character extends Component {
     render() { 
         let { character, isOpen, picture, icon } = this.state; 
         let { match: { params } } = this.props;    
-        
+        let { characters } = this.props;
 
+        if (params.id > characters.length) {
+          return <Redirect to='/404' />
+        }
         return ( 
 
             
