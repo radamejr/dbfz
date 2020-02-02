@@ -11,6 +11,7 @@ import Register from './components/Authentication/Registration'
 import Character from './components/Character'
 import ScrollToTop from './components/ScrollToTop';
 import NotFound from './components/NotFound'
+import UniversalData from './components/UniversalData';
 
 
 class App extends Component {
@@ -77,6 +78,7 @@ class App extends Component {
             <Switch>
               <Route exact path='/' component={Home} />
               <Route path='/characters/:id' render={props => (<Character {...props} characters={this.state.characters} character={this.state.character} user={user} />)} />
+              <Route path='/universal' component={UniversalData} />
               <Route exact path='/login' render={props => (<SignIn {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn} />)} />
               <Route exact path='/register' render={props => (<Register {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn} />)} />
               <Route path= '*' component={NotFound} />
