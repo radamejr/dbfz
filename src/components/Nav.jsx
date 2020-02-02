@@ -55,6 +55,7 @@ class Nav extends Component {
         <p className="navbar-brand">
           <Link to="/">Home</Link>
         </p>
+      
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="line"></span> 
         <span className="line"></span> 
@@ -66,8 +67,9 @@ class Nav extends Component {
                     
           <li className="nav-item dropdown">
             <p className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Characters
+              Character Data
             </p>
+
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
               <ul className="character-selector">
                 {selections}
@@ -76,7 +78,13 @@ class Nav extends Component {
               
             </div>
           </li>
+
+          <li className="nav-item">
+            <Link to="/universal" className="nav-link">Universal Data</Link>
+          </li>
         </ul>
+
+
         <div className="nav-link">
             {this.props.loggedInStatus 
             ? 

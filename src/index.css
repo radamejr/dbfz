@@ -110,6 +110,12 @@ margin: 100px, 0px, 100px, 0px;
   color: orange;
 }
 
+.helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
 .loading-container > img {
   width: 100%;
 }
@@ -197,6 +203,30 @@ margin: 100px, 0px, 100px, 0px;
   border-color: black;
 }
 
+.universal-selector  {
+  list-style: none;
+  overflow: hidden;
+}
+.universal-selector li {
+  display: inline-block;
+  margin-left: -2.5em;
+  margin-bottom: -1em;
+  transform: scale(.75);
+}
+
+.universal-icon {
+  transform: scale(.15);
+}
+
+.universal-move {
+  border: grey;
+  border-style: solid;
+}
+
+.universal-move img {
+  max-height: 300px;
+  vertical-align: middle;
+}
 .variants.row {
   margin: 0;
 }
