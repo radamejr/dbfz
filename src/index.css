@@ -1,3 +1,11 @@
+button.btn-link {
+  color: orange;
+  cursor: pointer;
+  font-size: 20px;
+}
+img.input {
+  max-height: 350px;
+}
 .App {
   min-height: 100vh;
   display: flex;
@@ -114,6 +122,18 @@ margin: 100px, 0px, 100px, 0px;
   display: inline-block;
   height: 100%;
   vertical-align: middle;
+}
+
+hr {
+  border-top: 2px solid grey;
+}
+.kame-intro img {
+  max-height: 200px;
+  vertical-align: middle;
+}
+
+.kame-nav .nav-link a {
+  color: orange;
 }
 
 .loading-container > img {

@@ -82,6 +82,10 @@ class Nav extends Component {
           <li className="nav-item">
             <Link to="/universal" className="nav-link">Universal Data</Link>
           </li>
+
+          <li className="nav-item">
+            <Link to="/learning" className="nav-link">Kame House</Link>
+          </li>
         </ul>
 
 
