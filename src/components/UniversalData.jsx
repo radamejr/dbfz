@@ -304,6 +304,79 @@ class UniversalData extends Component {
 
                 <div className="row universal-move">
                     <div className='col-sm-5 d-none d-sm-block'>
+                    <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/reflect.gif' }></img>
+                    </div>
+                    <div className='col-sm'>
+                        <div className="row">
+                            <div className="col mx-auto">
+                                <h4 className="">
+                                    <u>
+                                        Name: Reflect
+                                    </u>
+                                </h4>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col mx-auto">
+                                <h5 className="">
+                                    Input: 4 + S                                    
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div className="col mt-1">                                 
+                            <div className="row text-left">
+                                <div className="col-sm-7">
+                                    <p className="">
+                                        First Active:   1
+                                    </p>
+                                </div>
+                                <div className="col-sm-5">
+                                    <p className="">
+                                        Active:  22
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="row text-left">  
+                                <div className="col-sm-7">
+                                    <p className="">
+                                        Recovery:   17
+                                    </p>
+                                </div>
+                                <div className="col-sm-5">
+                                    <p className="">
+                                        Advantage:   N/A
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="row text-left">
+                                <div className="col-sm-7">
+                                    <p className="">
+                                        Gaurd:   N/A
+                                    </p>
+                                </div>
+                                <div className="col-sm-5">
+                                    
+                                </div>
+                            </div>
+                            <div className="row text-left">
+                                <div className="col-sm">
+                                    <p className="text-left notes-box">
+                                        Notes: 
+                                    </p>
+                                    <p className="text-left notes-box">
+                                    Succesful reflect enters 20 frame total invulnerability recovery period, throw invuln for 4 frames after recovery. Attacks dealt on reflect behave as on block (chains, blockstop etc.)																																	
+                                    </p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br></br>
+                <br></br>
+
+                <div className="row universal-move">
+                    <div className='col-sm-5 d-none d-sm-block'>
                     <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/gaurd cancel.gif' }></img>
                     </div>
                     <div className='col-sm'>

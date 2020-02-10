@@ -72,7 +72,7 @@ class Basics extends Component {
                 <div className="row">
                     <div className="col-sm">
                         <span className="helper"></span>
-                        <img className="img-fluid input" src="" alt="blocking"></img>
+                        <img className="img-fluid input" src="https://dbfz-image.s3.amazonaws.com/uploads/static-images/block.gif" alt="blocking"></img>
                     </div>
                     <div className="col-sm text-left">
                         <p>
@@ -150,7 +150,7 @@ class Basics extends Component {
                 <div className="row">
                     <div className="col-sm">
                         <span className="helper"></span>
-                        <img className="img-fluid move-gif" src="" alt="z-change"></img>
+                        <img className="img-fluid move-gif" src="https://dbfz-image.s3.amazonaws.com/uploads/static-images/DHC.gif" alt="z-change"></img>
                     </div>
                     <div className="col-sm text-left">
                         <p>
@@ -175,7 +175,7 @@ class Basics extends Component {
                     </div>
                     <div className="col-sm">
                         <span className="helper"></span>
-                        <img className="img-fluid move-gif" src="" alt="charge"></img>
+                        <img className="img-fluid move-gif" src="https://dbfz-image.s3.amazonaws.com/uploads/static-images/charge.gif" alt="charge"></img>
                     </div>
                 </div>
                 <br></br>

@@ -214,6 +214,12 @@ hr {
   border: orange;
 }
 
+.scrollable-menu {
+  height: auto;
+  max-height: 400px;
+  overflow-x: hidden;
+}
+
 .special-move.container {
   border-style: solid;
   border-color: black;

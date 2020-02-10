@@ -25,7 +25,7 @@ class Learning extends Component {
                 <div className="row kame-intro">
                     <div className="col-sm text-left">
                         <p>
-                            Kame House is Framehameha's "Tutorial" section. Here you will find the basics, tips, tricks and helpful resources on learning more about Dragonball Fighterz.
+                            Kame House is Framehameha's "Learning" section. Here you will find the basics, tips, tricks and helpful resources on learning more about Dragonball Fighterz.
                         </p>
                         <p>
                              Whether you are a veteran to fighting games, or just joining in because you love Dragonball. This resource is meant to help you power-up and jump into the fray.
