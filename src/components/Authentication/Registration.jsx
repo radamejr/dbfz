@@ -106,7 +106,8 @@ class Registration extends Component {
                             />
                         </div>
                     </div>
-                    <button type="submit" className="btn btn-primary">Register</button>
+                    <p><b><u>PLEASE NOTE SIGNING UP DOES NOTHING CURRENTLY FOR GENERAL USERS, THERE IS NO NEED TO SIGN UP FOR ANYTHING. IF YOU WISH TO HELP ADMIN PLEASE DM ME.</u></b></p>
+                    <button type="submit" className="btn btn-primary" disabled>Register</button>
                 </form>
                 <br></br>
                 <Link to='/login'>Already Registered?</Link>

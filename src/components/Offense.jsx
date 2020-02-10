@@ -35,7 +35,7 @@ class Offense extends Component {
                 </div>
                 <br></br>
                 <br></br>
-                <br></br>
+                <hr></hr>
                 <br></br>
 
                 <div className="row">
@@ -65,6 +65,8 @@ class Offense extends Component {
                         <h4 className="text-center"><u>Combo Structure Basics</u></h4>
                     </div>
                 </div>
+                <br></br>
+                <hr></hr>
                 <br></br>
 
                 <div className="row">
@@ -99,7 +101,8 @@ class Offense extends Component {
                     </div>
                 </div>
                 <br></br>
-
+                <hr></hr>
+                <br></br>
                 <div className="row">
 
                     <div className="col-sm my-auto">
@@ -118,9 +121,37 @@ class Offense extends Component {
                         <p>I don't have a video directly related to Supers, however here is a completely unbiased look at the best Supers in the game according to<a href="https://www.youtube.com/channel/UCOgaIuQYGr6ow_jbote4BKA" target="_blank" rel="noopener noreferrer" role="button">Maximilian Dood</a>(Missing Season 2).
                         </p>
                     </div>
+                </div>
+                <br></br>
+                <br></br>
+                <hr></hr>
+                <br></br>
+                <div className="row">
+                    <div className="col-sm">
+                        <h4 className="text-center"><u>Universal Fuzzy</u></h4>
+                    </div>
+                </div>
+                <br></br>
+
+                <div className="row">
 
                     
-                    
+                    <div className="col-sm text-left">
+                        <p>
+                        The Universal Fuzzy is an option that exists to put your opponent in a 100% 50/50 guessing scenario. It's dirty, its good and can benefit you in know how to defend against it and use it.
+                        </p>
+                        <p>
+                        <a href="https://www.youtube.com/channel/UC4n3mpDrD-noB7uMkKSD00Q" target="_blank" rel="noopener noreferrer" role="button">RathFGC</a> back at it again with the great videos.
+                        </p>
+                        
+                    </div>  
+
+                    <div className="col-sm my-auto">
+                        <div class="embed-responsive embed-responsive-16by9">
+                        <iframe title="neutral" className="empbed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/jr16kzxvfmA" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         );

@@ -70,7 +70,7 @@ class Nav extends Component {
               Character Data
             </p>
 
-            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div className="dropdown-menu scrollable-menu" aria-labelledby="navbarDropdown">
               <ul className="character-selector">
                 {selections}
               </ul>

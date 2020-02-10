@@ -20,7 +20,7 @@ class Defense extends Component {
                 <div className="row">
                     <div className="col-sm">
                         <span className="helper"></span>
-                        <img className="img-fluid" src="" alt="block"></img>
+                        <img className="img-fluid" src="https://dbfz-image.s3.amazonaws.com/uploads/static-images/block.gif" alt="block"></img>
                     </div>
 
                     <div className="col-sm text-left">
@@ -41,7 +41,7 @@ class Defense extends Component {
                     </div>
                     <div className="col-sm">
                         <span className="helper"></span>
-                        <img className="img-fluid" src="" alt="tech"></img>
+                        <img className="img-fluid" src="https://dbfz-image.s3.amazonaws.com/uploads/static-images/techout.gif" alt="tech"></img>
                     </div>
                 </div>
                 <br></br>

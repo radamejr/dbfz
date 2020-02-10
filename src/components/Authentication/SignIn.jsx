@@ -65,48 +65,50 @@ class SignIn extends Component {
     render() { 
         
         return ( 
-            <div>
-                <h1>Login</h1>
-                <form id="signin" onSubmit={this.onSubmit}>
-                    <div className="category">
-                        Username:
-                        <div className="form-input">
-                            <input name="username"
-                                type="text"
-                                defaultValue=''
-                                onChange={this.handleChange}
-                            />
+            <div className="row content content-container">
+                <div className="col-sm form-background mx-auto">
+                    <h1>Login</h1>
+                    <form id="signin" onSubmit={this.onSubmit}>
+                        <div className="category">
+                            Username:
+                            <div className="form-input">
+                                <input name="username"
+                                    type="text"
+                                    defaultValue=''
+                                    onChange={this.handleChange}
+                                />
+                            </div>
                         </div>
-                    </div>
-                    <div className="category">
-                        Email:
-                        <div className="form-input">
-                            <input name="email"
-                                type="email"
-                                defaultValue=''
-                                onChange={this.handleChange}
-                            />
+                        <div className="category">
+                            Email:
+                            <div className="form-input">
+                                <input name="email"
+                                    type="email"
+                                    defaultValue=''
+                                    onChange={this.handleChange}
+                                />
+                            </div>
                         </div>
-                    </div>
-                    <div className="category">
-                        Password:
-                        <div className="form-input">
-                            <input name="password"
-                                type="password"
-                                defaultValue=''
-                                onChange={this.handleChange}
-                            />
+                        <div className="category">
+                            Password:
+                            <div className="form-input">
+                                <input name="password"
+                                    type="password"
+                                    defaultValue=''
+                                    onChange={this.handleChange}
+                                />
+                            </div>
                         </div>
+                        <button type="submit" className="btn btn-primary">Login</button>
+                    </form>
+                    <br></br>
+                    <Link to='/register'>Not signed up?</Link>
+    
+                    <div>
+                        {
+                        this.state.errors ? this.handleErrors() : null
+                        }
                     </div>
-                    <button type="submit" className="btn btn-primary">Login</button>
-                </form>
-                <br></br>
-                <Link to='/register'>Not signed up?</Link>
-
-                <div>
-                    {
-                    this.state.errors ? this.handleErrors() : null
-                    }
                 </div>
             </div>
 
