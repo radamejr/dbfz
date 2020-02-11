@@ -85,80 +85,78 @@ class Supers extends Component {
             return(
                <div key={index}>
                     <div className="super-move container">
-                        <div className="row mt-1 justify-content-center">
-                            { superMove.picture.url ? 
-                                <div className="super col-6 d-none d-sm-block">
-                                    <img className="super img-fluid" src={superMove.picture.url}  alt="super"></img>
-    
-                                </div>
-                                 :
-                                <div className="super col-6 d-none d-sm-block">
-                                    <img className="super img-fluid" src='/question.png'  alt="missing"></img>
-                                </div>
-                            }
-                        </div>
-                        <div className="col">
-                            <div className="row text-left ml-1">
-                                <div className="col-sm-6">
-                                    <h4 className="">
-                                        <u>Move Name: {superMove.name}</u>
-                                    </h4>
-                                </div>
-                                <div className="col-sm-6">
-                                    <h4 className="">
-                                       <u>Input: {superMove.input}</u>
-                                    </h4>
-                                </div>
+                        <div className="row ml-3">
+                            <div className="col-sm-6">
+                                <h4 className="">
+                                    <u>Move Name: {superMove.name}</u>
+                                </h4>
+                            </div>
+                            <div className="col-sm-6">
+                                <h4 className="">
+                                    <u>Input: {superMove.input}</u>
+                                </h4>
                             </div>
                         </div>
-
-                        <div className="col">
-                            <div className="col mt-1">                                 
-                                <div className="row text-left">
-                                    <div className="col-sm">
-                                        <p className="">
-                                            Input:    {superMove.input}
-                                        </p>
+                        <br></br>
+                        <br></br>
+                        <div className="row">
+                            <div className="mt-1 col-5 d-none d-sm-block">
+                                { superMove.picture.url ? 
+                                    <div className="super">
+                                        <img className="super img-fluid" src={superMove.picture.url}  alt="super"></img>
+        
                                     </div>
-                                    <div className="col-sm">
+                                     :
+                                    <div className="super">
+                                        <img className="super img-fluid" src='/question.png'  alt="missing"></img>
+                                    </div>
+                                }
+                            </div>
+    
+                                                            
+                            <div className="col-sm">
+                                <div className="row text-left">
+                                    <div className="col-sm-4">
                                         <p className="">
                                             First Active:    {superMove.startup}
                                         </p>
                                     </div>
-                                    <div className="col-sm">
+                                    <div className="col-sm-4">
                                         <p className="">
                                             Active:  {superMove.active}
                                         </p>
                                     </div>
-                                </div>
-                                <div className="row text-left">  
                                     <div className="col-sm">
                                         <p className="">
                                             Recovery:    {superMove.recovery}
                                         </p>
                                     </div>
-                                    <div className="col-sm">
+                                </div>
+                                <div className="row text-left">  
+                                    <div className="col-sm-4">
                                         <p className="">
                                             Advantage:   {superMove.advantage}
                                         </p>
                                     </div>
-                                    <div className="col-sm">
+                                    <div className="col-sm-4">
                                         <p className="">
                                             Gaurd:   {superMove.gaurd}
                                         </p>
                                     </div>
                                 </div>
-                                <div className="row text-left">
-                                    <div className="col-sm">
-                                        <p className="text-left notes-box">
-                                            Notes: 
-                                        </p>
-                                        <p className="text-left notes-box">
-                                            {superMove.special_notes}
-                                        </p>
-                                    </div> 
-                                </div>
+                                
                             </div>
+                        </div>
+                        <br></br>
+                        <div className="row">
+                            <div className="text-left col-sm">
+                                <p className="notes-box">
+                                    Notes: 
+                                </p>
+                                <p className="notes-box">
+                                    {superMove.special_notes}
+                                </p>
+                            </div> 
                         </div>
 
                         <div className="row col mb-2">
