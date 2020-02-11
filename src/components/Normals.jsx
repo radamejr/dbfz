@@ -88,69 +88,74 @@ class Normals extends Component {
             return(
                 <div key={index}>
                     <div className="normal-move container">
-                        <div className="row mt-1 justify-content-center">
-                            { normal.picture.url ? 
-                                    <div className="col-6 d-none d-sm-block">
-                                        <img className="normal img-fluid" src={normal.picture.url}  alt="normal"></img>
-                                    </div>
-                                    :
-                                    <div className="col-6 d-none d-sm-block">
-                                        <img className="normal img-fluid" src='/question.png'  alt="missing"></img>
-                                    </div>
-                                }
-                        </div>
 
-                        <div className="row">
-                            <div className="col mx-auto">
-                                <h4 className="">
-                                    Input: {normal.input}
-                                </h4>
-                            </div>
+                    <div className="row">
+                        <div className="col mx-auto">
+                            <h4 className="">
+                                Input: {normal.input}
+                            </h4>
                         </div>
-                        <div className="col mt-1">                                 
-                            <div className="row text-left">
-                                <div className="col-sm-7">
-                                    <p className="">
-                                        First Active:    {normal.startup}
-                                    </p>
-                                </div>
-                                <div className="col-sm-5">
-                                    <p className="">
-                                        Active:  {normal.active}
-                                    </p>
-                                </div>
+                    </div>
+                        <br></br>
+                        <div className="row">
+                            <div className="col-5 justify-content-center d-none d-sm-block">
+                                { normal.picture.url ? 
+                                        <div className="mt-3">
+                                            <span className="helper"></span>
+                                            <img className="normal img-fluid" src={normal.picture.url}  alt="normal"></img>
+                                        </div>
+                                        :
+                                        <div className="mt-3">
+                                            <span className="helper"></span>
+                                            <img className="normal img-fluid" src='/question.png'  alt="missing"></img>
+                                        </div>
+                                    }
                             </div>
-                            <div className="row text-left">  
-                                <div className="col-sm-7">
-                                    <p className="">
-                                        Recovery:    {normal.recovery}
-                                    </p>
+                            <div className="col">                                 
+                                <div className="row text-left">
+                                    <div className="col-sm-7">
+                                        <p className="">
+                                            First Active:    {normal.startup}
+                                        </p>
+                                    </div>
+                                    <div className="col-sm">
+                                        <p className="">
+                                            Active:  {normal.active}
+                                        </p>
+                                    </div>
                                 </div>
-                                <div className="col-sm-5">
-                                    <p className="">
-                                        Advantage:   {normal.advantage}
-                                    </p>
+                                <div className="row text-left">  
+                                    <div className="col-sm-7">
+                                        <p className="">
+                                            Recovery:    {normal.recovery}
+                                        </p>
+                                    </div>
+                                    <div className="col-sm">
+                                        <p className="">
+                                            Advantage:   {normal.advantage}
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="row text-left">
-                                <div className="col-sm-7">
-                                    <p className="">
-                                        Gaurd:   {normal.gaurd}
-                                    </p>
+                                <div className="row text-left">
+                                    <div className="col-sm-7">
+                                        <p className="">
+                                            Gaurd:   {normal.gaurd}
+                                        </p>
+                                    </div>
+                                    <div className="col-sm">
+                                        
+                                    </div>
                                 </div>
-                                <div className="col-sm-5">
-                                    
+                                <div className="row text-left">
+                                    <div className="col-sm">
+                                        <p className="text-left notes-box">
+                                            Notes: 
+                                        </p>
+                                        <p className="text-left notes-box">
+                                            {normal.special_notes}
+                                        </p>
+                                    </div> 
                                 </div>
-                            </div>
-                            <div className="row text-left">
-                                <div className="col-sm">
-                                    <p className="text-left notes-box">
-                                        Notes: 
-                                    </p>
-                                    <p className="text-left notes-box">
-                                        {normal.special_notes}
-                                    </p>
-                                </div> 
                             </div>
                         </div>
                         

@@ -86,41 +86,43 @@ class Specials extends Component {
             return(
                 <div key={index}>
                     <div className="special-move container">
-                        <div className="row mt-1 justify-content-center">
-                            { special.picture.url ? 
-                                <div className="col-6 d-none d-sm-block">
-                                    <img className="special img-fluid" src={special.picture.url}  alt="special"></img>
-                                </div>
-                                :
-                                <div className="col-6 d-none d-sm-block">
-                                    <img className="special img-fluid" src='/question.png'  alt="missing"></img>
-                                </div>
-                            }
-                        </div>
-                        <div className="col">
-                            <div className="row text-left ml-3">
-                                <div className="col-sm-6">
-                                    <h4 className="">
-                                        <u>Move Name: {special.name}</u>
-                                    </h4>
-                                </div>
-                                <div className="col-sm-6">
-                                    <h4 className="">
-                                       <u>Input: {special.input}</u>
-                                    </h4>
-                                </div>
+                        <div className="row ml-3">
+                            <div className="col-sm-6">
+                                <h4 className="">
+                                    <u>Move Name: {special.name}</u>
+                                </h4>
+                            </div>
+                            <div className="col-sm-6">
+                                <h4 className="">
+                                    <u>Input: {special.input}</u>
+                                </h4>
                             </div>
                         </div>
-
-                        <div className="col">
-                            <div className="row text-left ml-3">
-                                <div className="col mx-auto mt-3">
+                        <div className="row">
+                            <div className="col-sm d-none d-sm-block">
+                                { special.picture.url ? 
+                                    <div className="mt-3">
+                                        <span className="helper"></span>
+                                        <img className="special img-fluid" src={special.picture.url}  alt="special"></img>
+                                    </div>
+                                    :
+                                    <div className="mt-3">
+                                        <span className="helper"></span>
+                                        <img className="special img-fluid" src='/question.png'  alt="missing"></img>
+                                    </div>
+                                }
+                            </div>
+                            <div className="col-sm text-left">
+                            
+                                <div className="mx-auto mt-3">
                                     <h4 className="notes-box">
-                                        Description: {special.special_notes}
+                                       <u>Description:</u> {special.special_notes}
                                     </h4>
                                 </div>
+                            
                             </div>
                         </div>
+                        
 
                         <br></br>
                         <br></br>

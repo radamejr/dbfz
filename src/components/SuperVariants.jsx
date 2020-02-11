@@ -176,7 +176,7 @@ class SuperVariants extends Component {
                         <div className="card-header" id="variantHeading">
                             <h5 className="mb-0">
                                 <button className="btn btn-link" data-toggle="collapse" data-target={`#variant-${super_id}`} aria-expanded="true" aria-controls="collapseOne">
-                                    Input Variant Information
+                                    Super Move Variant
                                 </button>
                             </h5>
                         </div>

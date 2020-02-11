@@ -104,7 +104,7 @@ class SpecialVariants extends Component {
                             <div className="row text-left">
                                 <div className="col-sm">
                                     <p className="">
-                                        Input:    {variant.input_type}
+                                        Variant Input:    {variant.input_type}
                                     </p>
                                 </div>
                                 <div className="col-sm">
@@ -138,7 +138,7 @@ class SpecialVariants extends Component {
                             <div className="row text-left">
                                 <div className="col-sm">
                                     <p className="text-left notes-box">
-                                        Notes: 
+                                        <u>Notes: </u>
                                     </p>
                                     <p className="text-left notes-box">
                                         {variant.special_notes}
@@ -185,7 +185,7 @@ class SpecialVariants extends Component {
                         <div className="card-header" id="variantHeading">
                             <h5 className="mb-0">
                                 <button className="btn btn-link" data-toggle="collapse" data-target={`#variant-${special_id}`} aria-expanded="true" aria-controls="collapseOne">
-                                    Special Move Input Variations
+                                    Special Move Variants
                                 </button>
                             </h5>
                         </div>

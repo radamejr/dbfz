@@ -199,6 +199,11 @@ hr {
 
 }
 
+.normal-move img {
+  max-height: 300px;
+  vertical-align: middle;
+}
+
 .scroll-to-top {
   position: fixed;
   bottom: 0.5rem;
@@ -224,11 +229,22 @@ hr {
   border-style: solid;
   border-color: black;
 }
+
+.special-move img {
+  max-height: 300px;
+  vertical-align: middle;
+}
+
+.special-move p {
+  font-size: larger;
+}
 .super-move.container {
   border-style: solid;
   border-color: black;
 }
-
+.super-move p {
+  font-size: larger;
+}
 .universal-selector  {
   list-style: none;
   overflow: hidden;

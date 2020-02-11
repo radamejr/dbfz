@@ -89,65 +89,67 @@ class Assist extends Component {
             return(
                 <div key={index}>
                     <div className="assist-move container">
-                        <div className="row mt-1 justify-content-center">
-                            { assist.picture.url ? 
-                                <div className="assist col-6 d-none d-sm-block">
-                                    <img className="assist img-fluid" src={assist.picture.url}  alt="assist"></img>
+                        <div className="row">
+                        <div className="col-5 justify-content-center d-none d-sm-block">
+                                { assist.picture.url ? 
+                                        <div className="mt-3">
+                                            <span className="helper"></span>
+                                            <img className="assist img-fluid" src={assist.picture.url}  alt="assist"></img>
+                                        </div>
+                                        :
+                                        <div className="mt-3">
+                                            <span className="helper"></span>
+                                            <img className="assist img-fluid" src='/question.png'  alt="missing"></img>
+                                        </div>
+                                    }
+                            </div>
+                            <div className="col mt-3">                                 
+                                <div className="row text-left">
+                                    <div className="col-sm-7">
+                                        <p className="">
+                                            First Active:    {assist.startup}
+                                        </p>
+                                    </div>
+                                    <div className="col-sm">
+                                        <p className="">
+                                            Active:  {assist.active}
+                                        </p>
+                                    </div>
                                 </div>
-                                :
-                                <div className="assist col-6 d-none d-sm-block">
-                                    <img className="assist img-fluid" src='/question.png'  alt="missing"></img>
+                                <div className="row text-left">  
+                                    <div className="col-sm-7">
+                                        <p className="">
+                                            Recovery:    {assist.recovery}
+                                        </p>
+                                    </div>
+                                    <div className="col-sm">
+                                        <p className="">
+                                            Advantage:   {assist.advantage}
+                                        </p>
+                                    </div>
                                 </div>
-                            }
-                        </div>
-                        
-                        <div className="col mt-1">
-                            <div className="row text-left">
-                                <div className="col-sm ">
-                                    <p className="">
-                                        First Active: {assist.startup}
-                                    </p>  
-                                </div>
-                                <div className="col-sm ">
-                                    <p className="">
-                                        Blockstun Frames: {assist.blockstun}
-                                    </p>  
-                                </div>
-                                <div className="col-sm ">
-                                    <p className="">
-                                        Active Frames: {assist.active}
-                                    </p>  
+                                <div className="row text-left">
+                                    <div className="col-sm-7">
+                                        <p className="">
+                                            Gaurd:   {assist.gaurd}
+                                        </p>
+                                    </div>
+                                    <div className="col-sm">
+                                        
+                                    </div>
                                 </div>
                             </div>
-                            <div className="row text-left">
-                                <div className="col-sm ">
-                                    <p className="">
-                                        OnScreen Frames: {assist.onscreen}
-                                    </p>  
-                                </div>
-                                <div className="col-sm ">
-                                    <p className="">
-                                        Hitstop on Block;Hit: {assist.hitstop}
-                                    </p>  
-                                </div>
-                                <div className="col-sm ">
-                                    <p className="">
-                                        Hitstun: {assist.hit_stun}
-                                    </p>  
-                                </div>
-                            </div>
-                            <div className="row text-left">
-                                <div className="col-sm">
-                                    <p className="text-left notes-box">
-                                        Notes:
-                                    </p>
-                                    <p className="text-left notes-box">    
-                                        {assist.special_notes}
-                                    </p>  
-                                </div>
-                            </div>              
                         </div>
-                            
+                        <div className="row text-left">
+                            <div className="col-sm">
+                                <p className="text-left notes-box">
+                                    Notes: 
+                                </p>
+                                <p className="text-left notes-box">
+                                    {assist.special_notes}
+                                </p>
+                            </div> 
+                        </div>    
             
                         {this.props.user && this.props.user.admin 
                         ? 
