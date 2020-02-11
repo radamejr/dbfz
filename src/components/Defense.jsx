@@ -70,7 +70,7 @@ class Defense extends Component {
 
                     <div className="col-sm my-auto">
                            <div class="embed-responsive embed-responsive-16by9">
-                           <iframe title="neutral" className="empbed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/NeKGdf34Cc8" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                           <iframe title="neutral" className="embed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/NeKGdf34Cc8" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                     </div>
                     
@@ -89,7 +89,7 @@ class Defense extends Component {
                 <div className="row">
                     <div className="col-sm my-auto">
                            <div class="embed-responsive embed-responsive-16by9">
-                           <iframe title="neutral" className="empbed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/MqrsKFAD60w" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                           <iframe title="neutral" className="embed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/MqrsKFAD60w" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                     </div>
                     <div className="col-sm text-left">
@@ -129,7 +129,7 @@ class Defense extends Component {
                     </div>   
                     <div className="col-sm my-auto">
                            <div class="embed-responsive embed-responsive-16by9">
-                           <iframe title="neutral" className="empbed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/Z8LleaSIa_4" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                           <iframe title="neutral" className="embed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/Z8LleaSIa_4" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                     </div>                 
                 </div>
@@ -147,7 +147,7 @@ class Defense extends Component {
                 <div className="row">
                     <div className="col-sm my-auto">
                            <div class="embed-responsive embed-responsive-16by9">
-                           <iframe title="neutral" className="empbed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/BlcUJdxTz24" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                           <iframe title="neutral" className="embed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/BlcUJdxTz24" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                     </div> 
                     <div className="col-sm text-left">
@@ -184,9 +184,41 @@ class Defense extends Component {
 
                     <div className="col-sm my-auto">
                            <div class="embed-responsive embed-responsive-16by9">
-                           <iframe title="neutral" className="empbed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/HEcN0LXkcyw" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                           <iframe title="neutral" className="embed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/HEcN0LXkcyw" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                     </div>                 
+                </div>
+                <br></br>
+                <hr></hr>
+                <br></br>
+
+                <div className="row">
+                    <div className="col-sm">
+                        <h4 className="text-center"><u>I's blocking but they keep grabbing me!</u></h4>
+                    </div>
+                </div>
+                <br></br>
+                <br></br>
+                <div className="row">
+                <div className="col-sm my-auto">
+                           <div class="embed-responsive embed-responsive-16by9">
+                           <iframe title="neutral" className="embed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/Jlbk9MeGhfg" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                    </div>   
+                    <div className="col-sm text-left">
+                        <p>
+                        Dragon Rush is a great way to mix-up your opponent and crucial to know how to manage while playing defense. Sometimes, Dragon Rush can feel unblockable, and it is! It is a grab, you musth either jump out of or tech Dragon Rush to avoid it.
+                        </p>
+                        
+                        <p>
+                        You haven't followed <a href="https://www.youtube.com/channel/UCAsbwTn8tHkg5rtcFpTMuMQ" target="_blank" rel="noopener noreferrer" role="button">Lord Knight</a> is another DBFZ content creator, and he talks about how to practice teching Dragon Rush.
+                        </p> 
+                        <p>
+                            If you are partial to  <a href="https://www.youtube.com/channel/UC4n3mpDrD-noB7uMkKSD00Q" target="_blank" rel="noopener noreferrer" role="button">RathFGC</a>'s videos. He also covers Dragon Rush <a href="https://www.youtube.com/watch?v=41V67xHa9Ig&t" target="_blank" rel="noopener noreferrer" role="button">here</a>
+                        </p>
+                    </div>   
+
+                                  
                 </div>
                 <br></br>
                 <hr></hr>
@@ -200,11 +232,6 @@ class Defense extends Component {
                 <br></br>
                 <br></br>
                 <div className="row">
-                <div className="col-sm my-auto">
-                           <div class="embed-responsive embed-responsive-16by9">
-                           <iframe title="neutral" className="empbed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/l0L6npzE748" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                    </div>   
                     <div className="col-sm text-left">
                         <p>
                         No, the lab is also a great tool for learning match-ups and how to beat certain pressure strings. Knowing when you can escape pressure or start your own offense is important. Experience, character knowledge and frame data help you bolster your defense and make sound defensive options. Not every situation you are in defensively is real and sometimes you have more options than you realize.
@@ -212,7 +239,13 @@ class Defense extends Component {
                         
                         <p>You haven't followed <a href="https://www.youtube.com/channel/UC4n3mpDrD-noB7uMkKSD00Q" target="_blank" rel="noopener noreferrer" role="button">RathFGC</a>'s YouTube channel yet? BLASHPEMY!!!
                         </p>
+                    </div> 
+                    <div className="col-sm my-auto">
+                           <div class="embed-responsive embed-responsive-16by9">
+                           <iframe title="neutral" className="embed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/l0L6npzE748" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
                     </div>   
+                      
 
                                   
                 </div>

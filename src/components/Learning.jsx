@@ -56,12 +56,12 @@ class Learning extends Component {
                 </div>
                 <br></br>
                 <br></br>
-                <div>
+                
                     {(this.state.topic === 'Basics') ? <Basics /> : null}
                     {(this.state.topic === 'Neutral') ? <Neutral /> : null}
                     {(this.state.topic === 'Offense') ? <Offense /> : null}
                     {(this.state.topic === 'Defense') ? <Defense /> : null}
-                </div>
+                
                 
             </div>
          );
