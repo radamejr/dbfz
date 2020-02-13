@@ -60,13 +60,14 @@ class Offense extends Component {
                     
                 </div>
                 <br></br>
+                <hr></hr>
+                <br></br>
+
                 <div className="row">
                     <div className="col-sm">
                         <h4 className="text-center"><u>Combo Structure Basics</u></h4>
                     </div>
                 </div>
-                <br></br>
-                <hr></hr>
                 <br></br>
 
                 <div className="row">
@@ -94,6 +95,7 @@ class Offense extends Component {
                     
                 </div>
                 <br></br>
+                <hr></hr>
                 <br></br>
                 <div className="row">
                     <div className="col-sm">
@@ -101,7 +103,7 @@ class Offense extends Component {
                     </div>
                 </div>
                 <br></br>
-                <hr></hr>
+                
                 <br></br>
                 <div className="row">
 
@@ -116,7 +118,7 @@ class Offense extends Component {
                         Super Moves allow you to spend meter to deal high amounts of damage to the opponent. Supers have two main variants, level 1's and level 3's. Doing Supers randomly is not the most recommended choice, they can be blocked/evaded, have a decent amount of recovery and use meter. One exception is most level 3's are considered reversals, so they can counter the opponent if their is a gap in their pressure. 
                         </p>
                         <p>
-                        The most optimal application is using Supers during a combo. At any point during a hits stun time you can activate an applicable super and add more damage. If you manage to knock the character down and put them into a sliding knockdown state, you can follow up with a super for M-M-Maximum Damage!
+                        The most optimal application is using Supers during a combo. At any point during a hits stun, you can activate an applicable super and add more damage. If you manage to knock the character down and put them into a sliding knockdown state, you can follow up with a super for M-M-Maximum Damage!
                         </p>
                         <p>I don't have a video directly related to Supers, however here is a completely unbiased look at the best Supers in the game according to<a href="https://www.youtube.com/channel/UCOgaIuQYGr6ow_jbote4BKA" target="_blank" rel="noopener noreferrer" role="button">Maximilian Dood</a>(Missing Season 2).
                         </p>

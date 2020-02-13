@@ -74,7 +74,7 @@ class Character extends Component {
         let { match: { params } } = this.props;    
         let { characters } = this.props;
 
-        if (params.id > characters.length) {
+        if (params.id > 38) {
           return <Redirect to='/404' />
         }
         return ( 
