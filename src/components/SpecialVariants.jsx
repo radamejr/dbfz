@@ -91,59 +91,62 @@ class SpecialVariants extends Component {
             return (
                 <div key={index}>
                     <div className="variants container mt-0">
-                        <div className="row mt-1 justify-content-center">
-                            { variant.picture.url ? 
-                                <div className="col-6 d-none d-sm-block">
-                                    <img className="variant img-fluid" src={variant.picture.url}  alt="variant"></img>
-                                </div>
-                                :
-                                null
+                        <div className="row">
+                            { variant.picture.url ?
+                            <div className="col-sm d-none d-sm-block">                              
+                                    <div className="mt-3">
+                                        <span className="helper"></span>
+                                        <img className="variant img-fluid" src={variant.picture.url}  alt="variant"></img>
+                                    </div>
+                            </div>
+                             :
+                             null
                             }
-                        </div>
-                        <div className="col mt-1">                                 
-                            <div className="row text-left">
-                                <div className="col-sm">
-                                    <p className="">
-                                        Variant Input:    {variant.input_type}
-                                    </p>
+                            <div className="col-sm mt-1">                                 
+                                <div className="row text-left">
+                                    <div className="col-sm">
+                                        <p className="">
+                                            Variant Input:    {variant.input_type}
+                                        </p>
+                                    </div>
+                                    <div className="col-sm">
+                                        <p className="">
+                                            First Active:    {variant.startup}
+                                        </p>
+                                    </div>
+                                    <div className="col-sm">
+                                        <p className="">
+                                            Active:  {variant.active}
+                                        </p>
+                                    </div>
                                 </div>
-                                <div className="col-sm">
-                                    <p className="">
-                                        First Active:    {variant.startup}
-                                    </p>
+                                <div className="row text-left">  
+                                    <div className="col-sm">
+                                        <p className="">
+                                            Recovery:    {variant.recovery}
+                                        </p>
+                                    </div>
+                                    <div className="col-sm">
+                                        <p className="">
+                                            Advantage:   {variant.advantage}
+                                        </p>
+                                    </div>
+                                    <div className="col-sm">
+                                        <p className="">
+                                            Gaurd:   {variant.gaurd}
+                                        </p>
+                                    </div>
                                 </div>
-                                <div className="col-sm">
-                                    <p className="">
-                                        Active:  {variant.active}
-                                    </p>
+                                <div className="row text-left">
+                                    <div className="col-sm">
+                                        <p className="text-left notes-box">
+                                            <u>Notes: </u>
+                                        </p>
+                                        <p className="text-left notes-box">
+                                            {variant.special_notes}
+                                        </p>
+                                    </div> 
                                 </div>
-                            </div>
-                            <div className="row text-left">  
-                                <div className="col-sm">
-                                    <p className="">
-                                        Recovery:    {variant.recovery}
-                                    </p>
-                                </div>
-                                <div className="col-sm">
-                                    <p className="">
-                                        Advantage:   {variant.advantage}
-                                    </p>
-                                </div>
-                                <div className="col-sm">
-                                    <p className="">
-                                        Gaurd:   {variant.gaurd}
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="row text-left">
-                                <div className="col-sm">
-                                    <p className="text-left notes-box">
-                                        <u>Notes: </u>
-                                    </p>
-                                    <p className="text-left notes-box">
-                                        {variant.special_notes}
-                                    </p>
-                                </div> 
                             </div>
                         </div>
                     
