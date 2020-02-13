@@ -65,7 +65,7 @@ class SignIn extends Component {
     render() { 
         
         return ( 
-            <div className="row content content-container">
+            <div className="">
                 <div className="col-sm form-background mx-auto">
                     <h1>Login</h1>
                     <form id="signin" onSubmit={this.onSubmit}>

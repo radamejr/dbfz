@@ -90,71 +90,60 @@ class SuperVariants extends Component {
             return (
                 <div key={index}>
                     <div className="variants container mt-0">
-                        <div className="row mt-1 justify-content-center">
-                            { variant.picture.url ? 
-                                <div className="col-6 d-none d-sm-block">
-                                    <img className="variant img-fluid" src={variant.picture.url}  alt="variant"></img>
+                        <div className="row">
+                            { variant.picture.url ?
+                                <div className="col-sm d-none d-sm-block">                              
+                                        <div className="mt-3">
+                                            <span className="helper"></span>
+                                            <img className="variant img-fluid" src={variant.picture.url}  alt="variant"></img>
+                                        </div>
                                 </div>
                                 :
                                 null
-                            }
-                        </div>
-                        <div className="col mt-1">                                 
-                            <div className="row text-left">
-                                <div className="col-sm">
-                                    <p className="">
-                                        Input:    {variant.input_type}
-                                    </p>
-                                </div>
-                                <div className="col-sm">
-                                    <p className="">
-                                        First Active:    {variant.startup}
-                                    </p>
-                                </div>
-                                <div className="col-sm">
-                                    <p className="">
-                                        Active:  {variant.active}
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="row text-left">  
-                                <div className="col-sm">
-                                    <p className="">
-                                        Recovery:    {variant.recovery}
-                                    </p>
-                                </div>
-                                <div className="col-sm">
-                                    <p className="">
-                                        Advantage:   {variant.advantage}
-                                    </p>
-                                </div>
-                                <div className="col-sm">
-                                    <p className="">
-                                        Gaurd:   {variant.gaurd}
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="row text-left">
-                                <div className="col-sm">
-                                    <p className="text-left notes-box">
-                                        Notes: 
-                                    </p>
-                                    <p className="text-left notes-box">
-                                        {variant.special_notes}
-                                    </p>
-                                </div> 
-                            </div>
-                        </div>
-                        <div className="row col mb-2">
-                            {this.props.user && this.props.user.admin ? 
-                            <div className="float-right col">
-                                <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Variant</button>
-                                <button className="btn btn-danger btn-sm float-left" onClick={ (event) => window.confirm("Are you sure you want to delete that?") && this.deleteButtonClick(variant.id)}>Delete Variant</button>  
-                            </div> 
-                            : null} 
-                        </div> 
-                         
+                                }
                         
+                            <div className="col mt-1">                                 
+                                <div className="row text-left">
+                                    <div className="col-sm">
+                                        <p className="">
+                                            Input:    {variant.input_type}
+                                        </p>
+                                    </div>
+                                    <div className="col-sm">
+                                        <p className="">
+                                            First Active:    {variant.startup}
+                                        </p>
+                                    </div>
+                                    <div className="col-sm">
+                                        <p className="">
+                                            Active:  {variant.active}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    
+                                </div>
+                                <div className="row text-left">
+                                    <div className="col-sm">
+                                        <p className="text-left notes-box">
+                                            Notes: 
+                                        </p>
+                                        <p className="text-left notes-box">
+                                            {variant.special_notes}
+                                        </p>
+                                    </div> 
+                                </div>
+                            </div>
+
+                            <div className="row col mb-2">
+                                {this.props.user && this.props.user.admin ? 
+                                <div className="float-right col">
+                                    <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Variant</button>
+                                    <button className="btn btn-danger btn-sm float-left" onClick={ (event) => window.confirm("Are you sure you want to delete that?") && this.deleteButtonClick(variant.id)}>Delete Variant</button>  
+                                </div> 
+                                : null} 
+                            </div> 
+                        </div>                       
                     </div>
                 </div>
             );
