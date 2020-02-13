@@ -112,8 +112,7 @@ class Supers extends Component {
                                     </div>
                                 }
                             </div>
-    
-                                                            
+                                                
                             <div className="col-sm">
                                 <div className="row text-left">
                                     <div className="col-sm-4">
@@ -132,6 +131,9 @@ class Supers extends Component {
                                         </p>
                                     </div>
                                 </div>
+                                <br></br>
+                                <br></br>
+                                        
                                 <div className="row text-left">  
                                     <div className="col-sm-4">
                                         <p className="">
@@ -141,6 +143,21 @@ class Supers extends Component {
                                     <div className="col-sm-4">
                                         <p className="">
                                             Gaurd:   {superMove.gaurd}
+                                        </p>
+                                    </div>
+                                </div>
+                                <br></br>
+                                <br></br>
+                                        
+                                <div className="row text-left">  
+                                    <div className="col-sm-4">
+                                        <p className="">
+                                            Raw Damage:   {superMove.raw_damage}
+                                        </p>
+                                    </div>
+                                    <div className="col-sm-4">
+                                        <p className="">
+                                            Scaled Damage:   {superMove.scaled_damage}
                                         </p>
                                     </div>
                                 </div>

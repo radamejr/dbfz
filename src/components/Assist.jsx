@@ -105,7 +105,7 @@ class Assist extends Component {
                             </div>
                             <div className="col mt-3">                                 
                                 <div className="row text-left">
-                                    <div className="col-sm-7">
+                                    <div className="col-sm">
                                         <p className="">
                                             First Active:    {assist.startup}
                                         </p>
@@ -115,27 +115,31 @@ class Assist extends Component {
                                             Active:  {assist.active}
                                         </p>
                                     </div>
+                                    <div className="col-sm">
+                                        <p className="">
+                                            Onscreen:    {assist.onscreen}
+                                        </p>
+                                    </div>
                                 </div>
+                                <br></br>
+                                <br></br>
                                 <div className="row text-left">  
-                                    <div className="col-sm-7">
+                                    
+                                    <div className="col-sm">
                                         <p className="">
-                                            Recovery:    {assist.recovery}
+                                            Hitstop Block/Hit:   {assist.hitstop}
+                                        </p>
+                                    </div>
+
+                                    <div className="col-sm">
+                                        <p className="">
+                                            Hitstun:   {assist.hit_stun}
                                         </p>
                                     </div>
                                     <div className="col-sm">
                                         <p className="">
-                                            Advantage:   {assist.advantage}
+                                            Blockstun:   {assist.blockstun}
                                         </p>
-                                    </div>
-                                </div>
-                                <div className="row text-left">
-                                    <div className="col-sm-7">
-                                        <p className="">
-                                            Gaurd:   {assist.gaurd}
-                                        </p>
-                                    </div>
-                                    <div className="col-sm">
-                                        
                                     </div>
                                 </div>
                             </div>
