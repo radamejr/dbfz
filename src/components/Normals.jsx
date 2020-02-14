@@ -115,7 +115,7 @@ class Normals extends Component {
                                 <div className="row text-left">
                                     <div className="col-sm-7">
                                         <p className="">
-                                            First Active:    {normal.startup}
+                                            Startup:    {normal.startup}
                                         </p>
                                     </div>
                                     <div className="col-sm">

@@ -107,7 +107,7 @@ class Assist extends Component {
                                 <div className="row text-left">
                                     <div className="col-sm">
                                         <p className="">
-                                            First Active:    {assist.startup}
+                                            Startup:    {assist.startup}
                                         </p>
                                     </div>
                                     <div className="col-sm">

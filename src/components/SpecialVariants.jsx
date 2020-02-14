@@ -111,7 +111,7 @@ class SpecialVariants extends Component {
                                     </div>
                                     <div className="col-sm">
                                         <p className="">
-                                            First Active:    {variant.startup}
+                                            Startup:    {variant.startup}
                                         </p>
                                     </div>
                                     <div className="col-sm">

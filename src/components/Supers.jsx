@@ -117,7 +117,7 @@ class Supers extends Component {
                                 <div className="row text-left">
                                     <div className="col-sm-4">
                                         <p className="">
-                                            First Active:    {superMove.startup}
+                                            Startup:    {superMove.startup}
                                         </p>
                                     </div>
                                     <div className="col-sm-4">

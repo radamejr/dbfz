@@ -35,7 +35,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        First Active:   24 
+                                        Startup:   24 
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -108,7 +108,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        First Active:   19 
+                                        Startup:   19 
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -181,7 +181,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        First Active:   N/A 
+                                        Startup:   N/A 
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -255,7 +255,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        First Active:   Minimum 21, Fullscreen 34
+                                        Startup:   Minimum 21, Fullscreen 34
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -328,7 +328,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        First Active:   1
+                                        Startup:   1
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -401,7 +401,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        First Active:   Corner 21, ~28 Full
+                                        Startup:   Corner 21, ~28 Full
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -478,7 +478,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        First Active:   15
+                                        Startup:   15
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -553,7 +553,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        First Active:   13
+                                        Startup:   13
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -628,7 +628,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        First Active:   N/A
+                                        Startup:   N/A
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -702,7 +702,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        First Active:   7
+                                        Startup:   7
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -777,7 +777,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        First Active:   4
+                                        Startup:   4
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -850,7 +850,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        First Active:   1
+                                        Startup:   1
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -922,7 +922,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        First Active:   1
+                                        Startup:   1
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -996,7 +996,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        First Active:   5 + 2 + 6 + normal
+                                        Startup:   5 + 2 + 6 + normal
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -1070,7 +1070,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        First Active:  1
+                                        Startup:  1
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -1142,7 +1142,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        First Active:  N/A
+                                        Startup:  N/A
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -1214,7 +1214,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        First Active:  N/A
+                                        Startup:  N/A
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -1286,7 +1286,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        First Active:  N/A
+                                        Startup:  N/A
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -1358,7 +1358,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        First Active:  N/A
+                                        Startup:  N/A
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -1430,7 +1430,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        First Active:  N/A
+                                        Startup:  N/A
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
