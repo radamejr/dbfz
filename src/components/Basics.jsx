@@ -59,9 +59,7 @@ class Basics extends Component {
                     </div>
                 </div>
                 <br></br>
-
                 <hr></hr>
-
                 <br></br>
 
                 <div className="row">
@@ -82,6 +80,7 @@ class Basics extends Component {
                     
                 </div>
                 <br></br>
+                <hr></hr>
                 <br></br>
                 <div className="row">
                     <div className="col-sm">
@@ -101,6 +100,7 @@ class Basics extends Component {
                     </div>
                 </div>
                 <br></br>
+                <hr></hr>
                 <br></br>
                 <div className="row">
                     <div className="col-sm">
@@ -121,6 +121,7 @@ class Basics extends Component {
                     
                 </div>
                 <br></br>
+                <hr></hr>
                 <br></br>
                 <div className="row">
                     <div className="col-sm">
@@ -140,6 +141,7 @@ class Basics extends Component {
                     </div>
                 </div>
                 <br></br>
+                <hr></hr>
                 <br></br>
                 <div className="row">
                     <div className="col-sm">
@@ -160,6 +162,7 @@ class Basics extends Component {
                     
                 </div>
                 <br></br>
+                <hr></hr>
                 <br></br>
                 <div className="row">
                     <div className="col-sm">
@@ -179,6 +182,7 @@ class Basics extends Component {
                     </div>
                 </div>
                 <br></br>
+                <hr></hr>
                 <br></br>
                 <div className="row">
                     <div className="col-sm">
