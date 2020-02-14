@@ -14,7 +14,7 @@ class Home extends Component {
                     Hopefully this can help fill a gap for any non android users out there. Or if you are looking to get this information on a PC/Mac without digging into the excel sheets. Speaking of those sheets this entire thing is not possible without <a href="https://twitter.com/RinSenpaiii" target="_blank" rel="noopener noreferrer" role="button">@Rin-senpaii</a> and <a href ="https://twitter.com/rafestation" target="_blank" rel="noopener noreferrer" role="button">@Turtleon</a> putting in an amazing amount of work on the doc's that enabled this kind of resource. I would also like to thank whoever is managing the hitbox viewer but I cannot seem to find their information, if you have it let me know. 
                     <br></br>
                     <br></br>
-                    Thank you everyone who has contributed to the DBFZ community to make this resource a possibility, special shout-out to <a href="https://twitter.com/rathfgc" target="_blank" rel="noopener noreferrer" role="button">RathFGC</a> for creating an awesome set of videos that can help new and old comers alike. And remember to tech those dragon rushes.
+                    Thank you everyone who has contributed to the DBFZ community to make this resource a possibility, special shout-out to <a href="https://twitter.com/rathfgc" target="_blank" rel="noopener noreferrer" role="button">RathFGC</a> (Gotta rep our AZ fam) and ALL DBFZ content creators, for creating awesome videos that can help new and old comers alike. And remember to tech those dragon rushes.
                     <br></br>
                     <br></br>
                     -KP
