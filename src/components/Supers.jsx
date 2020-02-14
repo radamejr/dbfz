@@ -142,7 +142,7 @@ class Supers extends Component {
                                     </div>
                                     <div className="col-sm-4">
                                         <p className="">
-                                            Gaurd:   {superMove.gaurd}
+                                            Guard:   {superMove.gaurd}
                                         </p>
                                     </div>
                                 </div>

@@ -139,7 +139,7 @@ class Normals extends Component {
                                 <div className="row text-left">
                                     <div className="col-sm-7">
                                         <p className="">
-                                            Gaurd:   {normal.gaurd}
+                                            Guard:   {normal.gaurd}
                                         </p>
                                     </div>
                                     <div className="col-sm">

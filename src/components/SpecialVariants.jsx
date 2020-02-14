@@ -133,7 +133,7 @@ class SpecialVariants extends Component {
                                     </div>
                                     <div className="col-sm">
                                         <p className="">
-                                            Gaurd:   {variant.gaurd}
+                                            Guard:   {variant.gaurd}
                                         </p>
                                     </div>
                                 </div>

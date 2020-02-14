@@ -94,13 +94,13 @@ class Defense extends Component {
                     </div>
                     <div className="col-sm text-left">
                         <p>
-                        Gaurd Cancel is a rather strong defensive tool, given it is used in the correct situations. Activated by hitting forward(6) during blockstun and an assist, the chosen assist will dash out toward the enemy. They do not take any hits, except from anti-airs, and will continue until hitting the enemy. Gaurd canceling requires you spend a bar of meter to initiate it.
+                        Guard Cancel is a rather strong defensive tool, given it is used in the correct situations. Activated by hitting forward(6) during blockstun and an assist, the chosen assist will dash out toward the enemy. They do not take any hits, except from anti-airs, and will continue until hitting the enemy. Guard canceling requires you spend a bar of meter to initiate it.
                         </p>
                         <p>
                             Sounds strong right? It is. However, if the opponent blocks your attempt to swap, you will get punished and potentially lose a character.
                         </p>
                         <p>
-                        <a href="https://www.youtube.com/channel/UC4n3mpDrD-noB7uMkKSD00Q" target="_blank" rel="noopener noreferrer" role="button">RathFGC</a> gives us the whats what on Gaurd Canceling.
+                        <a href="https://www.youtube.com/channel/UC4n3mpDrD-noB7uMkKSD00Q" target="_blank" rel="noopener noreferrer" role="button">RathFGC</a> gives us the whats what on Guard Canceling.
                         </p>
                     </div>                    
                 </div>

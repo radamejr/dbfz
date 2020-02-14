@@ -160,7 +160,7 @@ class EditSuper extends Component {
                     </div>
                 </div>
                 <div className="category">
-                Gaurd:
+                Guard:
                     <div className="form-input">
                         <input name="gaurd"
                             type="text"

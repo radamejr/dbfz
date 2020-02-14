@@ -59,7 +59,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        Gaurd:   High
+                                        Guard:   High
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -132,7 +132,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        Gaurd:   Throw
+                                        Guard:   Throw
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -205,7 +205,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        Gaurd:   N/A
+                                        Guard:   N/A
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -279,7 +279,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        Gaurd:   All
+                                        Guard:   All
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -352,7 +352,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        Gaurd:   N/A
+                                        Guard:   N/A
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -384,7 +384,7 @@ class UniversalData extends Component {
                             <div className="col mx-auto">
                                 <h4 className="">
                                     <u>
-                                        Name: Gaurd Cancel
+                                        Name: Guard Cancel
                                     </u>
                                 </h4>
                             </div>
@@ -425,7 +425,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        Gaurd:   All
+                                        Guard:   All
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -461,7 +461,7 @@ class UniversalData extends Component {
                             <div className="col mx-auto">
                                 <h4 className="">
                                     <u>
-                                        Name: Gaurd Cancel (Solo)
+                                        Name: Guard Cancel (Solo)
                                     </u>
                                 </h4>
                             </div>
@@ -502,7 +502,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        Gaurd:   All
+                                        Guard:   All
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -577,7 +577,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        Gaurd:   All
+                                        Guard:   All
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -652,7 +652,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        Gaurd:   All
+                                        Guard:   All
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -726,7 +726,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        Gaurd:   All
+                                        Guard:   All
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -801,7 +801,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        Gaurd:   N/A
+                                        Guard:   N/A
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -874,7 +874,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        Gaurd:   N/A
+                                        Guard:   N/A
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -946,7 +946,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        Gaurd:   N/A
+                                        Guard:   N/A
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -1020,7 +1020,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        Gaurd:   N/A
+                                        Guard:   N/A
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -1094,7 +1094,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        Gaurd:   N/A
+                                        Guard:   N/A
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -1166,7 +1166,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        Gaurd:   N/A
+                                        Guard:   N/A
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -1238,7 +1238,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        Gaurd:   N/A
+                                        Guard:   N/A
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -1310,7 +1310,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        Gaurd:   N/A
+                                        Guard:   N/A
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -1382,7 +1382,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        Gaurd:   N/A
+                                        Guard:   N/A
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
@@ -1454,7 +1454,7 @@ class UniversalData extends Component {
                             <div className="row text-left">
                                 <div className="col-sm-7">
                                     <p className="">
-                                        Gaurd:   N/A
+                                        Guard:   N/A
                                     </p>
                                 </div>
                                 <div className="col-sm-5">
