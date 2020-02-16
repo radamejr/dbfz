@@ -23,7 +23,7 @@ class Home extends Component {
                     <br></br>
                     <a href="https://docs.google.com/spreadsheets/d/17K1onCbItyLc8njouC_9-j7PZBT9rMqpn_Je55BINl4/edit#gid=0" target="_blank" rel="noopener noreferrer" role="button">Super Damage</a>
                     <br></br>
-                    <a href="https://docs.google.com/spreadsheets/d/17K1onCbItyLc8njouC_9-j7PZBT9rMqpn_Je55BINl4/edit#gid=0" target="_blank" rel="noopener noreferrer" role="button">5L / 2L Data</a>
+                    <a href="https://docs.google.com/spreadsheets/d/1-GxpldVn3bnerBlUfzYUgdLzSOdQ0IWvN7Co-nV7qlQ/edit#gid=0" target="_blank" rel="noopener noreferrer" role="button">5L / 2L Data</a>
                     <br></br>
                     <br></br>
                     Thank you everyone who has contributed to the DBFZ community to make this resource a possibility, special shout-out to <a href="https://twitter.com/rathfgc" target="_blank" rel="noopener noreferrer" role="button">RathFGC</a> (Gotta rep our AZ fam) and ALL DBFZ content creators, for creating awesome videos that can help new and old comers alike. And remember to tech those dragon rushes.
