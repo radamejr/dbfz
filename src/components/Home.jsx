@@ -13,10 +13,9 @@ class Home extends Component {
                     <br></br>
                     Hopefully this can help fill a gap for any non android users out there. Or if you are looking to get this information on a PC/Mac without digging into the excel sheets. Speaking of those sheets this entire thing is not possible without <a href="https://twitter.com/RinSenpaiii" target="_blank" rel="noopener noreferrer" role="button">@Rin-senpaii</a> and <a href ="https://twitter.com/rafestation" target="_blank" rel="noopener noreferrer" role="button">@Turtleon</a> putting in an amazing amount of work on the doc's that enabled this kind of resource. Also thank you to <a href ="https://twitter.com/CoderDBFZ" target="_blank" rel="noopener noreferrer" role="button">@CoderDBFZ</a> for the hitbox viewer.
                     
-
                     <br></br>
                     <br></br>
-                    This resource is not maintained by the folks mentioned above, rather I am updating and reflecting in a more digestable manner what they have created. None of the individuals are involved with this resource. If you would like to see their original data in all of its excel glory. You can view them:
+                    This resource is not maintained by anyone but <a href="https://twitter.com/_Kittenpower" target="_blank" rel="noopener noreferrer" role="button">myself</a> currently. I am updating and reflecting in a more digestable manner what they have created. None of the individuals are involved with this resource. If you would like to see their original data in all of its excel glory. You can view them:
                     <br></br>
                     <a href="https://docs.google.com/spreadsheets/d/1-p29UmRGIPF6n17ddOEtYfLcn_KRlE2VH6tE61P5UM8/edit#gid=768448487" target="_blank" rel="noopener noreferrer" role="button">Frame Data</a>
                     <br></br>
@@ -39,3 +38,4 @@ class Home extends Component {
  
 export default Home;
 
+   
