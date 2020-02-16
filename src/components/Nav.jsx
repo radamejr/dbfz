@@ -23,6 +23,13 @@ class Nav extends Component {
     this.setState({isOpen: !isOpen})
   }
 
+  toggleMenu = () => {
+    const isMobile = window.innerWidth < 768;
+    const changeDiv = document.getElementById("navbarSupportedContent")
+
+    isMobile ? changeDiv.classList.remove('show') : console.log()
+  }
+
   logoutClick = () => {
     axios.delete(auth("logout"), {withCredentials: true})
     .then(response => {
@@ -34,12 +41,12 @@ class Nav extends Component {
   render() { 
   const { characters, user } = this.props
   const { isOpen } = this.state
-
+  
   const selections = characters.map((character, index) => {
     
       return (        
         <li key={index} >
-          <Link to={"/characters/" + character.id} onClick={() => this.forceUpdate} >    
+          <Link to={"/characters/" + character.id } onClick={() => this.toggleMenu()} >    
             <img src={character.icon.url} className="dropdown-item" alt="character-icon" ></img>        
           </Link>
         </li>
@@ -51,7 +58,7 @@ class Nav extends Component {
     return (  
       // This is the navbar
       <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <nav className="navbar navbar-expand-md navbar-light bg-light fixed-top">
         <p className="navbar-brand">
           <Link to="/">Home</Link>
         </p>
@@ -80,11 +87,11 @@ class Nav extends Component {
           </li>
 
           <li className="nav-item">
-            <Link to="/universal" className="nav-link">Universal Data</Link>
+            <Link to="/universal" onClick={() => this.toggleMenu()} className="nav-link">Universal Data</Link>
           </li>
 
           <li className="nav-item">
-            <Link to="/learning" className="nav-link">Kame House</Link>
+            <Link to="/learning" onClick={() => this.toggleMenu()} className="nav-link">Kame House</Link>
           </li>
         </ul>
 
@@ -97,7 +104,7 @@ class Nav extends Component {
                 <button type="button" onClick={this.logoutClick} className="btn btn-link">Logout</button>
             </div>  
             : 
-            <Link to='/login'>Login</Link>}
+            <Link to='/login' onClick={() => this.toggleMenu()}>Login</Link>}
         </div>
       </div>
       </nav>

@@ -69,7 +69,7 @@ class Defense extends Component {
                     </div>
 
                     <div className="col-sm my-auto">
-                           <div class="embed-responsive embed-responsive-16by9">
+                           <div className="embed-responsive embed-responsive-16by9">
                            <iframe title="neutral" className="embed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/NeKGdf34Cc8" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                     </div>
@@ -88,7 +88,7 @@ class Defense extends Component {
                 <br></br>
                 <div className="row">
                     <div className="col-sm my-auto">
-                           <div class="embed-responsive embed-responsive-16by9">
+                           <div className="embed-responsive embed-responsive-16by9">
                            <iframe title="neutral" className="embed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/MqrsKFAD60w" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                     </div>
@@ -128,7 +128,7 @@ class Defense extends Component {
                         </p>
                     </div>   
                     <div className="col-sm my-auto">
-                           <div class="embed-responsive embed-responsive-16by9">
+                           <div className="embed-responsive embed-responsive-16by9">
                            <iframe title="neutral" className="embed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/Z8LleaSIa_4" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                     </div>                 
@@ -146,7 +146,7 @@ class Defense extends Component {
                 <br></br>
                 <div className="row">
                     <div className="col-sm my-auto">
-                           <div class="embed-responsive embed-responsive-16by9">
+                           <div className="embed-responsive embed-responsive-16by9">
                            <iframe title="neutral" className="embed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/BlcUJdxTz24" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                     </div> 
@@ -183,7 +183,7 @@ class Defense extends Component {
                     </div>   
 
                     <div className="col-sm my-auto">
-                           <div class="embed-responsive embed-responsive-16by9">
+                           <div className="embed-responsive embed-responsive-16by9">
                            <iframe title="neutral" className="embed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/HEcN0LXkcyw" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                     </div>                 
@@ -201,7 +201,7 @@ class Defense extends Component {
                 <br></br>
                 <div className="row">
                 <div className="col-sm my-auto">
-                           <div class="embed-responsive embed-responsive-16by9">
+                           <div className="embed-responsive embed-responsive-16by9">
                            <iframe title="neutral" className="embed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/Jlbk9MeGhfg" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                     </div>   
@@ -241,7 +241,7 @@ class Defense extends Component {
                         </p>
                     </div> 
                     <div className="col-sm my-auto">
-                           <div class="embed-responsive embed-responsive-16by9">
+                           <div className="embed-responsive embed-responsive-16by9">
                            <iframe title="neutral" className="embed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/l0L6npzE748" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                     </div>   

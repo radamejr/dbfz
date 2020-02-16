@@ -28,7 +28,7 @@ class Offense extends Component {
                         </p>
                     </div>
                     <div className="col-sm my-auto">
-                        <div class="embed-responsive embed-responsive-16by9">
+                        <div className="embed-responsive embed-responsive-16by9">
                         <iframe title="neutral" className="embed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/kUWEJBpX--I" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
@@ -88,7 +88,7 @@ class Offense extends Component {
                     </div>
 
                     <div className="col-sm my-auto">
-                        <div class="embed-responsive embed-responsive-16by9">
+                        <div className="embed-responsive embed-responsive-16by9">
                         <iframe title="neutral" className="embed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/XtYw3mt3HMw" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
@@ -108,7 +108,7 @@ class Offense extends Component {
                 <div className="row">
 
                     <div className="col-sm my-auto">
-                        <div class="embed-responsive embed-responsive-16by9">
+                        <div className="embed-responsive embed-responsive-16by9">
                         <iframe title="neutral" className="embed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/wyEE7O0EpNo" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
@@ -149,7 +149,7 @@ class Offense extends Component {
                     </div>  
 
                     <div className="col-sm my-auto">
-                        <div class="embed-responsive embed-responsive-16by9">
+                        <div className="embed-responsive embed-responsive-16by9">
                         <iframe title="neutral" className="embed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/jr16kzxvfmA" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>

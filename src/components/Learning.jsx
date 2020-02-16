@@ -12,10 +12,20 @@ class Learning extends Component {
         }
     }
 
+    componentDidMount() {
+        this.scrollToTop(); 
+    }
+
     changeTopic = (e, topic_type) => {
         e.preventDefault();
         this.setState({topic: topic_type})
-        
+               
+    }
+
+    scrollToTop = () => {
+        window.scrollTo({
+            top: 0
+        });
     }
 
     render() { 
@@ -39,18 +49,18 @@ class Learning extends Component {
                 <br></br>
                 <br></br>
                 <div className="kame-nav">
-                    <ul class="nav justify-content-center">
-                        <li class="nav-item">
-                            <button class="btn btn-link" onClick={ (event) => this.changeTopic(event, 'Basics')} >Basics</button>
+                    <ul className="nav justify-content-center">
+                        <li className="nav-item">
+                            <button className="btn btn-link" onClick={ (event) => this.changeTopic(event, 'Basics')} >Basics</button>
                         </li>
-                        <li class="nav-item">
-                            <button class="btn btn-link" onClick={ (event) => this.changeTopic(event, 'Neutral')} >Neutral</button>
+                        <li className="nav-item">
+                            <button className="btn btn-link" onClick={ (event) => this.changeTopic(event, 'Neutral')} >Neutral</button>
                         </li>
-                        <li class="nav-item">
-                            <button class="btn btn-link" onClick={ (event) => this.changeTopic(event, 'Offense')}>Offense</button>
+                        <li className="nav-item">
+                            <button className="btn btn-link" onClick={ (event) => this.changeTopic(event, 'Offense')}>Offense</button>
                         </li>
-                        <li class="nav-item">
-                            <button class="btn btn-link" onClick={ (event) => this.changeTopic(event, 'Defense')}>Defense</button>
+                        <li className="nav-item">
+                            <button className="btn btn-link" onClick={ (event) => this.changeTopic(event, 'Defense')}>Defense</button>
                         </li>
                     </ul>
                 </div>

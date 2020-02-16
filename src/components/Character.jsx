@@ -43,15 +43,23 @@ class Character extends Component {
               icon: ""
             });
             this.getCharacter();
+            this.scrollToTop();
             
         }
         
     }
 
     componentDidMount = () => {
-        this.getCharacter();
+      this.scrollToTop();  
+      this.getCharacter();
+        
     }
 
+    scrollToTop = () => {
+      window.scrollTo({
+          top: 0
+      });
+    }
     async getCharacter() {
         let { match: { params } } = this.props;
 
@@ -71,8 +79,7 @@ class Character extends Component {
 
     render() { 
         let { character, isOpen, picture, icon } = this.state; 
-        let { match: { params } } = this.props;    
-        let { characters } = this.props;
+        let { match: { params } } = this.props;
 
         if (params.id > 38) {
           return <Redirect to='/404' />

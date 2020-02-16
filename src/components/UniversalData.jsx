@@ -11,8 +11,14 @@ class UniversalData extends Component {
 
     componentDidMount = () => {
         this.setState({ random_image_number: (Math.floor(Math.random() * 27) + 1)});
+        this.scrollToTop();
     }
 
+    scrollToTop = () => {
+    window.scrollTo({
+        top: 0
+    });
+    }
     render() { 
         let { random_image_number } = this.state;
         

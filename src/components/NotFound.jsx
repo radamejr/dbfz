@@ -6,7 +6,7 @@ class NotFound extends Component {
         return ( 
             <div className="content-container">
                 <h4>Oops, that page does not exist. Try again.</h4>
-                <img src="./no_page.gif" class="rounded mx-auto d-block" alt="page not found"></img>
+                <img src="./no_page.gif" className="rounded mx-auto d-block" alt="page not found"></img>
             </div>
          );
     }
