@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import { charactersAPI } from './../helpers/urlFor';
+import { charactersAPI, twitterSearchBasic } from './../helpers/urlFor';
 import axios from 'axios';
 import Normals from './Normals';
 import Specials from './Specials';
@@ -80,7 +80,7 @@ class Character extends Component {
     render() { 
         let { character, isOpen, picture, icon } = this.state; 
         let { match: { params } } = this.props;
-
+        const twitter_url = twitterSearchBasic(character.twitter_tag)
         if (params.id > 38) {
           return <Redirect to='/404' />
         }
@@ -106,6 +106,9 @@ class Character extends Component {
                     <br></br>
                     <p className="notes-box">
                       For additional {character.name} details and resources be sure to visit the <a href={character.discord_link} target="_blank" rel="noopener noreferrer" role="button">Discord Server</a> and the <a href={character.combo_doc_link} target="_blank" rel="noopener noreferrer" role="button">Combo Document</a>.
+                    </p>
+                    <p className="notes-box">
+                      You can also visit the specific twitter search for {character.name} <a href={twitter_url} target="_blank" rel="noopener noreferrer" role="button">here.</a>
                     </p>
                   </div>
                   <div className="col character-picture justify-content-center float-right d-none d-sm-block">

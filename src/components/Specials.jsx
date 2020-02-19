@@ -32,6 +32,14 @@ class Specials extends Component {
         this.setState({editModalOpen: !editModalOpen})
     }
 
+    toggleImage = (id) => {
+        const isXs = window.innerWidth < 576;
+        const changeDiv = document.getElementById(id)
+        const imageNotShown = changeDiv.classList.contains("d-none")
+
+        isXs && imageNotShown ? changeDiv.classList.remove('d-none') : changeDiv.classList.add('d-none')
+    }
+
     editButtonClicked = (id) => {
         
         this.setState({special_index: id})
@@ -58,7 +66,7 @@ class Specials extends Component {
         this.deleteSpecial(id)
     }
 
-     deleteSpecial = (id) => {
+    deleteSpecial = (id) => {
         let {  params  } = this.props
         
         axios.delete(characterSpecials(params.id, id), {withCredentials: true})
@@ -83,6 +91,7 @@ class Specials extends Component {
         
 
         const currentSpecials = specials.map((special, index) => {
+            const id_block = `special${index}`
             return(
                 <div key={index}>
                     <div className="special-move container">
@@ -98,8 +107,15 @@ class Specials extends Component {
                                 </h4>
                             </div>
                         </div>
+                        <div className="row ml-3 d-block d-sm-none">
+                            <div className="col-sm-6 mx-auto d-block d-sm-none">
+                                <p className="image-toggle mx-auto" onClick={() => this.toggleImage(id_block)}>
+                                    <u>Toggle Image</u>
+                                </p>
+                            </div>
+                        </div>
                         <div className="row">
-                            <div className="col-sm d-none d-sm-block">
+                            <div className="col-sm d-none d-sm-block" id={id_block}>
                                 { special.picture.url ? 
                                     <div className="mt-3">
                                         <span className="helper"></span>
@@ -141,8 +157,10 @@ class Specials extends Component {
                              
                         
                     </div>
+                    <br></br>
+                    <br></br>
                 </div>
-
+                
             );
             
         });

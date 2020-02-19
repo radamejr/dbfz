@@ -31,6 +31,14 @@ class Normals extends Component {
         this.setState({editModalOpen: !editModalOpen})
     }
 
+    toggleImage = (id) => {
+        const isXs = window.innerWidth < 576;
+        const changeDiv = document.getElementById(id)
+        const imageNotShown = changeDiv.classList.contains("d-none")
+
+        isXs && imageNotShown ? changeDiv.classList.remove('d-none') : changeDiv.classList.add('d-none')
+    }
+
     editButtonClicked = (id) => {
         
         this.setState({normal_index: id})
@@ -85,31 +93,39 @@ class Normals extends Component {
         let { normals, normal_index, addModalOpen, editModalOpen, params } = this.state
         
         const currentNormals = normals.map((normal, index) => {
+            const id_block = `normal${index}`
             return(
                 <div key={index}>
                     <div className="normal-move container">
 
                     <div className="row">
-                        <div className="col mx-auto">
+                        <div className="col mx-auto" >
                             <h4 className="">
                                 Input: {normal.input}
                             </h4>
                         </div>
                     </div>
-                        <br></br>
+                    <div className="row d-block d-sm-none">
+                        <div className="col mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage(id_block)}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                        
                         <div className="row">
-                            <div className="col-5 justify-content-center d-none d-sm-block">
+                            <div className="col-sm-5 justify-content-center d-none d-sm-block" id={id_block}>
                                 { normal.picture.url ? 
-                                        <div className="mt-3">
-                                            <span className="helper"></span>
-                                            <img className="normal img-fluid" src={normal.picture.url}  alt="normal"></img>
-                                        </div>
-                                        :
-                                        <div className="mt-3">
-                                            <span className="helper"></span>
-                                            <img className="normal img-fluid" src='/question.png'  alt="missing"></img>
-                                        </div>
-                                    }
+                                    <div className="mt-3">
+                                        <span className="helper"></span>
+                                        <img className="normal img-fluid" src={normal.picture.url}  alt="normal"></img>
+                                    </div>
+                                    :
+                                    <div className="mt-3">
+                                        <span className="helper"></span>
+                                        <img className="normal img-fluid" src='/question.png'  alt="missing"></img>
+                                    </div>
+                                }
                             </div>
                             <div className="col">                                 
                                 <div className="row text-left">

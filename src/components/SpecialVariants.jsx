@@ -35,6 +35,13 @@ class SpecialVariants extends Component {
         this.setState({editModalOpen: !editModalOpen})
     }
 
+    toggleImage = (id) => {
+        const isXs = window.innerWidth < 576;
+        const changeDiv = document.getElementById(id)
+        const imageNotShown = changeDiv.classList.contains("d-none")
+
+        isXs && imageNotShown ? changeDiv.classList.remove('d-none') : changeDiv.classList.add('d-none')
+    }
     deleteButtonClick = (id) => {
 
         this.deleteVariant(id)
@@ -88,12 +95,24 @@ class SpecialVariants extends Component {
         const { variants, params, special_id, addModalOpen, editModalOpen, variant_index, isSpecial } = this.state
  
         const currentVariants = variants.map((variant, index) => {
+            const id_block = `specialvariant${index}`
             return (
                 <div key={index}>
                     <div className="variants container mt-0">
+                        { variant.picture.url ?
+                        <div className="row d-block d-sm-none">
+                            <div className="col mx-auto d-block d-sm-none">
+                                <p className="image-toggle mx-auto" onClick={() => this.toggleImage(id_block)}>
+                                    <u>Toggle Image</u>
+                                </p>
+                            </div>
+                        </div>
+                        :
+                        null
+                        }
                         <div className="row">
                             { variant.picture.url ?
-                            <div className="col-sm d-none d-sm-block">                              
+                            <div className="col-sm d-none d-sm-block" id={id_block}>                              
                                     <div className="mt-3">
                                         <span className="helper"></span>
                                         <img className="variant img-fluid" src={variant.picture.url}  alt="variant"></img>
@@ -162,6 +181,8 @@ class SpecialVariants extends Component {
                          
                         
                     </div>
+                    <br></br>
+                    <br></br>
                 </div>
             );
         });

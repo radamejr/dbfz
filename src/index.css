@@ -69,6 +69,8 @@ code {
   border-top: grey;
   border-bottom: grey;
   border-style: solid;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .character-selector > img {
@@ -126,6 +128,10 @@ margin: 100px, 0px, 100px, 0px;
 
 hr {
   border-top: 2px solid grey;
+}
+
+.image-toggle u{
+  font-size: small;
 }
 .kame-intro img {
   max-height: 200px;
