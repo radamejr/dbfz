@@ -34,6 +34,14 @@ class SuperVariants extends Component {
         this.setState({editModalOpen: !editModalOpen})
     }
 
+    toggleImage = (id) => {
+        const isXs = window.innerWidth < 576;
+        const changeDiv = document.getElementById(id)
+        const imageNotShown = changeDiv.classList.contains("d-none")
+
+        isXs && imageNotShown ? changeDiv.classList.remove('d-none') : changeDiv.classList.add('d-none')
+    }
+
     deleteButtonClick = (id) => {
 
         this.deleteVariant(id)
@@ -87,20 +95,33 @@ class SuperVariants extends Component {
         const { variants, params, super_id, addModalOpen, editModalOpen, variant_index } = this.state
  
         const currentVariants = variants.map((variant, index) => {
+            const id_block = `superVariant${index}`
             return (
                 <div key={index}>
                     <div className="variants container mt-0">
+                        { variant.picture.url ?
+                        <div className="row d-block d-sm-none">
+                            <div className="col mx-auto d-block d-sm-none">
+                                <p className="image-toggle mx-auto" onClick={() => this.toggleImage(id_block)}>
+                                    <u>Toggle Image</u>
+                                </p>
+                            </div>
+                        </div>
+                        :
+                        null
+                        }                   
+                        
                         <div className="row">
                             { variant.picture.url ?
-                                <div className="col-sm d-none d-sm-block">                              
-                                        <div className="mt-3">
-                                            <span className="helper"></span>
-                                            <img className="variant img-fluid" src={variant.picture.url}  alt="variant"></img>
-                                        </div>
-                                </div>
-                                :
-                                null
-                                }
+                                <div className="col-sm d-none d-sm-block" id={id_block}>                              
+                                    <div className="mt-3">
+                                        <span className="helper"></span>
+                                        <img className="variant img-fluid" src={variant.picture.url}  alt="variant"></img>
+                                    </div>
+                            </div>
+                            :
+                            null
+                            }
                         
                             <div className="col mt-1">                                 
                                 <div className="row text-left">
@@ -134,17 +155,18 @@ class SuperVariants extends Component {
                                     </div> 
                                 </div>
                             </div>
-
-                            <div className="row col mb-2">
-                                {this.props.user && this.props.user.admin ? 
-                                <div className="float-right col">
-                                    <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Variant</button>
-                                    <button className="btn btn-danger btn-sm float-left" onClick={ (event) => window.confirm("Are you sure you want to delete that?") && this.deleteButtonClick(variant.id)}>Delete Variant</button>  
-                                </div> 
-                                : null} 
+                        </div> 
+                        <div className="row col mb-2">
+                            {this.props.user && this.props.user.admin ? 
+                            <div className="float-right col">
+                                <button className="btn btn-primary btn-sm float-right" onClick={ (event) => this.editButtonClicked(index)}>Edit Variant</button>
+                                <button className="btn btn-danger btn-sm float-left" onClick={ (event) => window.confirm("Are you sure you want to delete that?") && this.deleteButtonClick(variant.id)}>Delete Variant</button>  
                             </div> 
+                            : null} 
                         </div>                       
                     </div>
+                    <br></br>
+                    <br></br>
                 </div>
             );
         });

@@ -30,6 +30,10 @@ const characterAssists = (character_id, assist_id = "") => {
 
 }
 
+const twitterSearchBasic = (char_tag) => {
+  return `https://twitter.com/search?q=%23${char_tag}&src=typed_query`
+}
+
 const auth = (action = '') => {
   return `https://dbfztech-api.herokuapp.com/${action}`
 }
@@ -42,6 +46,7 @@ export {
   characterSupers,
   superVariants,
   characterAssists,
+  twitterSearchBasic,
   auth
 }
 

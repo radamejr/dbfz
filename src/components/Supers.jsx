@@ -32,6 +32,14 @@ class Supers extends Component {
         this.setState({editModalOpen: !editModalOpen})
     }
 
+    toggleImage = (id) => {
+        const isXs = window.innerWidth < 576;
+        const changeDiv = document.getElementById(id)
+        const imageNotShown = changeDiv.classList.contains("d-none")
+
+        isXs && imageNotShown ? changeDiv.classList.remove('d-none') : changeDiv.classList.add('d-none')
+    }
+
     editButtonClicked = (id) => {
         
         this.setState({super_index: id})
@@ -82,6 +90,7 @@ class Supers extends Component {
        
 
         const currentSupers = supers.map((superMove, index) => {
+            const id_block = `superMove${index}`
             return(
                <div key={index}>
                     <div className="super-move container">
@@ -97,12 +106,18 @@ class Supers extends Component {
                                 </h4>
                             </div>
                         </div>
-                        <br></br>
-                        <br></br>
+                        <div className="row ml-3 d-block d-sm-none">
+                            <div className="col-sm-6 mx-auto d-block d-sm-none">
+                                <p className="image-toggle mx-auto" onClick={() => this.toggleImage(id_block)}>
+                                    <u>Toggle Image</u>
+                                </p>
+                            </div>
+                        </div>
                         <div className="row">
-                            <div className="mt-1 col-5 d-none d-sm-block">
+                            <div className="mt-3 col-sm d-none d-sm-block" id={id_block}>
                                 { superMove.picture.url ? 
                                     <div className="super">
+                                        <span className="helper"></span>
                                         <img className="super img-fluid" src={superMove.picture.url}  alt="super"></img>
         
                                     </div>
@@ -112,7 +127,10 @@ class Supers extends Component {
                                     </div>
                                 }
                             </div>
-                                                
+                        </div>
+                        <div>  
+                            <br></br>
+                            <br></br>
                             <div className="col-sm">
                                 <div className="row text-left">
                                     <div className="col-sm-4">
@@ -131,9 +149,10 @@ class Supers extends Component {
                                         </p>
                                     </div>
                                 </div>
-                                <br></br>
-                                <br></br>
-                                        
+                                <div className="d-none d-sm-block">
+                                    <br></br>
+                                    <br></br> 
+                                </div>  
                                 <div className="row text-left">  
                                     <div className="col-sm-4">
                                         <p className="">
@@ -146,9 +165,10 @@ class Supers extends Component {
                                         </p>
                                     </div>
                                 </div>
-                                <br></br>
-                                <br></br>
-                                        
+                                <div className="d-none d-sm-block">
+                                    <br></br>
+                                    <br></br> 
+                                </div> 
                                 <div className="row text-left">  
                                     <div className="col-sm-4">
                                         <p className="">
@@ -192,7 +212,8 @@ class Supers extends Component {
                     user={this.props.user}
                     />                             
                     </div>
-                    
+                    <br></br>
+                    <br></br>
                </div>
 
             );
