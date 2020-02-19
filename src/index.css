@@ -251,6 +251,10 @@ hr {
 .super-move p {
   font-size: larger;
 }
+
+.super img {
+  max-width: 350px;
+}
 .universal-selector  {
   list-style: none;
   overflow: hidden;
