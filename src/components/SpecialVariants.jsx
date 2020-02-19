@@ -95,7 +95,7 @@ class SpecialVariants extends Component {
         const { variants, params, special_id, addModalOpen, editModalOpen, variant_index, isSpecial } = this.state
  
         const currentVariants = variants.map((variant, index) => {
-            const id_block = `specialvariant${index}`
+            const id_block = `special${special_id}variant${index}`
             return (
                 <div key={index}>
                     <div className="variants container mt-0">

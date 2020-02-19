@@ -95,7 +95,7 @@ class SuperVariants extends Component {
         const { variants, params, super_id, addModalOpen, editModalOpen, variant_index } = this.state
  
         const currentVariants = variants.map((variant, index) => {
-            const id_block = `superVariant${index}`
+            const id_block = `super${super_id}Variant${index}`
             return (
                 <div key={index}>
                     <div className="variants container mt-0">
