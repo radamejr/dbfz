@@ -9,6 +9,14 @@ class UniversalData extends Component {
         }
     }
 
+    toggleImage = (id) => {
+        const isXs = window.innerWidth < 576;
+        const changeDiv = document.getElementById(id)
+        const imageNotShown = changeDiv.classList.contains("d-none")
+
+        isXs && imageNotShown ? changeDiv.classList.remove('d-none') : changeDiv.classList.add('d-none')
+    }
+
     componentDidMount = () => {
         this.setState({ random_image_number: (Math.floor(Math.random() * 27) + 1)});
         this.scrollToTop();
@@ -25,14 +33,22 @@ class UniversalData extends Component {
         return ( 
             <div className="content-container container col-lg-9 col-md-11 col-sm-12">
                 <div className="row universal-move">
-                    <div className='col-sm-5 d-none d-sm-block'>
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("6M")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="6M">
                         <img alt="6M" className="img-fluid"src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/6M/image+(' + random_image_number + ').png' }></img>
                     </div>
+                    
                     <div className='col-sm'>
                         <div className="row">
                             <div className="col mx-auto">
                                 <h4 className="">
-                                    Input: 6M
+                                    <u>Input: 6M</u>
                                 </h4>
                             </div>
                         </div>
@@ -89,7 +105,14 @@ class UniversalData extends Component {
                 <br></br>
 
                 <div className="row universal-move">
-                    <div className='col-sm-5 d-none d-sm-block'>
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("DR")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="DR">
                         <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/dragon rush.gif' }></img>
                     </div>
                     <div className='col-sm'>
@@ -162,7 +185,14 @@ class UniversalData extends Component {
                 <br></br>
 
                 <div className="row universal-move">
-                    <div className='col-sm-5 d-none d-sm-block'>
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("DRS")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="DRS">
                     <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/snap.gif' }></img>
                     </div>
                     <div className='col-sm'>
@@ -236,7 +266,14 @@ class UniversalData extends Component {
                 <br></br>
 
                 <div className="row universal-move">
-                    <div className='col-sm-5 d-none d-sm-block'>
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("SD")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="SD">
                     <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/superdash.gif' }></img>
                     </div>
                     <div className='col-sm'>
@@ -309,7 +346,14 @@ class UniversalData extends Component {
                 <br></br>
 
                 <div className="row universal-move">
-                    <div className='col-sm-5 d-none d-sm-block'>
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("REF")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="REF">
                     <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/reflect.gif' }></img>
                     </div>
                     <div className='col-sm'>
@@ -382,7 +426,14 @@ class UniversalData extends Component {
                 <br></br>
 
                 <div className="row universal-move">
-                    <div className='col-sm-5 d-none d-sm-block'>
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("GC")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="GC">
                     <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/gaurd cancel.gif' }></img>
                     </div>
                     <div className='col-sm'>
@@ -459,7 +510,14 @@ class UniversalData extends Component {
                 <br></br>
 
                 <div className="row universal-move">
-                    <div className='col-sm-5 d-none d-sm-block'>
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("GCS")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="GCS">
                     <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/gaurd cancel solo.gif' }></img>
                     </div>
                     <div className='col-sm'>
@@ -534,7 +592,14 @@ class UniversalData extends Component {
                 <br></br>
 
                 <div className="row universal-move">
-                    <div className='col-sm-5 d-none d-sm-block'>
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("VAN")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="VAN">
                     <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/vanish.gif' }></img>
                     </div>
                     <div className='col-sm'>
@@ -609,7 +674,14 @@ class UniversalData extends Component {
                 <br></br>
 
                 <div className="row universal-move">
-                    <div className='col-sm-5 d-none d-sm-block'>
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("EVS")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="EVS">
                     <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/empty vanish.gif' }></img>
                     </div>
                     <div className='col-sm'>
@@ -683,7 +755,14 @@ class UniversalData extends Component {
                 <br></br>
 
                 <div className="row universal-move">
-                    <div className='col-sm-5 d-none d-sm-block'>
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("Spark")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="Spark">
                     <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/spark.gif' }></img>
                     </div>
                     <div className='col-sm'>
@@ -758,7 +837,14 @@ class UniversalData extends Component {
                 <br></br>
 
                 <div className="row universal-move">
-                    <div className='col-sm-5 d-none d-sm-block'>
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("Jump")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="Jump">
                     <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/jump.gif' }></img>
                     </div>
                     <div className='col-sm'>
@@ -831,7 +917,14 @@ class UniversalData extends Component {
                 <br></br>
 
                 <div className="row universal-move">
-                    <div className='col-sm-5 d-none d-sm-block'>
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("FAD")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="FAD">
                     <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/forward air dash.gif' }></img>
                     </div>
                     <div className='col-sm'>
@@ -903,7 +996,14 @@ class UniversalData extends Component {
                 <br></br>
 
                 <div className="row universal-move">
-                    <div className='col-sm-5 d-none d-sm-block'>
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("ABD")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="ABD">
                     <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/air backdash.gif' }></img>
                     </div>
                     <div className='col-sm'>
@@ -977,7 +1077,14 @@ class UniversalData extends Component {
                 <br></br>
                 <br></br>
                 <div className="row universal-move">
-                    <div className='col-sm-5 d-none d-sm-block'>
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("IAD")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="IAD">
                     <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/instant air dash.gif' }></img>
                     </div>
                     <div className='col-sm'>
@@ -1051,7 +1158,14 @@ class UniversalData extends Component {
                 <br></br>
                 <br></br>
                 <div className="row universal-move">
-                    <div className='col-sm-5 d-none d-sm-block'>
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("BD")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="BD">
                     <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/backdash.gif' }></img>
                     </div>
                     <div className='col-sm'>
@@ -1123,7 +1237,14 @@ class UniversalData extends Component {
                 <br></br>
                 <br></br>
                 <div className="row universal-move">
-                    <div className='col-sm-5 d-none d-sm-block'>
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("GR")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="GR">
                     <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/ground-recovery.gif' }></img>
                     </div>
                     <div className='col-sm'>
@@ -1195,7 +1316,14 @@ class UniversalData extends Component {
                 <br></br>
                 <br></br>
                 <div className="row universal-move">
-                    <div className='col-sm-5 d-none d-sm-block'>
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("Clash")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="Clash">
                     <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/clash.gif' }></img>
                     </div>
                     <div className='col-sm'>
@@ -1267,7 +1395,14 @@ class UniversalData extends Component {
                 <br></br>
                 <br></br>
                 <div className="row universal-move">
-                    <div className='col-sm-5 d-none d-sm-block'>
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("GT")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="GT">
                     <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/groundtech.gif' }></img>
                     </div>
                     <div className='col-sm'>
@@ -1339,7 +1474,14 @@ class UniversalData extends Component {
                 <br></br>
                 <br></br>
                 <div className="row universal-move">
-                    <div className='col-sm-5 d-none d-sm-block'>
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("DT")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="DT">
                     <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/delay tech.gif' }></img>
                     </div>
                     <div className='col-sm'>
@@ -1411,7 +1553,14 @@ class UniversalData extends Component {
                 <br></br>
                 <br></br>
                 <div className="row universal-move">
-                    <div className='col-sm-5 d-none d-sm-block'>
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("DTA")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="DTA">
                     <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/down tech.gif' }></img>
                     </div>
                     <div className='col-sm'>
