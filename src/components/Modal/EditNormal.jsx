@@ -18,6 +18,7 @@ class EditNormal extends Component {
             special_notes: '',
             picture: '',
             move_type: '',
+            list_order: '',
             id: ''
         }
         
@@ -38,6 +39,7 @@ class EditNormal extends Component {
             special_notes: props.special_notes,
             move_type: props.move_type,
             picture: props.picture,
+            list_order: props.list_order,
             id: props.id,
             isLoading: false
 
@@ -58,11 +60,11 @@ class EditNormal extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, move_type, picture, id } = this.state;
+        const { input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, move_type, picture, id, list_order } = this.state;
         let { params } = this.props
 
         this.setState({isLoading: true})
-        axios.put(characterNormals(params, id), {input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, move_type, picture }, {withCredentials: true})
+        axios.put(characterNormals(params, id), {input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, move_type, picture, list_order}, {withCredentials: true})
         .then((result) => {
             this.props.getNormals()
             this.props.toggleEditModal()
@@ -193,6 +195,16 @@ class EditNormal extends Component {
                                 onChange={this.handleChange}
                                 cols="50"
                                 rows="5"
+                            />
+                        </div>
+                    </div>
+                    <div className="category">
+                    List Order(admin):
+                        <div className="form-input">
+                            <input name="list_order"
+                                type="text"
+                                defaultValue={this.state.list_order}
+                                onChange={this.handleChange}
                             />
                         </div>
                     </div>

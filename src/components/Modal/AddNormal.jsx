@@ -18,6 +18,7 @@ class AddNormal extends Component {
             special_notes: '',
             move_type: '',
             picture: '',
+            list_order: '',
             isLoading: false
         }
         
@@ -25,11 +26,11 @@ class AddNormal extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, move_type } = this.state;
+        const { input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, move_type, list_order } = this.state;
         let { params } = this.props
         
         this.setState({isLoading: true})
-        axios.post(characterNormals(params), {input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, move_type }, {withCredentials: true})
+        axios.post(characterNormals(params), {input, startup, active, recovery, advantage, gaurd, properties, immune_to, special_notes, picture, move_type, list_order }, {withCredentials: true})
         .then((result) => {
             this.props.getNormals();
             this.props.toggleAddModal();
@@ -56,6 +57,8 @@ class AddNormal extends Component {
     }
   
     render() { 
+
+    
                
         let { isLoading } = this.state
 
@@ -174,6 +177,16 @@ class AddNormal extends Component {
                                 onChange={this.handleChange}
                                 cols="50"
                                 rows="5"
+                            />
+                        </div>
+                    </div>
+                    <div className="category">
+                    Sorting Order:
+                        <div className="form-input">
+                            <input name="list_order"
+                                type="text"
+                                defaultValue={this.props.list_order !== 0 ? this.props.list_order + 1 : 1}                                
+                                onChange={this.handleChange}
                             />
                         </div>
                     </div>
