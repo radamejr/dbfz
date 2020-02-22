@@ -11,9 +11,8 @@ img.input {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-image: url('/triangles.png');
   color: #bfbfbf;
-
+  flex: 1 0 auto;
 }
 .assist-move.container {
   border-style: double;
@@ -26,6 +25,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('/triangles.png');
 
 }
 

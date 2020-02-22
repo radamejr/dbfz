@@ -919,6 +919,250 @@ class UniversalData extends Component {
                 <div className="row universal-move">
                     <div className="col d-block d-sm-none">
                         <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("SuperJump")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="SuperJump">
+                    <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/sj.gif' }></img>
+                    </div>
+                    <div className='col-sm'>
+                        <div className="row">
+                            <div className="col mx-auto">
+                                <h4 className="">
+                                    <u>
+                                        Name: Super Jump
+                                    </u>
+                                </h4>   
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col mx-auto">
+                                <h5 className="">
+                                    Input: 2 > 8                              
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div className="col mt-1">                                 
+                            <div className="row text-left">
+                                <div className="col-sm-7">
+                                    <p className="">
+                                        Startup:   N/A
+                                    </p>
+                                </div>
+                                <div className="col-sm-5">
+                                    <p className="">
+                                        Active:  N/A
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="row text-left">  
+                                <div className="col-sm-7">
+                                    <p className="">
+                                        Recovery:    N/A
+                                    </p>
+                                </div>
+                                <div className="col-sm-5">
+                                    <p className="">
+                                        Advantage:   N/A
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="row text-left">
+                                <div className="col-sm-7">
+                                    <p className="">
+                                        Guard:   N/A
+                                    </p>
+                                </div>
+                                <div className="col-sm-5">
+                                    
+                                </div>
+                            </div>
+                            <div className="row text-left">
+                                <div className="col-sm">
+                                    <p className="text-left notes-box">
+                                        Notes: 
+                                    </p>
+                                    <p className="text-left notes-box">
+                                    Super-Jump sends you higher into the air.  Makes jump take 60 frames. (Based on counting from first pre-jump frame until they land.)	Majin Buu has different values: 63 frames							    
+                                    </p>							                                
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br></br>
+                <br></br>
+
+                <div className="row universal-move">
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("SuperJumpFloat")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="SuperJumpFloat">
+                    <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/sjfloat.gif' }></img>
+                    </div>
+                    <div className='col-sm'>
+                        <div className="row">
+                            <div className="col mx-auto">
+                                <h4 className="">
+                                    <u>
+                                        Name: Super Jump Float
+                                    </u>
+                                </h4>   
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col mx-auto">
+                                <h5 className="">
+                                    Input: 2 > [8]                               
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div className="col mt-1">                                 
+                            <div className="row text-left">
+                                <div className="col-sm-7">
+                                    <p className="">
+                                        Startup:   N/A
+                                    </p>
+                                </div>
+                                <div className="col-sm-5">
+                                    <p className="">
+                                        Active:  N/A
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="row text-left">  
+                                <div className="col-sm-7">
+                                    <p className="">
+                                        Recovery:    N/A
+                                    </p>
+                                </div>
+                                <div className="col-sm-5">
+                                    <p className="">
+                                        Advantage:   N/A
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="row text-left">
+                                <div className="col-sm-7">
+                                    <p className="">
+                                        Guard:   N/A
+                                    </p>
+                                </div>
+                                <div className="col-sm-5">
+                                    
+                                </div>
+                            </div>
+                            <div className="row text-left">
+                                <div className="col-sm">
+                                    <p className="text-left notes-box">
+                                        Notes: 
+                                    </p>
+                                    <p className="text-left notes-box">
+                                    Super-Jump sends you higher into the air.  Makes jump take 71 frames. (Based on counting from first pre-jump frame until they land.)
+                                    Holding 8 lets you float down slower.	
+                                    Majin Buu has different values: 68 frames	    						
+                                    </p>							                                
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br></br>
+                <br></br>
+
+                <div className="row universal-move">
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("SuperJumpFastFall")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="SuperJumpFastFall">
+                    <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/sjfastfall.gif' }></img>
+                    </div>
+                    <div className='col-sm'>
+                        <div className="row">
+                            <div className="col mx-auto">
+                                <h4 className="">
+                                    <u>
+                                        Name: Super Jump Fast Fall
+                                    </u>
+                                </h4>   
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col mx-auto">
+                                <h5 className="">
+                                    Input: 2 > 8 > [2]                               
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div className="col mt-1">                                 
+                            <div className="row text-left">
+                                <div className="col-sm-7">
+                                    <p className="">
+                                        Startup:   N/A
+                                    </p>
+                                </div>
+                                <div className="col-sm-5">
+                                    <p className="">
+                                        Active:  N/A
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="row text-left">  
+                                <div className="col-sm-7">
+                                    <p className="">
+                                        Recovery:    N/A
+                                    </p>
+                                </div>
+                                <div className="col-sm-5">
+                                    <p className="">
+                                        Advantage:   N/A
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="row text-left">
+                                <div className="col-sm-7">
+                                    <p className="">
+                                        Guard:   N/A
+                                    </p>
+                                </div>
+                                <div className="col-sm-5">
+                                    
+                                </div>
+                            </div>
+                            <div className="row text-left">
+                                <div className="col-sm">
+                                    <p className="text-left notes-box">
+                                        Notes: 
+                                    </p>
+                                    <p className="text-left notes-box">
+                                    Super-Jump sends you higher into the air.  Makes jump take 42 frames. (Based on counting from first pre-jump frame until they land.)
+                                    Holding 2 lets you fall down faster.	
+                                    Majin Buu has different values: 49 frames	    						
+                                    </p>							                                
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br></br>
+                <br></br>
+
+                <div className="row universal-move">
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
                             <p className="image-toggle mx-auto" onClick={() => this.toggleImage("FAD")}>
                                 <u>Toggle Image</u>
                             </p>
