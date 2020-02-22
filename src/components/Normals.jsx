@@ -81,7 +81,7 @@ class Normals extends Component {
         let {  params  } = this.props
         try {
             const response = await axios.get(characterNormals(params.id));
-            response.data.sort((a, b) => a.id - b.id)
+            response.data.sort((a, b) => a.list_order - b.list_order)
             this.setState({normals: response.data})
           } catch (error) {
             console.error(error);
@@ -219,6 +219,7 @@ class Normals extends Component {
                         params={params}
                         getNormals={this.getNormals}
                         toggleAddModal={this.toggleAddModal}
+                        list_order = {normals.length}
                         />
                     
                 </Modal>
