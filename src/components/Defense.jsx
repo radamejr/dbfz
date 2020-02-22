@@ -12,37 +12,26 @@ class Defense extends Component {
             <div>
                 <div className="row">
                     <div className="col-sm">
-                        <h4 className="text-center"><u>Is Defense better than Offense?</u></h4>
+                        <h4 className="text-center"><u>Defense</u></h4>
                     </div>
                 </div>
                 <br></br>
                 <br></br>
                 <div className="row">
-                    <div className="col-sm">
-                        <span className="helper"></span>
-                        <img className="img-fluid" src="https://dbfz-image.s3.amazonaws.com/uploads/static-images/block.gif" alt="block"></img>
+                     <div className="col-sm my-auto">
+                           <div className="embed-responsive embed-responsive-16by9">
+                           <iframe title="neutral" className="embed-responsive-item" width="720" height="315" src="https://www.youtube.com/embed/lDfNBrlQ1_s" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
                     </div>
 
                     <div className="col-sm text-left">
                         <p>
-                        Blocking is important, blocking keeps you safe. Blocking makes it so normals dont hurt you. However, no one can block forever. And your opponent might try and do mix-ups that require you to do more than block. So what can we do? What options are we given to try and escape an opponents oppressive offense. 
+                        Sometimes, you don't always get to go on the offensive with an opponent. You will, at some point have to deal with their offensive pressure. But what do we do when we have to block? How do I deal with all these mixups. I can't react to anything in this game!!!!
                         </p>
-                                               
-                    </div>                 
-                </div>
-                <br></br>
-                <br></br>
-                <div className="row">
-                    <div className="col-sm text-left">
                         <p>
-                        Even if you get hit, your focus should still be on your character. If your opponents combo is not polished, or something goes wrong you can tech out. How? By holding a normal button and a direction you can tech out of a combo, when this happens you might even be able to punish your opponents failures.
+                        <a href="https://www.youtube.com/channel/UC4n3mpDrD-noB7uMkKSD00Q" target="_blank" rel="noopener noreferrer" role="button">RathFGC</a> is here to give a break down and high level look at defense.
                         </p>
-                        
-                    </div>
-                    <div className="col-sm">
-                        <span className="helper"></span>
-                        <img className="img-fluid" src="https://dbfz-image.s3.amazonaws.com/uploads/static-images/techout.gif" alt="tech"></img>
-                    </div>
+                    </div>                 
                 </div>
                 <br></br>
                 <br></br>

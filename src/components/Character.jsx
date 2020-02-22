@@ -105,7 +105,10 @@ class Character extends Component {
                     </p>
                     <br></br>
                     <p className="notes-box">
-                      For additional {character.name} details and resources be sure to visit the <a href={character.discord_link} target="_blank" rel="noopener noreferrer" role="button">Discord Server</a> and the <a href={character.combo_doc_link} target="_blank" rel="noopener noreferrer" role="button">Combo Document</a>.
+                      For additional {character.name} details and resources be sure to visit the <a href={character.discord_link} target="_blank" rel="noopener noreferrer" role="button">Discord Server</a> and the <a href={character.combo_doc_link} target="_blank" rel="noopener noreferrer" role="button">Combo List</a> over on <a href="https://combosuki.com/game.php?gameid=1" target="_blank" rel="noopener noreferrer" role="button">Combosuki</a>.
+
+
+
                     </p>
                     <p className="notes-box">
                       You can also visit the specific twitter search for {character.name} <a href={twitter_url} target="_blank" rel="noopener noreferrer" role="button">here.</a>
