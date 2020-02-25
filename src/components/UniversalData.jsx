@@ -107,6 +107,87 @@ class UniversalData extends Component {
                 <div className="row universal-move">
                     <div className="col d-block d-sm-none">
                         <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("Assist")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="Assist">
+                        <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/assist.gif' }></img>
+                    </div>
+                    <div className='col-sm'>
+                        <div className="row">
+                            <div className="col mx-auto">
+                                <h4 className="">
+                                    <u>
+                                        Name: Assists
+                                    </u>
+                                </h4>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col mx-auto">
+                                <h5 className="">
+                                    Input: Assist Button 1 or 2                                    
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div className="col mt-1">                                 
+                            <div className="row text-left">
+                                <div className="col-sm-7">
+                                    <p className="">
+                                        Startup:   N/A
+                                    </p>
+                                </div>
+                                <div className="col-sm-5">
+                                    <p className="">
+                                        Active:  N/A
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="row text-left">  
+                                <div className="col-sm-7">
+                                    <p className="">
+                                        Recovery:    N/A
+                                    </p>
+                                </div>
+                                <div className="col-sm-5">
+                                    <p className="">
+                                        Advantage:   N/A
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="row text-left">
+                                <div className="col-sm-7">
+                                    <p className="">
+                                        Guard:   Varies
+                                    </p>
+                                </div>
+                                <div className="col-sm-5">
+                                    
+                                </div>
+                            </div>
+                            <div className="row text-left">
+                                <div className="col-sm">
+                                    <p className="text-left notes-box">
+                                        Notes: 
+                                    </p>
+                                    <p className="text-left notes-box">
+                                    Each character comes equipped with 3 assists. Assists will not begin recharging until the opponent has not been in blockstun for 20 frames.
+                                    Once recharging has begun, A and B Type assists take 300 frames to charge. C assist Tpe will take 720 frames.							
+                                    </p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br></br>
+                <br></br>
+
+                <div className="row universal-move">
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
                             <p className="image-toggle mx-auto" onClick={() => this.toggleImage("DR")}>
                                 <u>Toggle Image</u>
                             </p>

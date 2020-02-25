@@ -40,6 +40,21 @@ class App extends Component {
     })
   }
 
+  sortCharacters = (a, b) => {
+    const nameA = a.name.toUpperCase();
+    const nameB = b.name.toUpperCase();
+
+    let comparison = 0;
+    if (nameA > nameB) {
+      comparison = 1;
+    }else if (nameA < nameB) {
+      comparison = -1;
+    }
+
+    return comparison;
+
+  } 
+
   loginStatus = () => {
     axios.get(auth("logged_in"), {withCredentials: true})
     .then(response => {
@@ -55,19 +70,20 @@ class App extends Component {
 
   componentDidMount = () => {    
     this.getCharacters() 
-    this.loginStatus()      
+    this.loginStatus()          
   }
 
   async getCharacters() {
-
     try {
       const response = await axios.get(charactersAPI());
-      response.data.sort((a, b) => a.id - b.id )
+      response.data.sort(this.sortCharacters);
       this.setState({characters: response.data})
       } catch (error) {
       console.error(error);
+    }
   }
-  }
+
+
 
   render() { 
     const { characters, user } = this.state;
