@@ -33,6 +33,11 @@ body {
   margin-top: 100px;
 }
 
+.home-container h5 {
+  border-style: solid;
+  padding: 35px;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

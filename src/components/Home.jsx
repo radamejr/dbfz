@@ -4,10 +4,31 @@ class Home extends Component {
     
     render() { 
         return (  
-            <div className="content-container container text-left col-md-11 col-sm-12">
+            <div className="content-container home-container container text-left col-md-11 col-sm-12">
+                <h5>
+                    Date: 02/25/18
+                    <br></br>
+                    <br></br>
+                    SEASON 3 is upon us!
+                    <br></br>
+                    <br></br>
+                    Hopefully everyone is hyped about the changes and updates coming to Dragonball Fighterz. I wanted to keep everyone informed on how updates will be occuring with Framehameha! Right now I get a daily update from Google Sheets letting me know all of the changes that were updated to the sheets listed below. Once I get those updates I will be updating the site to reflect the most recent changes. Keep in mind, that this is alot of information and will take some time to settle down entirely.
+                    <br></br>
+                    <br></br>
+
+                    I look forward to seeing everyone out on the battlefield. Let's go!
+                    <br></br>
+                    <br></br>
+                    -KP
+                </h5>
+                <br></br>
+                <br></br>
+                <br></br>
+
                 <h5>
                     Hello Everyone,
-
+                    <br></br>
+                    <br></br>
                     Welcome to Frame-ha-me-ha! This was a personal project that I have been working on to try and bring together multpile assets and resources. Recently <a href="https://play.google.com/store/apps/details?id=com.Jonathan.Thats_Plus" target="_blank" rel="noopener noreferrer" role="button">That's Plus</a>(If you havent checked it out, you should.), was released by <a href="https://twitter.com/jonathan_tene" target="_blank" rel="noopener noreferrer" role="button">Jonathan Tene</a> which was a huge motivator to finish this project. 
                     <br></br>
                     <br></br>
