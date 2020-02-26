@@ -18,7 +18,7 @@ class AddNormal extends Component {
             special_notes: '',
             move_type: '',
             picture: '',
-            list_order: '',
+            list_order: this.props.list_order !== 0 ? this.props.list_order + 1 : 1,
             isLoading: false
         }
         
