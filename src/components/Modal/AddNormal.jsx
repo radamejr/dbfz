@@ -42,9 +42,6 @@ class AddNormal extends Component {
     componentDidMount = () => {
         const {props} = this.props
 
-        this.setState({
-            
-        })
         this.props.list_order !== 0 ?  this.setState({list_order = props.list_order + 1 }) : this.setState({list_order = 1 })
     }
 
