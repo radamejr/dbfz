@@ -22,11 +22,11 @@ class AddAssist extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { input, startup, active, onscreen, hitstop, hit_stun, blockstun, special_notes, picture } = this.state;
+        const { startup, active, onscreen, hitstop, hit_stun, blockstun, special_notes, picture } = this.state;
         let { params } = this.props
         
         this.setState({isLoading: true})
-        axios.post(characterAssists(params.id), { input, startup, active, onscreen, hitstop, hit_stun, blockstun, special_notes, picture }, {withCredentials: true})
+        axios.post(characterAssists(params.id), { startup, active, onscreen, hitstop, hit_stun, blockstun, special_notes, picture }, {withCredentials: true})
         .then((result) => {
             this.props.getAssists();
             this.props.toggleAddModal();

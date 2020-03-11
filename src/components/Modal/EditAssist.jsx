@@ -23,11 +23,11 @@ class EditAssist extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { input, startup, active, onscreen, hitstop, hit_stun, blockstun, special_notes, picture, id } = this.state;
+        const { startup, active, onscreen, hitstop, hit_stun, blockstun, special_notes, picture, id } = this.state;
         let { params } = this.props
         
         this.setState({isLoading: true})
-        axios.put(characterAssists(params.id, id), { input, startup, active, onscreen, hitstop, hit_stun, blockstun, special_notes, picture }, {withCredentials: true})
+        axios.put(characterAssists(params.id, id), { startup, active, onscreen, hitstop, hit_stun, blockstun, special_notes, picture }, {withCredentials: true})
         .then((result) => {
             this.props.getAssists()
             this.props.toggleEditModal()
