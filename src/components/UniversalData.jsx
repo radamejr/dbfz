@@ -509,6 +509,86 @@ class UniversalData extends Component {
                 <div className="row universal-move">
                     <div className="col d-block d-sm-none">
                         <div className="mx-auto d-block d-sm-none">
+                            <p className="image-toggle mx-auto" onClick={() => this.toggleImage("REF")}>
+                                <u>Toggle Image</u>
+                            </p>
+                        </div>
+                    </div>
+                    <div className='col-sm-5 d-none d-sm-block' id="REF">
+                    <span className="helper"></span><img alt="move-gif" className="img-fluid" src={'https://dbfz-image.s3.amazonaws.com/uploads/static-images/charge.gif' }></img>
+                    </div>
+                    <div className='col-sm'>
+                        <div className="row">
+                            <div className="col mx-auto">
+                                <h4 className="">
+                                    <u>
+                                        Name: Ki-Charge
+                                    </u>
+                                </h4>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col mx-auto">
+                                <h5 className="">
+                                    Input: L + S                                    
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div className="col mt-1">                                 
+                            <div className="row text-left">
+                                <div className="col-sm-7">
+                                    <p className="">
+                                        Startup:   1
+                                    </p>
+                                </div>
+                                <div className="col-sm-5">
+                                    <p className="">
+                                        Active:  55
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="row text-left">  
+                                <div className="col-sm-7">
+                                    <p className="">
+                                        Recovery:   N/A
+                                    </p>
+                                </div>
+                                <div className="col-sm-5">
+                                    <p className="">
+                                        Advantage:   N/A
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="row text-left">
+                                <div className="col-sm-7">
+                                    <p className="">
+                                        Guard:   N/A
+                                    </p>
+                                </div>
+                                <div className="col-sm-5">
+                                    
+                                </div>
+                            </div>
+                            <div className="row text-left">
+                                <div className="col-sm">
+                                    <p className="text-left notes-box">
+                                        Notes: 
+                                    </p>
+                                    <p className="text-left notes-box">
+                                        Ki-charge now reflects Ki-blasts after frame 4. (Hang in the Broly) Can cancel into superdash from frame 30. Can also hold Ki-charge even if maxed.					
+                                    </p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br></br>
+                <br></br>
+
+                <div className="row universal-move">
+                    <div className="col d-block d-sm-none">
+                        <div className="mx-auto d-block d-sm-none">
                             <p className="image-toggle mx-auto" onClick={() => this.toggleImage("GC")}>
                                 <u>Toggle Image</u>
                             </p>
@@ -1021,7 +1101,7 @@ class UniversalData extends Component {
                         <div className="row">
                             <div className="col mx-auto">
                                 <h5 className="">
-                                    Input: 2 > 8                              
+                                    {`Input: 2 > 8`}                              
                                 </h5>
                             </div>
                         </div>
@@ -1101,7 +1181,7 @@ class UniversalData extends Component {
                         <div className="row">
                             <div className="col mx-auto">
                                 <h5 className="">
-                                    Input: 2 > [8]                               
+                                    {`Input: 2 > [8]`}                               
                                 </h5>
                             </div>
                         </div>
@@ -1183,7 +1263,7 @@ class UniversalData extends Component {
                         <div className="row">
                             <div className="col mx-auto">
                                 <h5 className="">
-                                    Input: 2 > 8 > [2]                               
+                                    {`Input: 2 > 8 > [2]`}                               
                                 </h5>
                             </div>
                         </div>
@@ -1265,7 +1345,7 @@ class UniversalData extends Component {
                         <div className="row">
                             <div className="col mx-auto">
                                 <h5 className="">
-                                    Input: 6 > 6 while airborne                              
+                                    {`Input: 6 > 6 while airborne`}                              
                                 </h5>
                             </div>
                         </div>
@@ -1344,7 +1424,7 @@ class UniversalData extends Component {
                         <div className="row">
                             <div className="col mx-auto">
                                 <h5 className="">
-                                    Input: 4 > 4 while airborne                              
+                                    {`Input: 4 > 4 while airborne`}                              
                                 </h5>
                             </div>
                         </div>
@@ -1425,7 +1505,7 @@ class UniversalData extends Component {
                         <div className="row">
                             <div className="col mx-auto">
                                 <h5 className="">
-                                    Input: 9 > 5 > 6                              
+                                    {`Input: 9 > 5 > 6`}                              
                                 </h5>
                             </div>
                         </div>
@@ -1506,7 +1586,7 @@ class UniversalData extends Component {
                         <div className="row">
                             <div className="col mx-auto">
                                 <h5 className="">
-                                    Input: 4 > 4                             
+                                    {`Input: 4 > 4`}                             
                                 </h5>
                             </div>
                         </div>
