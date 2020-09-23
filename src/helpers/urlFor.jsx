@@ -3,7 +3,7 @@ const env = process.env.NODE_ENV
 
 let hostname = ''
 
-env === 'development' ? hostname = 'http://localhost:3000/' : hostname = 'https://dbfztech-api.herokuapp.com/'
+env === 'development' ? hostname = 'http://localhost:3000/' : hostname = 'https://api.framehameha.com/'
 
 const charactersAPI = (character_id = "") => {
     return `${hostname}api/v1/characters/${character_id}`;
