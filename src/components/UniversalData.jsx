@@ -95,6 +95,7 @@ class UniversalData extends Component {
                                     </p>
                                     <p className="text-left notes-box">
                                         Can cancel into air action while in sparking.
+                                        Roshi is the only exception to this, his 6M is less active for 2 frames and has 2 frames more recovery.
                                     </p>
                                 </div> 
                             </div>
