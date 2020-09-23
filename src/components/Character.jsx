@@ -81,7 +81,7 @@ class Character extends Component {
         let { character, isOpen, picture, icon } = this.state; 
         let { match: { params } } = this.props;
         const twitter_url = twitterSearchBasic(character.twitter_tag)
-        if (params.id > 40) {
+        if (params.id > 41) {
           return <Redirect to='/404' />
         }
         return ( 
